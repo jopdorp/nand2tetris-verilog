@@ -1,13 +1,13 @@
-`include "my_and.v"
+`include "my_or.v"
 
-module test_my_and();
+module test_my_or();
    reg a;
    reg b;
    reg expected;
    
    wire c;
 
-   my_and  u1(c, a, b);
+   my_or u1(c, a, b);
 
    initial 
      begin
@@ -17,11 +17,11 @@ module test_my_and();
 
 	#1 a = 0;
 	b = 1;
-	expected = 0;
+	expected = 1;
 	
 	#1 a = 1;
 	b = 0;
-	expected = 0;
+	expected = 1;
 	
 	#1 a = 1;
 	b = 1;
@@ -29,6 +29,6 @@ module test_my_and();
      end
 
    initial
-     $monitor("my_and %d %b %b (%b %b)", $time, a, b, c, expected);
+     $monitor("my_or %d %b %b (%b %b)", $time, a, b, c, expected);
    
 endmodule
