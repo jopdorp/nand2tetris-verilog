@@ -18,6 +18,6 @@ module test_my_not();
      end
 
    initial
-     $monitor("my_not %d %b %b", $time, b, expected);
+     $monitor("my_not %d %b (%b %b)", $time, a, b, expected);
    
 endmodule
