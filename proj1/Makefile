@@ -12,7 +12,7 @@ results.txt: $(TEST_RESULTS)
 	cat $? > $(RESULT_FILE)
 
 test: $(RESULT_FILE)
-	cat $(RESULT_FILE)
+	./valid.pl $(RESULT_FILE)
 
 clean:
 	rm *.txt
