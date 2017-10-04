@@ -9,7 +9,7 @@ sub valid_group {
 }
 
 while (<>) {
-    if ($_ =~ /^([a-zA-Z_]+) # test name 
+    if ($_ =~ /^([a-zA-Z_\d]+) # test name 
 	\s+(\d+) # test number 
 	[\s\d]+
 	(\(.*\)) #paren groups 
