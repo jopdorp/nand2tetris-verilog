@@ -36,6 +36,6 @@ module test_my_mux4way16();
      end
 
    initial
-     $monitor("my_mux16 %d %b %b %b %b %b (%b %b)", $time, a, b, c, d, s, e, expected);
+     $monitor("my_mux4way16 %d %b %b %b %b %b (%b %b)", $time, a, b, c, d, s, e, expected);
    
 endmodule

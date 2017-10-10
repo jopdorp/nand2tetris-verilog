@@ -60,6 +60,6 @@ module test_my_mux8way16();
      end
 
    initial
-     $monitor("my_mux16 %d %b %b %b %b %b %b %b %b %b (%b %b)", $time, a, b, c, d, e, f, g, h, sel, j, expected);
+     $monitor("my_mux8way16 %d %b %b %b %b %b %b %b %b %b (%b %b)", $time, a, b, c, d, e, f, g, h, sel, j, expected);
    
 endmodule
