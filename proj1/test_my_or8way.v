@@ -1,7 +1,7 @@
 `include "my_or8way.v"
 
 module test_my_or8way();
-   reg [8:0] a;
+   reg [7:0] a;
    reg 	     expected;
    wire      b;
 

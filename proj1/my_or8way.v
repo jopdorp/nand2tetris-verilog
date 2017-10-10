@@ -1,7 +1,7 @@
 `include "my_or.v"
 
-module my_or8way(b, a[8:0]);
-   input [8:0] a;
+module my_or8way(b, a[7:0]);
+   input [7:0] a;
    output b;
 
    wire 	  or_1_2;
