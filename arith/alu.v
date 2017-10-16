@@ -1,14 +1,14 @@
-module alu(out, x, y, zx, zy, nx, ny, f, no);
+module alu(out, zr, ng, x, y, zx, zy, nx, ny, f, no);
    input [15:0] x;
    input [15:0] y;
    input zx, zy, nx, ny, f, no;
 
    output [15:0] out;
+   output 	 zr, ng;
 
-   reg [15:0] 	 zero;
+   wire [15:0] 	 zero;
    
-   initial
-     zero = 16'b0000000000000000;
+   assign zero = 16'b0000000000000000;
    
    // x procesing
    wire [15:0] zx_o;
@@ -42,4 +42,16 @@ module alu(out, x, y, zx, zy, nx, ny, f, no);
    
    my_not16 u10(o_neg, f_out);
    my_mux16 u11(out, f_out, o_neg, no);
+
+   // zr status
+   wire zr_n;
+   wire zr_n_upper, zr_n_lower;
+   my_or8way u12(zr_n_upper, out[15:8]);
+   my_or8way u13(zr_n_lower, out[7:0]);
+   or u14(zr_n, zr_n_upper, zr_n_lower);
+   not u15(zr, zr_n);
+
+   // ng status
+   assign ng = out[15];
+   
 endmodule
