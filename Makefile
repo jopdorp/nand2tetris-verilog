@@ -40,16 +40,16 @@ $(ALL_RESULTS): $(TEST_RESULTS)
 	cat $? > $(ALL_RESULTS)
 
 test_logic: $(LOGIC_RESULTS)
-	./valid.pl $(LOGIC_RESULTS)
+	./valid.py < $(LOGIC_RESULTS)
 
 test_arith: $(ARITH_RESULTS)
-	./valid.pl $(ARITH_RESULTS)
+	./valid.py < $(ARITH_RESULTS)
 
 test_seq: $(SEQ_RESULTS)
-	./valid.pl $(SEQ_RESULTS)
+	./valid.py < $(SEQ_RESULTS)
 
 test_all: $(ALL_RESULTS)
-	./valid.pl $(ALL_RESULTS)
+	./valid.py < $(ALL_RESULTS)
 
 clean:
 	- rm $(LOGIC_DIR)/*.txt
