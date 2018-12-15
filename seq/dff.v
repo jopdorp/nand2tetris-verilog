@@ -3,7 +3,6 @@ module dff(out, data, clk);
    output out;
    reg 	  out;
 
-   always @(posedge clk)
-	out <= data;
-   
+   // implementation
+
 endmodule

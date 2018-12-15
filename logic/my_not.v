@@ -1,6 +1,7 @@
 module my_not(b, a);
    input a;
    output b;
+
+   // implementation
    
-   nand u1(b, a, a);
 endmodule
