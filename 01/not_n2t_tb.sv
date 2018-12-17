@@ -10,9 +10,9 @@ module not_n2t_tb();
     initial begin
         in = 0;
         expected = 1;
-	// assert(expected == in);
+	assert(expected == ~in);
         #10 in = 1;
         expected = 0;
-	// assert(expected == in);
+	assert(expected == in);
     end
 endmodule
