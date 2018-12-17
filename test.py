@@ -3,8 +3,9 @@
 import os
 import re
 import sys
-import time
+from queue import Queue
 from subprocess import check_output, call, CalledProcessError
+from multiprocessing.pool import ThreadPool
 
 
 class bcolors:
@@ -21,7 +22,7 @@ class TestBenchRunner(object):
 
 def simulate(filename):
     simulation_command = ["/home/jegor/intelFPGA/18.1/modelsim_ase/bin/vsim", "-c"]
-    simulation_command.append(filename)
+    simulation_command.append(filename[0:-3])
     simulation_command = simulation_command + ["-do", "run", "-do", "quit"]
 
     try:
@@ -37,23 +38,34 @@ def simulate(filename):
         return {"assertion_errors": 0, "run_errors": 1}
 
 
-if __name__ == '__main__':
-    os.chdir(sys.argv[1])
-    verilog_files = [f for f in os.listdir("./") if re.search(r'.*\.sv$', f)]
-    test_files = [f for f in os.listdir("./") if re.search(r'.*_tb\.sv$', f)]
+def summarise_results(results):
+    [
+        assertion_errors,
+        run_errors,
+        successful_test_benches,
+        unsuccessful_test_benches,
+        test_benches_with_assertion_errors
+    ] = results
+    color = bcolors.FAIL if unsuccessful_test_benches > 0 else bcolors.OKGREEN
+    print(color + "Finished testing\n")
+    print(bcolors.OKGREEN + str(successful_test_benches), "test benches ran without any errors")
+    if unsuccessful_test_benches > 0:
+        print(bcolors.FAIL + str(unsuccessful_test_benches), "test benches had errors, of which:",
+              "\n" + str(test_benches_with_assertion_errors), "ran, but had a total of ", assertion_errors,
+              "assertion errors",
+              "\n" + str(run_errors), "testbenches failed to run", bcolors.ENDC)
 
-    compile_command = ["/home/jegor/intelFPGA/18.1/modelsim_ase/bin/vlog"]
-    for filename in verilog_files:
-        compile_command.append(filename)
-    call(compile_command)
 
+def run_tests():
     assertion_errors = 0
     run_errors = 0
     successful_test_benches = 0
     unsuccessful_test_benches = 0
     test_benches_with_assertion_errors = 0
-    for filename in test_files:
-        errors = simulate(filename[0:-3])
+    pool = ThreadPool(processes=8)
+    async_results = [pool.apply_async(simulate, (filename,)) for filename in test_files]
+    for result in async_results:
+        errors = result.get()
         assertion_errors += errors["assertion_errors"]
         run_errors += errors["run_errors"]
 
@@ -64,11 +76,22 @@ if __name__ == '__main__':
             unsuccessful_test_benches += 1
         else:
             successful_test_benches += 1
+    return [
+        assertion_errors,
+        run_errors,
+        successful_test_benches,
+        unsuccessful_test_benches,
+        test_benches_with_assertion_errors
+    ]
 
-    color = bcolors.FAIL if unsuccessful_test_benches > 0 else bcolors.OKGREEN
-    print(color + "Finished testing\n")
-    print(bcolors.OKGREEN + str(successful_test_benches), "test benches ran without any errors")
-    if unsuccessful_test_benches > 0:
-        print(bcolors.FAIL+str(unsuccessful_test_benches), "test benches had errors, of which:",
-            "\n"+str(test_benches_with_assertion_errors), "ran, but had a total of ",assertion_errors,"assertion errors",
-            "\n"+str(run_errors), "testbenches failed to run", bcolors.ENDC)
+
+if __name__ == '__main__':
+    os.chdir(sys.argv[1])
+    verilog_files = [f for f in os.listdir("./") if re.search(r'.*\.sv$', f)]
+    test_files = [f for f in os.listdir("./") if re.search(r'.*_tb\.sv$', f)]
+
+    compile_command = ["/home/jegor/intelFPGA/18.1/modelsim_ase/bin/vlog"]
+    for filename in verilog_files:
+        compile_command.append(filename)
+    call(compile_command)
+    summarise_results(run_tests())
