@@ -13,15 +13,15 @@ module and_tb();
 	b = 0;
 	expected = 0;
 
-	#1 a = 0;
+	#10 a = 0;
 	b = 1;
 	expected = 0;
 	
-	#1 a = 1;
+	#10 a = 1;
 	b = 0;
 	expected = 0;
 	
-	#1 a = 1;
+	#10 a = 1;
 	b = 1;
 	expected = 1;
      end

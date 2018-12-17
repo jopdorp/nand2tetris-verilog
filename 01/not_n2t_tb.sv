@@ -1,21 +1,18 @@
 `include "not_n2t.sv"
 
 module not_n2t_tb();
-    reg  a;
-    reg  expected;
-
-    wire b;
-
-    not_n2t gate1(b, a);
+    reg in;
+    reg expected;
+    reg result;
+    
+    not_n2t gate1(result, in);
 
     initial begin
-        a = 0;
+        in = 0;
+        expected = 1;
+	// assert(expected == in);
+        #10 in = 1;
         expected = 0;
-        #1 a = 1;
-        expected = 0;
+	// assert(expected == in);
     end
-
-    initial
-        $monitor("not_n2t %d %b (%b %b)", $time, a, b, expected);
-
 endmodule
