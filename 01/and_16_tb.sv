@@ -1,47 +1,31 @@
 `include "and_16.sv"
 
 module and_16_tb();
-    reg [15:0] a;
-    reg [15:0] b;
-    reg [15:0] expected;
-    
-    wire [15:0] c;
-    
-    and_16 u1(c, b, a);
+    reg [15:0]  a = 16'b0000000000000000;
+    reg [15:0]  b = 16'b0000000000000000;
+    wire [15:0] out;
 
-    initial 
-      begin
-	  a = 16'b0000000000000000;
-	  b = 16'b0000000000000000;
-	  expected = 16'b0000000000000000;
+    and_16 u1(out, a, b);
 
-	  #1 a[0] = 1;
-	  expected[0] = 0;
+    function void display_and_assert(reg [15:0] expected);
+        assert (out == expected) else $error("out: %b expected: %b, a: %b, b %b", out, expected, a, b);
+    endfunction
 
-	  #1 b[0] = 1;
-	  expected[0] = 1;
+    generate
+        genvar i;
+        genvar j;
+        for (i = 0; i <= 15; i = i+1) begin
+            for (j = 0; j <= 15; j = j+1) begin
+                initial begin
+                    #(i*20+j) a[i] = 1;
+                    if (j == 0) begin
+                        b = 16'b0000000000000000;
+                    end
+                    #1 b[j] = 1;
+                    #2 display_and_assert(a & b);
+                end
+            end
+        end
+    endgenerate
 
-	  #1 b[1] = 1;
-	  expected[1] = 0;
-
-	  #1 a[1] = 1;
-
-	  expected[1] = 1;
-
-	  #1 a[2] = 1;
-	  expected[2] = 0;
-
-	  #1 b[2] = 1;
-	  expected[2] = 1;
-
-	  #1 b[3] = 1;
-	  expected[3] = 0;
-
-	  #1 a[3] = 1;
-	  expected[3] = 1;
-      end
-
-    initial
-      $monitor("and_16 %d %b %b (%b %b)", $time, a, b, c, expected);
-    
 endmodule

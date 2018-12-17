@@ -3,8 +3,7 @@
 import os
 import re
 import sys
-from queue import Queue
-from subprocess import check_output, call, CalledProcessError
+from subprocess import check_output, call, CalledProcessError, run, Popen, PIPE
 from multiprocessing.pool import ThreadPool
 
 
@@ -23,11 +22,11 @@ class TestBenchRunner(object):
 def simulate(filename):
     simulation_command = ["/home/jegor/intelFPGA/18.1/modelsim_ase/bin/vsim", "-c"]
     simulation_command.append(filename[0:-3])
-    simulation_command = simulation_command + ["-do", "run", "-do", "quit"]
+    simulation_command = simulation_command + ["-do", "run 2000", "-do", "quit"]
 
     try:
         output = check_output(simulation_command).decode("utf-8")
-        assertion_errors = len(re.findall(r'Error: Assertion error.', output))
+        assertion_errors = len(re.findall(r'Error: ', output))
         print(output)
         color = bcolors.FAIL if assertion_errors > 0 else bcolors.OKGREEN
         print(color + "Found", assertion_errors, "assertion errors", "in", filename, bcolors.ENDC, "\n")
@@ -52,8 +51,9 @@ def summarise_results(results):
     if unsuccessful_test_benches > 0:
         print(bcolors.FAIL + str(unsuccessful_test_benches), "test benches had errors, of which:",
               "\n" + str(test_benches_with_assertion_errors), "ran, but had a total of ", assertion_errors,
-              "assertion errors",
-              "\n" + str(run_errors), "testbenches failed to run", bcolors.ENDC)
+              "assertion errors")
+    if run_errors > 0:
+        "\n" + str(run_errors), "testbenches failed to run", bcolors.ENDC
 
 
 def run_tests():
@@ -84,14 +84,24 @@ def run_tests():
         test_benches_with_assertion_errors
     ]
 
-
 if __name__ == '__main__':
     os.chdir(sys.argv[1])
-    verilog_files = [f for f in os.listdir("./") if re.search(r'.*\.sv$', f)]
-    test_files = [f for f in os.listdir("./") if re.search(r'.*_tb\.sv$', f)]
+    [verilog_files, test_files] = [[],[]] if len(sys.argv) <= 2 else [[sys.argv[2]], [sys.argv[2]]]
+
+    if len(verilog_files) == 0:
+        verilog_files = [f for f in os.listdir("./") if re.search(r'.*\.sv$', f)]
+        test_files = [f for f in os.listdir("./") if re.search(r'.*_tb\.sv$', f)]
 
     compile_command = ["/home/jegor/intelFPGA/18.1/modelsim_ase/bin/vlog"]
     for filename in verilog_files:
         compile_command.append(filename)
-    call(compile_command)
+
+    output = Popen(" ".join(compile_command), stdout=PIPE, shell=True)
+    output = output.communicate()[0].decode("utf-8")
+
+    if re.search(r'Error:', output):
+        raise Exception("Aborting, there were compilation errors!\n\n" + output)
+    else:
+        print(bcolors.OKBLUE+"Finished compiling", compile_command, bcolors.ENDC, "\n")
+
     summarise_results(run_tests())
