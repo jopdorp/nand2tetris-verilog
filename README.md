@@ -1,12 +1,12 @@
-#Nand2Tetris Verilog
+# Nand2Tetris Verilog
 
-###What is this about?
+### What is this about?
 Nand2Tetris is an awesome course where you learn how to build a computer.  
 You build the all chips and architecture from the ground up, in a simplified HDL language.  
 After this, you create an assembler language, an operating system called Jack OS.  
 Then a virtual machine and a java-like language called Jack.  
 
-###Why this repo?
+### Why this repo?
 This is a SystemVerilog version of the course materials on hardware design.  
 The purpose of is usage by other students, so go ahead, give it a try!  
 The course Nand2Tetris is on coursera https://www.coursera.org/learn/build-a-computer
@@ -20,14 +20,14 @@ This project is an implementation of the HACK architecture in SysytemVerilog.
 The no-solutions branch is meant for students to implement the architecture themselves.  
 For each chip, there is a testbench to test its functionctionality.  
 
-##Current state
+## Current state
 
 Project 01 is entirely finished.
 There are individual branches for each project.
 02 and 03  don't have automated tests yet, but they can be verified by looking at the test outputs.    
 Not all the solutions are ready either. Will update soon!
 
-##Installation
+## Installation
 So, you want to try to build hack in SystemVerilog!  
 
 The first step is cloning thin repo, so open up your favorite terminal and type:
@@ -38,11 +38,11 @@ $ cd nand2tetris-verilog
 I recommend using git, but if you don't want to use git, you can download this repository as a zip file!  
 https://bitbucket.org/jopdorp/nand2tetris-verilog/downloads/  
 
-###Requirements
+### Requirements
 - python
 - ModelSim starter edition
 
-####Python:
+#### Python:
 Many operating systems come with python preinstalled.  
 In Ubuntu you can do something like:
 ```console
@@ -56,14 +56,14 @@ Mac OS X:
 ```console
 $ brew install python
 ```
-####ModelSim:
+#### ModelSim:
 This should work with any licensed edition of ModelSim  
 You can get a free, licensed copy of ModelSim starter edition from Intel:  
 http://fpgasoftware.intel.com/18.1/?edition=standard&download_manager=dlm3&product=modelsim_ae#tabs-2  
 First you have to register, then you can download the ModelSim installer.  
 Follow the instructions in the installer.  
 
-####Configuration:
+#### Configuration:
 
 Put the ModelSim bin directory on your PATH environment variable.   
 I added to the bottom of ~/.zshrc, ~/.bashrc for bash and ~/.bash_profile for Mac OS X
@@ -79,7 +79,7 @@ Windows 10 and Windows 8:
 1. In the Edit System Variable (or New System Variable) window, specify the value of the PATH environment variable. Click OK. Close all remaining windows by clicking OK.  
 1. Log out and in
 
-####A note about editors  
+#### A note about editors  
 There is an editor in the ModelSim graphical interface, but it's not the best.  
 A good editor is vital for comfort during development.  
 -   I recommend using IntelliJ Community edition which can be obtained here:  
@@ -103,9 +103,9 @@ If you don't want a big program like that, there are other options:
 
 There should also be plugins for vim and sublime text, but don't know the details about those.
 
-##You're ready!
+## You're ready!
 
-##Usage
+## Usage
 
 The testbenches can be run using "test.py".  
 1. It compiles all verilog files in the project
@@ -147,7 +147,7 @@ All tests succeeded!
 ```
 Note that there is `# Hello world!` before the script quits the simulator.  
 If there are not errors and you see this message, it means everything is good to go!  
-It could be that you'll see some error, please see the [Troubleshoot section](#markdown-header-troubleshooting)
+It could be that you'll see some error, please see the [Troubleshoot section](#troubleshooting)
 
 Now you can implement your first chip.  
 I advise to start with not_n2t.sv, you can test it as follows:  
@@ -220,9 +220,9 @@ Finished testing:
 
 All tests succeeded!
 ```
-##Troubleshooting
+## Troubleshooting
 
-####Linux:
+#### Linux:
 
 -   When installing in Ubuntu, you might encounter some problems.
     This link should have most, if not all, solutions:  
@@ -256,7 +256,7 @@ All tests succeeded!
     suppress = 3116
     ```
 
-###Thanks
+### Thanks
 - Thanks to Noam Nisan and Shimon Schocken for creating this awesome course!
 - This repo was originally forked from https://github.com/f2xeb/n2t.  
 Finding this repository convinced me that it was passible for me,  
