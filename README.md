@@ -21,8 +21,12 @@ The no-solutions branch is meant for students to implement the architecture them
 For each chip, there is a testbench to test its functionctionality.  
 
 ## Current state
-Need to clean up a bit, the no-solutions branch has outdated skeleton files, and no test framework.  
+
+Project 01 is entirely finished.
+There are individual branches for each project.
+02 and 03  don't have automated tests yet, but they can be verified by looking at the test outputs.    
 Not all the solutions are ready either. Will update soon!
+
 ## Installation
 So, you want to try to build hack in SystemVerilog!  
 I hope that you'll have an easy time getting your environment up and running, it took me three days :p.  
@@ -30,11 +34,13 @@ Hopefully it'll be a matter of an hour or so.
 Please message me if you encounter any problems during your install,  
 especially if you managed to solve them! Then I'll add the solution here.
 ```console
-git clone --single-branch  --branch no-solutions https://jopdorp@bitbucket.org/jopdorp/nand2tetris-verilog.git
+git clone https://jopdorp@bitbucket.org/jopdorp/nand2tetris-verilog.git
 ```
+
 ### Requirements
 - python
 - ModelSim starter edition
+
 #### Python:
 Many operating systems come with python preinstalled.  
 In Ubuntu you can do something like:
@@ -81,34 +87,102 @@ Windows 10 and Windows 8:
 1. In the Edit System Variable (or New System Variable) window, specify the value of the PATH environment variable. Click OK. Close all remaining windows by clicking OK.  
 1. Log out and in
 
+#### A note about editors  
+There is an editor in the ModelSim graphical interface, but it's not the best.  
+A good editor is vital for comfort during development.  
+I recommend using IntellJ Community edition which can be obtained here:  
+https://www.jetbrains.com/idea/download  
+You will need a verilog plugin:  
+https://plugins.jetbrains.com/plugin/10695-systemverilog  
+The above plugin might be paid when you read this
+
+## You're ready!
+
 ## Usage
 
 The testbenches can be run using "test.py".  
-test.py is essentially a very small test framework for SystemVerilog.  
-Svunit and vunit do not support generators in tests.  
-Also was it difficult to findor did not support any free simulator.  
-So I created this.  
+1. It compiles all verilog files in the project
+1. It runs the test benches, by default all files that end with "_tb.sv" in the project
 
-It look for files that end with "_tb.sv", compiles them and runs them with vlog and vsim.
-
-From the Terminal or PowerShell:
+To verify that your environment is up and running type:
 ```console
 $ cd nand2tetris-verilog
-$ python test.py <project> <optional filename>
+$ python test.py 00
 ```
-examples:
+Now you can implement your first chip!  
+I advise to start with not_n2t.sv, you can test it as follows:  
 ```console
-$ python test.py 01
+$ python test.py 01 not_n2t_tb.sv
 ```
+This should give you an assertion error:
+
 ```console
-$ python test.py 01 or_tb.sv
+Starting compilation...
+Finished compiling!
+
+Reading pref.tcl
+
+# 10.5b
+
+# vsim -c not_n2t_tb -do "run 2000" -do "quit" 
+# Start time: 12:55:04 on Dec 18,2018
+# Loading sv_std.std
+# Loading work.not_n2t_tb
+# Loading work.not_n2t
+# run 2000
+# ** Error: Assertion error.
+#    Time: 1 ps  Scope: not_n2t_tb File: not_n2t_tb.sv Line: 10
+# ** Error: Assertion error.
+#    Time: 3 ps  Scope: not_n2t_tb File: not_n2t_tb.sv Line: 12
+# quit
+# End time: 12:55:04 on Dec 18,2018, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0, Suppressed Warnings: 1
+
+Found 2 assertion errors in not_n2t_tb.sv
+
+
+Finished testing:
+
+0 test benches ran without any errors
+
+1 test benches had errors, of which:
+1 ran, but had a total of 2 assertion errors
+
 ```
 
+Implement the chip and rerun the test to see if it works!  
+When you chip is correctly implemented you should see the following:
+
+```console
+Starting compilation...
+Finished compiling!
+
+Reading pref.tcl
+
+# 10.5b
+
+# vsim -c not_n2t_tb -do "run 2000" -do "quit" 
+# Start time: 12:57:45 on Dec 18,2018
+# Loading sv_std.std
+# Loading work.not_n2t_tb
+# Loading work.not_n2t
+# run 2000
+# quit
+# End time: 12:57:46 on Dec 18,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0, Suppressed Warnings: 1
+
+Found 0 assertion errors in not_n2t_tb.sv
+
+
+Finished testing:
+
+1 test benches ran without any errors
+
+All tests succeeded!
+```
 ## Troubleshooting
 
 ####Linux:
-
-
 
 -   When installing in Ubuntu, you might encounter some problems.
     This link should have most, if not all, solutions:  
@@ -123,23 +197,28 @@ $ python test.py 01 or_tb.sv
     1. Save ~/.modelsim (Ctrl+O and then Enter)
     1. Reopen modelsim
 
--   When starting a simulation in vsim, it will always issue the following warning:  
-VSIM 3> run  
+-   When starting a simulation in vsim, it will always issue the following warning:   
 
-    **Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.**
+    `Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.`
 
-    This seems to be related to this GDB bug report. The warning is harmless, as linux-gate.so.1 does not really exist. It is an interface provided by the Linux kernel to load ELF files. 
-    A better method to fix this issue batch modelsim.ini located in the modelsim installation directory. Use following commands:
-    nano modelsim.ini
+    This seems to be related to this GDB bug report.  
+    The warning is harmless, as linux-gate.so.1 does not really exist.  
+    It is an interface provided by the Linux kernel to load ELF files.  
+    A better method to fix this issue batch modelsim.ini located in the modelsim installation directory.  
+    Use the following command:
+    ```
+    $ sudo nano modelsim.ini
+    ```
 
-    And write the following to the file  
+    Go to the bottom of the file and find `[msg_system]` add `suppress = 3116`:
     ```
     [msg_system]
     suppress = 3116
     ```
 
 ### Thanks
-It was originally forked from https://github.com/f2xeb/n2t.  
+- Thanks to Noam Nisan and Shimon Schocken for creating this awesome course!
+- This repo was originally forked from https://github.com/f2xeb/n2t.  
 Finding this repository convinced me that it was passible for me,  
 someone with no experience in hardware design,  
 to implement the HACK architecture in SystemVerilog.

@@ -116,10 +116,6 @@ if __name__ == '__main__':
     verilog_files = [f for f in os.listdir("./") if re.search(r'.*\.sv$', f)]
     test_files = [] if len(sys.argv) <= 2 else [sys.argv[2]]
 
-    # we want to recompile all files
-    for file in glob.glob("work/*"):
-        os.remove(file)
-
     # swallow the error if work already exists
     check_output(["vlib", "work"])
 
@@ -139,3 +135,11 @@ if __name__ == '__main__':
     for file in glob.glob(".*"):
         os.remove(file)
 
+    for file in glob.glob("transcript"):
+        os.remove(file)
+
+    # we want to recompile all files next time
+    for file in glob.glob("work/*"):
+        os.remove(file)
+    for dir in glob.glob("work"):
+        os.removedirs(dir)
