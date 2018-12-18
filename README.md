@@ -75,7 +75,9 @@ Windows 10 and Windows 8:
 1. Log out and in
 
 ## Usage
+From the Terminal or PowerShell:
 ```
+$ cd nand2tetris-verilog
 $ python test.py <project> <optional filename>
 ```
 examples:

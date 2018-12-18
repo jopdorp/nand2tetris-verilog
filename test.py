@@ -3,7 +3,7 @@
 import os
 import re
 import sys
-from subprocess import check_output, call, CalledProcessError, run, Popen, PIPE
+from subprocess import check_output, call, CalledProcessError, Popen, PIPE
 from multiprocessing.pool import ThreadPool
 
 
@@ -29,11 +29,11 @@ def simulate(filename):
         assertion_errors = len(re.findall(r'Error: ', output))
         print(output)
         color = bcolors.FAIL if assertion_errors > 0 else bcolors.OKGREEN
-        print(color + "Found", assertion_errors, "assertion errors", "in", filename, bcolors.ENDC, "\n")
+        print(color + "Found " + str(assertion_errors) + " assertion errors in " + filename + bcolors.ENDC + "\n")
         return {"assertion_errors": assertion_errors, "run_errors": 0}
     except CalledProcessError as e:
         return_code = e.returncode
-        print(bcolors.FAIL + "Error while running", filename, return_code, bcolors.ENDC, "\n")
+        print(bcolors.FAIL + "Error while running" + filename + return_code + bcolors.ENDC + "\n")
         return {"assertion_errors": 0, "run_errors": 1}
 
 
@@ -47,11 +47,11 @@ def summarise_results(results):
     ] = results
     color = bcolors.FAIL if unsuccessful_test_benches > 0 else bcolors.OKGREEN
     print(color + "Finished testing\n")
-    print(bcolors.OKGREEN + str(successful_test_benches), "test benches ran without any errors")
+    print(bcolors.OKGREEN + str(successful_test_benches) + " test benches ran without any errors")
     if unsuccessful_test_benches > 0:
-        print(bcolors.FAIL + str(unsuccessful_test_benches), "test benches had errors, of which:",
-              "\n" + str(test_benches_with_assertion_errors), "ran, but had a total of ", assertion_errors,
-              "assertion errors")
+        print(bcolors.FAIL + str(unsuccessful_test_benches) + " test benches had errors, of which:"
+              + "\n" + str(test_benches_with_assertion_errors) + " ran, but had a total of "
+              + str(assertion_errors) + "assertion errors")
     if run_errors > 0:
         "\n" + str(run_errors), "testbenches failed to run", bcolors.ENDC
 
@@ -84,9 +84,10 @@ def run_tests():
         test_benches_with_assertion_errors
     ]
 
+
 if __name__ == '__main__':
     os.chdir(sys.argv[1])
-    [verilog_files, test_files] = [[],[]] if len(sys.argv) <= 2 else [[sys.argv[2]], [sys.argv[2]]]
+    [verilog_files, test_files] = [[], []] if len(sys.argv) <= 2 else [[sys.argv[2]], [sys.argv[2]]]
 
     if len(verilog_files) == 0:
         verilog_files = [f for f in os.listdir("./") if re.search(r'.*\.sv$', f)]
@@ -104,6 +105,6 @@ if __name__ == '__main__':
     if re.search(r'Error:', output):
         raise Exception("Aborting, there were compilation errors!\n\n" + output)
     else:
-        print(bcolors.OKBLUE+"Finished compiling", compile_command, bcolors.ENDC, "\n")
+        print(bcolors.OKBLUE + "Finished compiling " + str(compile_command) + bcolors.ENDC + "\n")
 
     summarise_results(run_tests())
