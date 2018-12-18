@@ -90,12 +90,26 @@ Windows 10 and Windows 8:
 #### A note about editors  
 There is an editor in the ModelSim graphical interface, but it's not the best.  
 A good editor is vital for comfort during development.  
-I recommend using IntellJ Community edition which can be obtained here:  
-https://www.jetbrains.com/idea/download  
-You will need a verilog plugin:  
-https://plugins.jetbrains.com/plugin/10695-systemverilog  
-The above plugin might be paid when you read this
+-   I recommend using IntelliJ Community edition which can be obtained here:  
+    https://www.jetbrains.com/idea/download  
+    You will need a verilog plugin:  
+    https://plugins.jetbrains.com/plugin/10695-systemverilog  
+    The above plugin might be paid when you read this
 
+If you don't want a big program like that, there are other options:
+-   Emacs https://www.gnu.org/software/emacs/download.html  
+    You'll probably want to use my config:
+    ```console
+    $ git clone https://jopdorp@bitbucket.org/jopdorp/emacs-config.git ~/.emacs.d
+    ```
+-   Atom with apio, it can be a bit of a hassle to setup.
+    - https://atom.io/
+    - https://atom.io/packages/apio-ide
+-   Notepad++, i did not try this myself. Only has Windows support.
+    - https://notepad-plus-plus.org/download/
+    - https://sourceforge.net/projects/nppverilog/  
+
+There should also be plugins for vim and sublime text, but don't know the details about those.
 ## You're ready!
 
 ## Usage
