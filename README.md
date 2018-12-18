@@ -1,15 +1,15 @@
-#nand2tetris verilog
+#Nand2Tetris Verilog
 
-### What is this about?
-nand2tetris is an awesome course where you learn how to build a computer.  
+###What is this about?
+Nand2Tetris is an awesome course where you learn how to build a computer.  
 You build the all chips and architecture from the ground up, in a simplified HDL language.  
 After this, you create an assembler language, an operating system called Jack OS.  
 Then a virtual machine and a java-like language called Jack.  
 
-### Why this repo?
+###Why this repo?
 This is a SystemVerilog version of the course materials on hardware design.  
 The purpose of is usage by other students, so go ahead, give it a try!  
-The course nand2tetris is on coursera https://www.coursera.org/learn/nand2tetris2  
+The course Nand2Tetris is on coursera https://www.coursera.org/learn/build-a-computer
 There is also a website https://www.nand2tetris.org/  
 I can also highly recommend the book from the course:  
 
@@ -20,28 +20,29 @@ This project is an implementation of the HACK architecture in SysytemVerilog.
 The no-solutions branch is meant for students to implement the architecture themselves.  
 For each chip, there is a testbench to test its functionctionality.  
 
-## Current state
+##Current state
 
 Project 01 is entirely finished.
 There are individual branches for each project.
 02 and 03  don't have automated tests yet, but they can be verified by looking at the test outputs.    
 Not all the solutions are ready either. Will update soon!
 
-## Installation
+##Installation
 So, you want to try to build hack in SystemVerilog!  
-I hope that you'll have an easy time getting your environment up and running, it took me three days :p.  
-Hopefully it'll be a matter of an hour or so.  
-Please message me if you encounter any problems during your install,  
-especially if you managed to solve them! Then I'll add the solution here.
-```console
-git clone https://jopdorp@bitbucket.org/jopdorp/nand2tetris-verilog.git
-```
 
-### Requirements
+The first step is cloning thin repo, so open up your favorite terminal and type:
+```console
+$ git clone https://jopdorp@bitbucket.org/jopdorp/nand2tetris-verilog.git
+$ cd nand2tetris-verilog
+```
+I recommend using git, but if you don't want to use git, you can download this repository as a zip file!  
+https://bitbucket.org/jopdorp/nand2tetris-verilog/downloads/  
+
+###Requirements
 - python
 - ModelSim starter edition
 
-#### Python:
+####Python:
 Many operating systems come with python preinstalled.  
 In Ubuntu you can do something like:
 ```console
@@ -55,23 +56,14 @@ Mac OS X:
 ```console
 $ brew install python
 ```
-#### ModelSim:
+####ModelSim:
 This should work with any licensed edition of ModelSim  
 You can get a free, licensed copy of ModelSim starter edition from Intel:  
 http://fpgasoftware.intel.com/18.1/?edition=standard&download_manager=dlm3&product=modelsim_ae#tabs-2  
-First you have to register, then you can download the ModelSim installer.
+First you have to register, then you can download the ModelSim installer.  
+Follow the instructions in the installer.  
 
-Windows:  
-In windows the installation is very easy, just follow the instructions in the installer.
-
-Mac OS X:  
-Should be just following the installer, same as Windows.
-
-Linux:  
-Redhat should be easy, but if you are using another distro.
-For example Ubuntu, there can be some problems, see the troubleshooting section.  
-
-#### Configuration:
+####Configuration:
 
 Put the ModelSim bin directory on your PATH environment variable.   
 I added to the bottom of ~/.zshrc, ~/.bashrc for bash and ~/.bash_profile for Mac OS X
@@ -87,7 +79,7 @@ Windows 10 and Windows 8:
 1. In the Edit System Variable (or New System Variable) window, specify the value of the PATH environment variable. Click OK. Close all remaining windows by clicking OK.  
 1. Log out and in
 
-#### A note about editors  
+####A note about editors  
 There is an editor in the ModelSim graphical interface, but it's not the best.  
 A good editor is vital for comfort during development.  
 -   I recommend using IntelliJ Community edition which can be obtained here:  
@@ -110,9 +102,10 @@ If you don't want a big program like that, there are other options:
     - https://sourceforge.net/projects/nppverilog/  
 
 There should also be plugins for vim and sublime text, but don't know the details about those.
-## You're ready!
 
-## Usage
+##You're ready!
+
+##Usage
 
 The testbenches can be run using "test.py".  
 1. It compiles all verilog files in the project
@@ -123,7 +116,40 @@ To verify that your environment is up and running type:
 $ cd nand2tetris-verilog
 $ python test.py 00
 ```
-Now you can implement your first chip!  
+You should see the following output:
+```console
+Starting compilation of project 00...
+Finished compiling!
+
+Starting tests in project 00
+Reading pref.tcl
+
+# 10.5b
+
+# vsim -c hello_verilog_tb -do "run 2000" -do "quit" 
+# Start time: 15:58:14 on Dec 18,2018
+# Loading sv_std.std
+# Loading ../work.hello_verilog_tb
+# run 2000
+# Hello world!
+# quit
+# End time: 15:58:14 on Dec 18,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0, Suppressed Warnings: 1
+
+Found 0 assertion errors in hello_verilog_tb.sv
+
+
+Finished testing:
+
+1 test benches ran without any errors
+
+All tests succeeded!
+```
+Note that there is `# Hello world!` before the script quits the simulator.  
+If there are not errors and you see this message, it means everything is good to go!  
+It could be that you'll see some error, please see the [Troubleshoot section](#markdown-header-troubleshooting)
+
+Now you can implement your first chip.  
 I advise to start with not_n2t.sv, you can test it as follows:  
 ```console
 $ python test.py 01 not_n2t_tb.sv
@@ -194,7 +220,7 @@ Finished testing:
 
 All tests succeeded!
 ```
-## Troubleshooting
+##Troubleshooting
 
 ####Linux:
 
@@ -230,7 +256,7 @@ All tests succeeded!
     suppress = 3116
     ```
 
-### Thanks
+###Thanks
 - Thanks to Noam Nisan and Shimon Schocken for creating this awesome course!
 - This repo was originally forked from https://github.com/f2xeb/n2t.  
 Finding this repository convinced me that it was passible for me,  
