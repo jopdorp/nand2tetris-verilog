@@ -20,6 +20,9 @@ This project is an implementation of the HACK architecture in SysytemVerilog.
 The no-solutions branch is meant for students to implement the architecture themselves.  
 For each chip, there is a testbench to test its functionctionality.  
 
+## Current state
+Need to clean up a bit, the no-solutions branch has outdated skeleton files, and no test framework.  
+Not all the solutions are ready either. Will update soon!
 ## Installation
 So, you want to try to build hack in SystemVerilog!  
 I hope that you'll have an easy time getting your environment up and running, it took me three days :p.  
@@ -91,6 +94,15 @@ Windows 10 and Windows 8:
 1. Log out and in
 
 ## Usage
+
+The testbenches can be run using "test.py".  
+test.py is essentially a very small test framework for SystemVerilog.  
+Svunit and vunit do not support generators in tests.  
+Also was it difficult to findor did not support any free simulator.  
+So I created this.  
+
+It look for files that end with "_tb.sv", compiles them and runs them with vlog and vsim.
+
 From the Terminal or PowerShell:
 ```console
 $ cd nand2tetris-verilog

@@ -1,43 +1,37 @@
+`include "dmux.sv"
+
 module dmux_tb();
-   reg i;
-   reg s;
-   reg expected_a;
-   reg expected_b;
-   
-   wire a;
-   wire b;
+    reg  in = 0;
+    reg  select = 0;
 
-   dmux u1(a, b, i, s);
+    wire a;
+    wire b;
 
-   initial 
-     begin
-	i = 0;
-	s = 0;
-	expected_a = 0;
-	expected_b = 0;
+    dmux u1(in, select, a, b);
+    function void assert_else_error(reg expected_a, reg expected_b);
+        assert (a == expected_a && b == expected_b) else begin
+            $error("dmux in: %b, select: %b, (a: %b, expected_a: %b) (b: %b, expected_b %b)",
+                in, select, a, expected_a, b, expected_b);
+        end
+    endfunction
 
-	#1 
-	i = 0;
-	s = 1;
-	expected_a = 0;
-	expected_b = 0;
+    initial
+        begin
+            in = 0;
+            select = 0;
+            #1 assert_else_error(0, 0);
 
+            #1 in = 0;
+            select = 1;
+            #1 assert_else_error(0, 0);
 
-	#1 
-	i = 1;
-	s = 0;
-	expected_a = 1;
-	expected_b = 0;
+            #1 in = 1;
+            select = 0;
+            #1 assert_else_error(1, 0);
 
+            #1 in = 1;
+            select = 1;
+            #1 assert_else_error(0, 1);
+        end
 
-	#1 
-	i = 1;
-	s = 1;
-	expected_a = 0;
-	expected_b = 1;
-     end
-
-   initial
-     $monitor("dmux %d %b %b (%b %b) (%b %b)", $time, i, s, a, expected_a, b, expected_b);
-   
 endmodule
