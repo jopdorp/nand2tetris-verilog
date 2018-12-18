@@ -1,4 +1,5 @@
 work
 .idea
+**/.*
 venv
 transcript
