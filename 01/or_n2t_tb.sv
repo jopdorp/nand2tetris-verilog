@@ -1,5 +1,3 @@
-`include "or_n2t.sv"
-
 module or_n2t_tb();
     reg  a;
     reg  b;

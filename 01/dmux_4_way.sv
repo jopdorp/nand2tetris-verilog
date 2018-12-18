@@ -1,5 +1,3 @@
-`include "dmux.sv"
-
 module dmux_4_way(
     input       in,
     input [1:0] sel,

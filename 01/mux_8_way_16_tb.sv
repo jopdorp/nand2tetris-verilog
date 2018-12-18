@@ -1,5 +1,3 @@
-`include "mux_8_way_16.sv"
-
 module mux_8_way_16_tb();
     reg [15:0]  a = 16'b0101010101010101;
     reg [15:0]  b = 16'b1010101010101010;

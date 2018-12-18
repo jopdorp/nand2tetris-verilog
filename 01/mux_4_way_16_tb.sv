@@ -1,5 +1,3 @@
-`include "mux_4_way_16.sv"
-
 module mux_4_way_16_tb();
     reg [15:0]  a;
     reg [15:0]  b;

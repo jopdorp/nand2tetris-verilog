@@ -1,13 +1,6 @@
-`include "dmux_4_way.sv"
-
 module dmux_4_way_tb();
     reg       in = 1;
     reg [1:0] select;
-
-    reg       expected_b;
-    reg       expected_c;
-    reg       expected_d;
-    reg       expected_e;
 
     wire      a;
     wire      b;
@@ -19,14 +12,15 @@ module dmux_4_way_tb();
     function void assert_else_error(reg a_exp, reg b_exp, reg c_exp, reg d_exp);
         assert (a == a_exp &&
             b == b_exp &&
-            b == b_exp &&
-            b == b_exp)
+            c == c_exp &&
+            d == d_exp)
         else begin
-            $error("dmux_4_way in: %b, select: %b, (a: %b, a_exp: %b) (b: %b, b_exp: %b) \
-(c: %b, c_exp: %b) (d: %b d_exp: %b)", in, select, a, a_exp, b, b_exp, c, c_exp, d, d_exp);
+            $error("dmux_4_way in: %b, select: %b, outputs (%b %b %b %b) expected (%b %b %b %b)",
+                in, select, a, b, c, d, a_exp, b_exp, c_exp, d_exp);
 
         end
     endfunction
+
     initial
         begin
             select = 2'b00;

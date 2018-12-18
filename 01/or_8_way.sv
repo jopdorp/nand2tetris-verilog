@@ -1,5 +1,3 @@
-`include "or_n2t.sv"
-
 module or_8_way(
     input [7:0] in,
     output      out

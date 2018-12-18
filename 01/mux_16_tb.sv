@@ -1,5 +1,3 @@
-`include "mux_16.sv"
-
 module mux_16_tb();
     reg [15:0]  a;
     reg [15:0]  b;

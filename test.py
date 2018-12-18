@@ -11,6 +11,7 @@ import glob
 class bcolors:
     OKBLUE = '\033[94m'
     OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
     FAIL = '\033[91m'
     ENDC = '\033[0m'
 
@@ -19,6 +20,22 @@ class TestBenchRunner(object):
     def __init__(self, filename):
         self.name = filename
 
+def compile(verilog_files):
+    global compile_command, output
+    compile_command = ["vlog"]
+    for filename in verilog_files:
+        compile_command.append(filename)
+
+    output = Popen(" ".join(compile_command), stdout=PIPE, shell=True)
+    output = output.communicate()[0].decode("utf-8")
+
+    if re.search(r'Error:', output):
+        print(bcolors.FAIL+"There were compilation errors!\n\n" + output)
+    else:
+        warnings = re.findall(r'Warning:.*\n.*\n.*\n', output)
+        if len(warnings) > 0:
+            print(bcolors.WARNING)
+            print("\n".join(warnings))
 
 def simulate(filename):
     simulation_command = ["vsim", "-c"]
@@ -34,7 +51,7 @@ def simulate(filename):
         return {"assertion_errors": assertion_errors, "run_errors": 0}
     except CalledProcessError as e:
         return_code = e.returncode
-        print(bcolors.FAIL + "Error while running " + filename + str(return_code) + "\n")
+        print(bcolors.FAIL + "Error while running " + filename + "\nError code: " + str(return_code) + "\n")
         print(e.output.decode("utf-8"))
         print(bcolors.ENDC)
         return {"assertion_errors": 0, "run_errors": 1}
@@ -92,29 +109,33 @@ def run_tests():
     ]
 
 
-if __name__ == '__main__':
-    os.chdir(sys.argv[1])
-    [verilog_files, test_files] = [[], []] if len(sys.argv) <= 2 else [[sys.argv[2]], [sys.argv[2]]]
 
-    if len(verilog_files) == 0:
-        verilog_files = [f for f in os.listdir("./") if re.search(r'.*\.sv$', f)]
+if __name__ == '__main__':
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    os.chdir(dir_path + "/" + sys.argv[1])
+    verilog_files = [f for f in os.listdir("./") if re.search(r'.*\.sv$', f)]
+    test_files = [] if len(sys.argv) <= 2 else [sys.argv[2]]
+
+    # we want to recompile all files
+    for file in glob.glob("work/*"):
+        os.remove(file)
+
+    # swallow the error if work already exists
+    check_output(["vlib", "work"])
+
+    if len(test_files) == 0:
         test_files = [f for f in os.listdir("./") if re.search(r'.*_tb\.sv$', f)]
 
-    call(["vlib", "work"])
 
-    compile_command = ["vlog"]
-    for filename in verilog_files:
-        compile_command.append(filename)
+    print("\nStarting compilation...")
 
-    output = Popen(" ".join(compile_command), stdout=PIPE, shell=True)
-    output = output.communicate()[0].decode("utf-8")
+    for file in verilog_files:
+        compile([file])
 
-    if re.search(r'Error:', output):
-        raise Exception("Aborting, there were compilation errors!\n\n" + output)
-    else:
-        print(bcolors.OKBLUE + "Finished compiling " + str(compile_command) + bcolors.ENDC + "\n")
+    print(bcolors.OKBLUE + "Finished compiling!\n" + bcolors.ENDC)
 
     summarise_results(run_tests())
 
     for file in glob.glob(".*"):
         os.remove(file)
+

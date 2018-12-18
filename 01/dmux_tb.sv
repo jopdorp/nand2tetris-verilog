@@ -1,5 +1,3 @@
-`include "dmux.sv"
-
 module dmux_tb();
     reg  in = 0;
     reg  select = 0;

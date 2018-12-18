@@ -1,6 +1,3 @@
-`include "mux_4_way_16.sv"
-`include "mux_16.sv"
-
 module mux_8_way_16(
     input  [15:0] a,
     input  [15:0] b,

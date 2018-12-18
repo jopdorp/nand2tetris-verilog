@@ -1,5 +1,3 @@
-`include "xor_n2t.sv"
-
 module xor_n2t_tb();
     reg  a;
     reg  b;

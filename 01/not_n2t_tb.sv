@@ -1,5 +1,3 @@
-`include "not_n2t.sv"
-
 module not_n2t_tb();
     reg in;
     reg expected;

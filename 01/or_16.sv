@@ -1,5 +1,3 @@
-`include "or_n2t.sv"
-
 module or_16(
     input[15:0] a,
     input[15:0] b,

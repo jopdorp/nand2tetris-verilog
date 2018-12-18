@@ -1,5 +1,3 @@
-`include "or_8_way.sv"
-
 module or_8_way_tb();
     reg [7:0] in;
     wire      out;

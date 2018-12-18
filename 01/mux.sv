@@ -1,7 +1,3 @@
-`include "and_n2t.sv"
-`include "not_n2t.sv"
-`include "or_n2t.sv"
-
 module mux(
     input  a,
     input  b,

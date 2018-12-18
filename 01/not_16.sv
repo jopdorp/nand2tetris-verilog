@@ -1,5 +1,3 @@
-`include "not_n2t.sv"
-
 module not_16(
     input [15:0] in,
     output [15:0] out

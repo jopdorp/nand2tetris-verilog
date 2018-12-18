@@ -1,6 +1,3 @@
-`include "not_n2t.sv"
-`include "and_n2t.sv"
-
 module dmux(
     input  in,
     input  select,

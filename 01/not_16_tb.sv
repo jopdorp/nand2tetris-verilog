@@ -1,5 +1,3 @@
-`include "not_16.sv"
-
 module not_16_tb();
     reg [15:0]  in = 16'b0000000000000000;
     wire [15:0] out;

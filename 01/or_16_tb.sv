@@ -1,5 +1,3 @@
-`include "or_16.sv"
-
 module or_16_tb();
     reg [15:0]  a;
     reg [15:0]  b;

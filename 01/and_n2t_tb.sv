@@ -1,4 +1,3 @@
-`include "and_n2t.sv"
 module and_n2t_tb();
     reg  a;
     reg  b;
