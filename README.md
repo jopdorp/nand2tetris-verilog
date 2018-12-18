@@ -62,21 +62,9 @@ Mac OS X:
 Should be just following the installer, same as Windows.
 
 Linux:  
-Redhat should be easy, but if you are using another distro, for example Ubuntu, there can be some problems.  
+Redhat should be easy, but if you are using another distro.
+For example Ubuntu, there can be some problems, see the troubleshooting section.  
 
-This link might be useful:  
-https://gist.github.com/PrieureDeSion/e2c0945cc78006b00d4206846bdb7657  
-
-It's not really needed to use the gui, but if the editor in modelsim is showing a really small font:  
-https://stackoverflow.com/questions/31555431/the-font-of-my-modelsim-is-too-small-to-see
-
-This is the answer I found:
-1. Open ~/.modelsim (use "nano ~/.modelsim" in terminal)
-1. Find: PrefDefault = ... textFontV2 {{Courier 10 Pitch} 12 normal roman} (the name of the font may differ)
-1. Change 12 to -12, so it will looks like this: textFontV2 {{Courier 10 Pitch} -12 normal roman} 
-1. Save ~/.modelsim (Ctrl+O and then Enter)
-
-Reopen modelsim
 #### Configuration:
 
 Put the ModelSim bin directory on your PATH environment variable.   
@@ -115,6 +103,40 @@ $ python test.py 01
 ```console
 $ python test.py 01 or_tb.sv
 ```
+
+## Troubleshooting
+
+####Linux:
+
+
+
+-   When installing in Ubuntu, you might encounter some problems.
+    This link should have most, if not all, solutions:  
+    https://gist.github.com/PrieureDeSion/e2c0945cc78006b00d4206846bdb7657  
+
+-   It's not really needed to use the gui, but if the editor in modelsim is showing a really small font:  
+    https://stackoverflow.com/questions/31555431/the-font-of-my-modelsim-is-too-small-to-see  
+    This is the answer I found:
+    1. Open ~/.modelsim (use "nano ~/.modelsim" in terminal)
+    1. Find: PrefDefault = ... textFontV2 {{Courier 10 Pitch} 12 normal roman} (the name of the font may differ)
+    1. Change 12 to -12, so it will looks like this: textFontV2 {{Courier 10 Pitch} -12 normal roman} 
+    1. Save ~/.modelsim (Ctrl+O and then Enter)
+    1. Reopen modelsim
+
+-   When starting a simulation in vsim, it will always issue the following warning:  
+VSIM 3> run  
+
+    **Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.**
+
+    This seems to be related to this GDB bug report. The warning is harmless, as linux-gate.so.1 does not really exist. It is an interface provided by the Linux kernel to load ELF files. 
+    A better method to fix this issue batch modelsim.ini located in the modelsim installation directory. Use following commands:
+    nano modelsim.ini
+
+    And write the following to the file  
+    ```
+    [msg_system]
+    suppress = 3116
+    ```
 
 ### Thanks
 It was originally forked from https://github.com/f2xeb/n2t.  
