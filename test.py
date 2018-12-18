@@ -20,7 +20,7 @@ class TestBenchRunner(object):
 
 
 def simulate(filename):
-    simulation_command = ["/home/jegor/intelFPGA/18.1/modelsim_ase/bin/vsim", "-c"]
+    simulation_command = ["vsim", "-c"]
     simulation_command.append(filename[0:-3])
     simulation_command = simulation_command + ["-do", "run 2000", "-do", "quit"]
 
@@ -92,7 +92,9 @@ if __name__ == '__main__':
         verilog_files = [f for f in os.listdir("./") if re.search(r'.*\.sv$', f)]
         test_files = [f for f in os.listdir("./") if re.search(r'.*_tb\.sv$', f)]
 
-    compile_command = ["/home/jegor/intelFPGA/18.1/modelsim_ase/bin/vlog"]
+    call(["vlib", "work"])
+
+    compile_command = ["vlog"]
     for filename in verilog_files:
         compile_command.append(filename)
 
