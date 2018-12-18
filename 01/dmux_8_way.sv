@@ -1,7 +1,9 @@
-module dmux_8_way(b, c, d, e, f, g, h, j, a, sel[2:0]);
-   input a;
-   input [2:0] sel;
+module dmux_8_way(
+    input  in,
+    input[2:0] sel,
+    output[7:0] out
+);
 
-   // implementation
+    // implementation
 
 endmodule

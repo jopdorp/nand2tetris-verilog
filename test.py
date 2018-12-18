@@ -1,10 +1,11 @@
-#!/usr/local/bin/python3.6
+#!/usr/bin/env python3
 
 import os
 import re
 import sys
 from subprocess import check_output, call, CalledProcessError, Popen, PIPE
 from multiprocessing.pool import ThreadPool
+import glob
 
 
 class bcolors:
@@ -33,7 +34,9 @@ def simulate(filename):
         return {"assertion_errors": assertion_errors, "run_errors": 0}
     except CalledProcessError as e:
         return_code = e.returncode
-        print(bcolors.FAIL + "Error while running" + filename + return_code + bcolors.ENDC + "\n")
+        print(bcolors.FAIL + "Error while running " + filename + str(return_code) + "\n")
+        print(e.output.decode("utf-8"))
+        print(bcolors.ENDC)
         return {"assertion_errors": 0, "run_errors": 1}
 
 
@@ -46,14 +49,18 @@ def summarise_results(results):
         test_benches_with_assertion_errors
     ] = results
     color = bcolors.FAIL if unsuccessful_test_benches > 0 else bcolors.OKGREEN
-    print(color + "Finished testing\n")
-    print(bcolors.OKGREEN + str(successful_test_benches) + " test benches ran without any errors")
+    print(color + "\nFinished testing:\n")
+    print(bcolors.OKGREEN + str(successful_test_benches) + " test benches ran without any errors\n")
+
     if unsuccessful_test_benches > 0:
         print(bcolors.FAIL + str(unsuccessful_test_benches) + " test benches had errors, of which:"
               + "\n" + str(test_benches_with_assertion_errors) + " ran, but had a total of "
-              + str(assertion_errors) + "assertion errors")
+              + str(assertion_errors) + " assertion errors")
+    else:
+        print(bcolors.OKGREEN + "All tests succeeded!")
+
     if run_errors > 0:
-        "\n" + str(run_errors), "testbenches failed to run", bcolors.ENDC
+        print(str(run_errors) + " testbenches failed to run" + bcolors.ENDC)
 
 
 def run_tests():
@@ -108,3 +115,6 @@ if __name__ == '__main__':
         print(bcolors.OKBLUE + "Finished compiling " + str(compile_command) + bcolors.ENDC + "\n")
 
     summarise_results(run_tests())
+
+    for file in glob.glob(".*"):
+        os.remove(file)

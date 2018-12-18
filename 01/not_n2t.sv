@@ -1,3 +1,3 @@
-module not_n2t(output out, input in);
-    nand gate1(out, in, in);
+module not_n2t(input in, output out);
+    nand not_n2t(out, in, in);
 endmodule

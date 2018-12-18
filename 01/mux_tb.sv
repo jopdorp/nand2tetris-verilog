@@ -1,64 +1,65 @@
+`include "mux.sv"
+
 module mux_tb();
-   reg a;
-   reg b;
-   reg s;
-   reg expected;
-   
-   wire c;
+    reg  a;
+    reg  b;
+    reg  select;
 
-   mux u1(c, a, b, s);
+    wire out;
 
-   initial 
-     begin
-	a = 0;
-	b = 0;
-	s = 0;
-	expected = 0;
+    mux mux_to_test(a, b, select, out);
 
-	#1 
-	a = 0;
-	b = 0;
-	s = 1;
-	expected = 0;
-	
-	#1 
-	a = 0;
-	b = 1;
-	s = 0;
-	expected = 0;
-	
-	#1 
-	a = 0;
-	b = 1;
-	s = 1;
-	expected = 1;
+    function void assert_else_error(expected);
+        assert (expected == out) else $error("a %b, b %b, select %b, out %b, expected %b", a, b, select, out, expected);
+    endfunction
 
-	#1
-	a = 1;
-	b = 0;
-	s = 0;
-	expected = 1;
-	
-	#1
-	a = 1;
-	b = 0;
-	s = 1;
-	expected = 0;
-	
-	#1
-	a = 1;
-	b = 1;
-	s = 0;
-	expected = 1;
+    initial
+        begin
+            a = 0;
+            b = 0;
+            select = 0;
+            #1 assert_else_error(0);
 
-	#1
-	a = 1;
-	b = 1;
-	s = 1;
-	expected = 1;
-     end
+            #1;
+            a = 0;
+            b = 0;
+            select = 1;
+            #1 assert_else_error(0);
 
-   initial
-     $monitor("mux %d %b %b %b (%b %b)", $time, a, b, s, c, expected);
-   
+            #1;
+            a = 0;
+            b = 1;
+            select = 0;
+            #1 assert_else_error(0);
+
+            #1;
+            a = 0;
+            b = 1;
+            select = 1;
+            #1 assert_else_error(1);
+
+            #1
+                a = 1;
+            b = 0;
+            select = 0;
+            #1 assert_else_error(1);
+
+            #1;
+            a = 1;
+            b = 0;
+            select = 1;
+            #1 assert_else_error(0);
+
+            #1;
+            a = 1;
+            b = 1;
+            select = 0;
+            #1 assert_else_error(1);
+
+            #1;
+            a = 1;
+            b = 1;
+            select = 1;
+            #1 assert_else_error(1);
+        end
 endmodule

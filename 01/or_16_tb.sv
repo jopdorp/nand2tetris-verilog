@@ -1,53 +1,48 @@
+`include "or_16.sv"
+
 module or_16_tb();
-   reg [15:0] a;
-   reg [15:0] b;
-   reg [15:0] expected;
-   
-   wire [15:0] c;
-   
+    reg [15:0]  a;
+    reg [15:0]  b;
+    reg [15:0]  expected;
 
-   or_16 u1(c, b, a);
+    wire [15:0] out;
 
-   initial 
-     begin
-	a = 16'b0000000000000000;
-	b = 16'b0000000000000000;
-	expected = 16'b0000000000000000;
 
-	#1 
-        a[0] = 1;
-	expected[0] = 1;
+    or_16 or_16(a, b, out);
 
-	#1 
-        b[0] = 1;
-	expected[0] = 1;
+    function void display_and_assert;
+        assert (out == a | b) else $error("out: %b expected: %b, a: %b, b %b", out, a | b, a, b);
+    endfunction
+    
+    initial
+        begin
+            a = 16'b0000000000000000;
+            b = 16'b0000000000000000;
+            #1 display_and_assert();
+            
+            #1 a[0] = 1;
+            #1 display_and_assert();
 
-	#1 
-        b[1] = 1;
-	expected[1] = 1;
+            #1 b[0] = 1;
+            #1 display_and_assert();
 
-	#1
-        a[1] = 1;
-	expected[1] = 1;
+            #1 b[1] = 1;
+            #1 display_and_assert();
 
-	#1 
-        a[2] = 1;
-	expected[2] = 1;
+            #1 a[1] = 1;
+            #1 display_and_assert();
 
-	#1 
-        b[2] = 1;
-	expected[2] = 1;
+            #1 a[2] = 1;
+            #1 display_and_assert();
 
-	#1 
-        b[3] = 1;
-	expected[3] = 1;
+            #1 b[2] = 1;
+            #1 display_and_assert();
 
-	#1
-        a[3] = 1;
-	expected[3] = 1;
-     end
+            #1 b[3] = 1;
+            #1 display_and_assert();
 
-   initial
-     $monitor("or_16 %d %b %b (%b %b)", $time, a, b, c, expected);
-   
+            #1 a[3] = 1;
+            #1 display_and_assert();
+        end
+
 endmodule

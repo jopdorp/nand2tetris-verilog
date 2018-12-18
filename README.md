@@ -1,7 +1,17 @@
 #nand2tetris verilog
+
+### What is this about?
+nand2tetris is an awesome course where you learn how to build a computer.  
+You build the all chips and architecture from the ground up, in a simplified HDL language.  
+After this, you create an assembler language, an operating system called Jack OS.  
+Then a virtual machine and a java-like language called Jack.  
+
+### Why this repo?
+This is a SystemVerilog version of the course materials on hardware design.  
+The purpose of is usage by other students, so go ahead, give it a try!  
 The course nand2tetris is on coursera https://www.coursera.org/learn/nand2tetris2  
 There is also a website https://www.nand2tetris.org/  
-I can also highly recommend the book from this course:  
+I can also highly recommend the book from the course:  
 
 **The Elements of Computing Systems**  
 *Building a Modern Computer from First Principles*
@@ -10,16 +20,22 @@ This project is an implementation of the HACK architecture in SysytemVerilog.
 The no-solutions branch is meant for students to implement the architecture themselves.  
 For each chip, there is a testbench to test its functionctionality.  
 
+## Installation
+So, you want to try to build hack in SystemVerilog!  
+I hope that you'll have an easy time getting your environment up and running, it took me three days :p.  
+Hopefully it'll be a matter of an hour or so.  
+Please message me if you encounter any problems during your install,  
+especially if you managed to solve them! Then I'll add the solution here.
+```console
+git clone --single-branch  --branch no-solutions https://jopdorp@bitbucket.org/jopdorp/nand2tetris-verilog.git
+```
 ### Requirements
 - python
 - ModelSim starter edition
-
-## Installation
-
 #### Python:
 Many operating systems come with python preinstalled.  
 In Ubuntu you can do something like:
-```
+```console
 $ sudo apt install python3.6
 ```
 More info: https://docs.python-guide.org/starting/install3/linux/  
@@ -27,7 +43,7 @@ More info: https://docs.python-guide.org/starting/install3/linux/
 In Windows you usually would download the installer from  https://www.python.org/downloads/windows/  
 
 Mac OS X:
-```
+```console
 $ brew install python
 ```
 #### ModelSim:
@@ -76,14 +92,20 @@ Windows 10 and Windows 8:
 
 ## Usage
 From the Terminal or PowerShell:
-```
+```console
 $ cd nand2tetris-verilog
 $ python test.py <project> <optional filename>
 ```
 examples:
-```
+```console
 $ python test.py 01
 ```
-```
+```console
 $ python test.py 01 or_tb.sv
 ```
+
+### Thanks
+It was originally forked from https://github.com/f2xeb/n2t.  
+Finding this repository convinced me that it was passible for me,  
+someone with no experience in hardware design,  
+to implement the HACK architecture in SystemVerilog.

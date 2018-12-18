@@ -1,27 +1,27 @@
+`include "mux_16.sv"
+
 module mux_16_tb();
-   reg [15:0] a;
-   reg [15:0] b;
-   reg 	      s;
-   reg [15:0] expected;
-   
-   wire [15:0] c;
+    reg [15:0]  a;
+    reg [15:0]  b;
+    reg         select;
 
-   mux_16 u1(c, a, b, s);
+    wire [15:0] out;
 
-   initial 
-     begin
-	a = 16'b0101010101010101;
-	b = 16'b1010101010101010;
-	s = 0;
-	
-	expected = 16'b0101010101010101;
+    mux_16 u1(a, b, select, out);
 
-	#1 
-        s = 1;
-	expected = 16'b1010101010101010;
-     end
+    function void assert_else_error(reg[15:0] expected);
+        assert (out == expected) else begin
+            $error("mux_16 a: %b b: %b select: %b out: %b  expected: %b", a, b, select, out, expected);
+        end
+    endfunction
 
-   initial
-     $monitor("mux_16 %d %b %b %b (%b %b)", $time, a, b, s, c, expected);
-   
+    initial
+        begin
+            a = 16'b0101010101010101;
+            b = 16'b1010101010101010;
+            select = 0;
+            #1 assert_else_error(16'b0101010101010101);
+            #1 select = 1;
+            #1 assert_else_error(16'b1010101010101010);
+        end
 endmodule

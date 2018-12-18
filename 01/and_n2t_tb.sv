@@ -1,5 +1,4 @@
 `include "and_n2t.sv"
-
 module and_n2t_tb();
     reg  a;
     reg  b;
@@ -7,10 +6,10 @@ module and_n2t_tb();
 
     wire out;
 
-    and_n2t tested_intance(out, a, b);
+    and_n2t tested_intance(a, b, out);
 
-    function void throw_assertion_error;
-        $error("a was %d, b was %d, out was %d, expected %d\n", a , b, out, expected);
+    function void assert_else_error;
+        assert (expected == out) else $error("a was %d, b was %d, out was %d, expected %d\n", a , b, out, expected);
     endfunction
 
     initial
@@ -18,19 +17,22 @@ module and_n2t_tb();
             a = 0;
             b = 0;
             expected = 0;
-            #1 assert (expected == out) else throw_assertion_error();
-            #10 a = 0;
+            #1 assert_else_error();
+            #1;
+            a = 0;
             b = 1;
             expected = 0;
-            #1 assert (expected == out) else throw_assertion_error();
-            #10 a = 1;
+            #1 assert_else_error();
+            #1;
+            a = 1;
             b = 0;
             expected = 0;
-            #1 assert (expected == out) else throw_assertion_error();
-            #10 a = 1;
+            #1 assert_else_error();
+            #1;
+            a = 1;
             b = 1;
             expected = 1;
-            #1 assert (expected == out) else throw_assertion_error();
+            #1 assert_else_error();
         end
 
 endmodule

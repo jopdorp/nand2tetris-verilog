@@ -1,5 +1,5 @@
-module and_n2t(output out, input a, input b);
+module and_n2t(input a, input b, output out);
     wire nand_a_b;
     nand nand_b_a(nand_a_b, a, b);
-    not not_a_b(out, nand_a_b);
+    not_n2t and_n2t(nand_a_b, out);
 endmodule 

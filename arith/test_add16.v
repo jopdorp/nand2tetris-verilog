@@ -3,9 +3,7 @@
  * 
  * a more refined test should ensure that propagation follows realistic 
  * expectations.
- */
-
-module test_add16();
+ */ test_add16();
    reg [15:0] a;
    reg [15:0] b;
    reg [15:0] ex_c;
