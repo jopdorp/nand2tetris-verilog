@@ -3,6 +3,6 @@ module dff(out, data, clk);
    output out;
    reg 	  out;
 
-   // implementation
+   // Put your code here:
 
 endmodule

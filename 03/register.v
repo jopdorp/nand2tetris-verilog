@@ -3,6 +3,6 @@ module register(out, in, load, reset, clk);
    input load, clk, reset;
    output [15:0] out;
 
-   // implementation
+   // Put your code here:
 
 endmodule

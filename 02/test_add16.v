@@ -1,9 +1,10 @@
-/* ok, i'll confess that i have no idea how propagation delays work here, but
+/* ok, I'll confess that i have no idea how propagation delays work here, but
  * it looks like carry propagation happens instantaneously.
  * 
  * a more refined test should ensure that propagation follows realistic 
  * expectations.
- */ test_add16();
+ */
+module test_add16();
    reg [15:0] a;
    reg [15:0] b;
    reg [15:0] ex_c;

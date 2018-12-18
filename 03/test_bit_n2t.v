@@ -1,9 +1,9 @@
-module test_bit();
+module test_bit_n2t();
    reg in, load, exp_out;
    reg clk, reset;
    wire out;
 
-   bit 	u1(out, in, load, reset, clk);
+   bit_n2t 	u1(out, in, load, reset, clk);
    
    initial
       begin

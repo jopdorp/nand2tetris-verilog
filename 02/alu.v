@@ -6,6 +6,6 @@ module alu(out, zr, ng, x, y, zx, zy, nx, ny, f, no);
    output [15:0] out;
    output 	 zr, ng;
 
-   // implementation
+   // Put your code here:
 
 endmodule
