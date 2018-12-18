@@ -1,5 +1,12 @@
 #nand2tetris verilog
-This project is an implementation of the hack architecture in SysytemVerilog.  
+The course nand2tetris is on coursera https://www.coursera.org/learn/nand2tetris2  
+There is also a website https://www.nand2tetris.org/  
+I can also highly recommend the book from this course:  
+
+**The Elements of Computing Systems**  
+*Building a Modern Computer from First Principles*
+
+This project is an implementation of the HACK architecture in SysytemVerilog.  
 The no-solutions branch is meant for students to implement the architecture themselves.  
 For each chip, there is a testbench to test its functionctionality.  
 
