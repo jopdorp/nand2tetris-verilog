@@ -32,8 +32,7 @@ So, you want to try to build hack in SystemVerilog!
 
 The first step is cloning thin repo, so open up your favorite terminal and type:
 ```console
-$ git clone https://jopdorp@bitbucket.org/jopdorp/nand2tetris-verilog.git
-$ cd nand2tetris-verilog
+$ git clone https://github.com/jopdorp/nand2tetris-verilog.git
 ```
 I recommend using git, but if you don't want to use git, you can download this repository as a zip file!  
 https://bitbucket.org/jopdorp/nand2tetris-verilog/downloads/  
@@ -43,7 +42,8 @@ https://bitbucket.org/jopdorp/nand2tetris-verilog/downloads/
 - ModelSim starter edition
 
 #### Python:
-Many operating systems come with python preinstalled.  
+If you don't already have python installed, you can install it as follows:
+
 In Ubuntu you can do something like:
 ```console
 $ sudo apt install python3.6
@@ -56,6 +56,13 @@ Mac OS X:
 ```console
 $ brew install python
 ```
+
+### Python libraries
+When you have python installed, you can:
+```
+$ cd nand2tetris-verilog
+$ pip install -r requirements.txt
+```
 #### ModelSim:
 This should work with any licensed edition of ModelSim  
 You can get a free, licensed copy of ModelSim starter edition from Intel:  
@@ -65,7 +72,8 @@ Follow the instructions in the installer.
 
 #### Configuration:
 
-Put the ModelSim bin directory on your PATH environment variable.   
+
+Put the ModelSim bin directory and python in your PATH environment variable.   
 I added to the bottom of ~/.zshrc, ~/.bashrc for bash and ~/.bash_profile for Mac OS X
 ```
 export PATH="$PATH:/home/jegor/intelFPGA/18.1/modelsim_ase/bin"
@@ -76,8 +84,11 @@ Windows 10 and Windows 8:
 1. In Search, search for and then select: System (Control Panel)  
 1. Click the Advanced system settings link.  
 1. Click Environment Variables. In the section System Variables, find the PATH environment variable and select it. Click Edit. If the PATH environment variable does not exist, click New.  
-1. In the Edit System Variable (or New System Variable) window, specify the value of the PATH environment variable. Click OK. Close all remaining windows by clicking OK.  
-1. Log out and in
+1. In the Edit System Variable (or New System Variable) window, specify the value of the PATH environment variable. 
+    For me the path to modelsim was C:\intelFPGA_pro\18.1\modelsim_ase\win32aloem
+    Click OK. Close all remaining windows by clicking OK. 
+1. Open a new command prompt or power shell
+
 
 #### A note about editors  
 There is an editor in the ModelSim graphical interface, but it's not the best.  
@@ -113,7 +124,6 @@ The testbenches can be run using "test.py".
 
 To verify that your environment is up and running type:
 ```console
-$ cd nand2tetris-verilog
 $ python test.py 00
 ```
 You should see the following output:

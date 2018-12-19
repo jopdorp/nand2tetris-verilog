@@ -6,14 +6,8 @@ import sys
 from subprocess import check_output, CalledProcessError, Popen, PIPE
 from multiprocessing.pool import ThreadPool
 import glob
-
-
-class bcolors:
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
+import colorama
+from colorama import Fore, Style
 
 
 class TestBenchRunner(object):
@@ -25,11 +19,11 @@ def compile(filename):
     output = output.communicate()[0].decode("utf-8")
 
     if re.search(r'Error:', output):
-        print(bcolors.FAIL+"There were compilation errors!\n\n" + output)
+        print(Fore.RED+"There were compilation errors!\n\n" + output)
     else:
         warnings = re.findall(r'Warning:.*\n.*\n.*\n', output)
         if len(warnings) > 0:
-            print(bcolors.WARNING)
+            print(Fore.YELLOW)
             print("\n".join(warnings))
 
 def simulate(filename):
@@ -41,14 +35,14 @@ def simulate(filename):
         output = check_output(simulation_command).decode("utf-8")
         assertion_errors = len(re.findall(r'Error: ', output))
         print(output)
-        color = bcolors.FAIL if assertion_errors > 0 else bcolors.OKGREEN
-        print(color + "Found " + str(assertion_errors) + " assertion errors in " + filename + bcolors.ENDC + "\n")
+        color = Fore.RED if assertion_errors > 0 else Fore.GREEN
+        print(color + "Found " + str(assertion_errors) + " assertion errors in " + filename + Style.RESET_ALL + "\n")
         return {"assertion_errors": assertion_errors, "run_errors": 0}
     except CalledProcessError as e:
         return_code = e.returncode
-        print(bcolors.FAIL + "Error while running " + filename + "\nError code: " + str(return_code) + "\n")
+        print(Fore.RED + "Error while running " + filename + "\nError code: " + str(return_code) + "\n")
         print(e.output.decode("utf-8"))
-        print(bcolors.ENDC)
+        print(Style.RESET_ALL)
         return {"assertion_errors": 0, "run_errors": 1}
 
 
@@ -60,19 +54,19 @@ def summarise_results(results):
         unsuccessful_test_benches,
         test_benches_with_assertion_errors
     ] = results
-    color = bcolors.FAIL if unsuccessful_test_benches > 0 else bcolors.OKGREEN
+    color = Fore.RED if unsuccessful_test_benches > 0 else Fore.GREEN
     print(color + "\nFinished testing:\n")
-    print(bcolors.OKGREEN + str(successful_test_benches) + " test benches ran without any errors\n")
+    print(Fore.GREEN + str(successful_test_benches) + " test benches ran without any errors\n")
 
     if unsuccessful_test_benches > 0:
-        print(bcolors.FAIL + str(unsuccessful_test_benches) + " test benches had errors, of which:"
+        print(Fore.RED + str(unsuccessful_test_benches) + " test benches had errors, of which:"
               + "\n" + str(test_benches_with_assertion_errors) + " ran, but had a total of "
               + str(assertion_errors) + " assertion errors")
     else:
-        print(bcolors.OKGREEN + "All tests succeeded!")
+        print(Fore.GREEN + "All tests succeeded!")
 
     if run_errors > 0:
-        print(str(run_errors) + " testbenches failed to run" + bcolors.ENDC)
+        print(str(run_errors) + " testbenches failed to run" + Style.RESET_ALL)
 
 
 def run_tests(project):
@@ -120,7 +114,7 @@ def compile_and_run_simulations(project):
         print("\nStarting compilation of project 0"+str(i)+"...")
         for file in verilog_files:
             compile(file)
-        print(bcolors.OKBLUE + "Finished compiling!\n" + bcolors.ENDC)
+        print(Fore.BLUE + "Finished compiling!\n" + Style.RESET_ALL)
 
 
     summarise_results(run_tests(project))
@@ -146,6 +140,7 @@ def clean_up(project):
 
 
 if __name__ == '__main__':
+    colorama.init()
     dir_path = os.path.dirname(os.path.realpath(__file__))
     project = int(sys.argv[1])
     compile_and_run_simulations(project)
