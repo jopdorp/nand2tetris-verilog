@@ -18,7 +18,7 @@ def compile(filename):
     output = Popen(" ".join(["vlog","-work","../work",filename]), stdout=PIPE, shell=True)
     output = output.communicate()[0].decode("utf-8")
 
-    if re.search(r'Error:', output):
+    if re.search(r'(Error:|Error )', output):
         print(Fore.RED+"There were compilation errors!\n\n" + output)
     else:
         warnings = re.findall(r'Warning:.*\n.*\n.*\n', output)
