@@ -111,4 +111,37 @@ def compile_and_run_simulations(project):
     for i in range(project+1):
         os.chdir(dir_path + "/0" + str(i))
         verilog_files = [f for f in os.listdir("./") if re.search(r'.*\.sv$', f)]
-        print("\nStarting compilation of project
+        print("\nStarting compilation of project 0"+str(i)+"...")
+        for file in verilog_files:
+            compile(file)
+        print(Fore.BLUE + "Finished compiling!\n" + Style.RESET_ALL)
+
+
+    summarise_results(run_tests(project))
+
+    clean_up(project)
+
+
+def clean_up(project):
+    for i in range(project+1):
+        os.chdir(dir_path + "/0" + str(i))
+        for file in glob.glob(".*"):
+            os.remove(file)
+        for file in glob.glob("transcript"):
+            os.remove(file)
+
+    os.chdir(dir_path)
+
+    # we want to recompile all files next time
+    for file in glob.glob("work/*"):
+        os.remove(file)
+    for dir in glob.glob("work"):
+        os.removedirs(dir)
+
+
+if __name__ == '__main__':
+    colorama.init()
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    project = int(sys.argv[1])
+    compile_and_run_simulations(project)
+
