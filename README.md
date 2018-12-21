@@ -22,10 +22,12 @@ For each chip, there is a testbench to test its functionctionality.
 
 ## Current state
 
-Project 01 is entirely finished.
-There are individual branches for each project.
-02 and 03  don't have automated tests yet, but they can be verified by looking at the test outputs.    
-Not all the solutions are ready either. Will update soon!
+Project 01 and 02 are entirely finished.
+There are individual branches for each project, named project-00, project-01 etc.
+If you use the branches, you'll be sure that the solutions of previous projects are correct.
+03  don't have automated tests or solutions yet,  
+but it can be verified by looking at the test outputs.  
+Will update soon!
 
 ## Installation
 So, you want to try to build hack in SystemVerilog!  
