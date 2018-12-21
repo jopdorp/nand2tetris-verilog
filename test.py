@@ -23,8 +23,7 @@ def compile(filename):
     else:
         warnings = re.findall(r'Warning:.*\n.*\n.*\n', output)
         if len(warnings) > 0:
-            print(Fore.YELLOW)
-            print("\n".join(warnings))
+            print(Fore.YELLOW+"\n".join(warnings))
 
 def simulate(filename):
     simulation_command = ["vsim", "-c","-work","../work"]
@@ -111,4 +110,5 @@ def compile_and_run_simulations(project):
     for i in range(project+1):
         os.chdir(dir_path + "/0" + str(i))
         verilog_files = [f for f in os.listdir("./") if re.search(r'.*\.sv$', f)]
-        print("\nStarting compilation of project
+        print("\nStarting compilation of project 0"+str(i)+"...")
+ 
