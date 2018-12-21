@@ -245,32 +245,3 @@ All tests succeeded!
     This is the answer I found:
     1. Open ~/.modelsim (use "nano ~/.modelsim" in terminal)
     1. Find: PrefDefault = ... textFontV2 {{Courier 10 Pitch} 12 normal roman} (the name of the font may differ)
-    1. Change 12 to -12, so it will looks like this: textFontV2 {{Courier 10 Pitch} -12 normal roman} 
-    1. Save ~/.modelsim (Ctrl+O and then Enter)
-    1. Reopen modelsim
-
--   When starting a simulation in vsim, it will always issue the following warning:   
-
-    `Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.`
-
-    This seems to be related to this GDB bug report.  
-    The warning is harmless, as linux-gate.so.1 does not really exist.  
-    It is an interface provided by the Linux kernel to load ELF files.  
-    A better method to fix this issue batch modelsim.ini located in the modelsim installation directory.  
-    Use the following command:
-    ```
-    $ sudo nano modelsim.ini
-    ```
-
-    Go to the bottom of the file and find `[msg_system]` add `suppress = 3116`:
-    ```
-    [msg_system]
-    suppress = 3116
-    ```
-
-### Thanks
-- Thanks to Noam Nisan and Shimon Schocken for creating this awesome course!
-- This repo was originally forked from https://github.com/f2xeb/n2t.  
-Finding this repository convinced me that it was passible for me,  
-someone with no experience in hardware design,  
-to implement the HACK architecture in SystemVerilog.
