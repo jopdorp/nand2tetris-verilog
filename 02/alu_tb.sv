@@ -11,6 +11,12 @@ module test_alu();
 
     alu u1(out, zr, ng, x, y, zx, zy, nx, ny, f, no);
 
+    function void assert_else_error(reg [15:0] exp_out, reg exp_zr, reg exp_ng);
+        assert (out == exp_out && zr == exp_zr && exp_ng && ng) else begin
+            $error("alu %b %b %b %b %b %b %b %b (%b %b) (%b %b) (%b %b)",
+                zx, zy, nx, ny, f, no, x, y, out, exp_out, zr, exp_zr, ng, exp_ng);
+        end
+    endfunction
     initial
         begin
             x = 16'b0000000000000000;
@@ -21,12 +27,9 @@ module test_alu();
             ny = 0;
             f = 1;
             no = 0;
-            exp_out = 16'b0000000000000000;
-            exp_zr = 16'b1;
-            exp_ng = 16'b0;
+            #1 assert_else_error(16'b0000000000000000, 16'b1, 16'b0);
 
-            #1
-                x = 16'b0000000000000000;
+            #1 x = 16'b0000000000000000;
             y = 16'b1111111111111111;
             zx = 1;
             nx = 1;
