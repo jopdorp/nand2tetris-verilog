@@ -275,3 +275,14 @@ Finding this repository convinced me that it was passible for me,
 someone with no experience in hardware design,  
 to implement the HACK architecture in SystemVerilog.
 
+### Cool links
+####Verilog learning material:
+- https://www.nandland.com/verilog/tutorials/tutorial-introduction-to-verilog-for-beginners.html
+- http://www.asic-world.com/verilog/veritut.html
+#### nand2tetris stuff in (System)Verilog:
+- https://github.com/f2xeb/n2t
+- https://github.com/cbrooks90/Hack-cpu
+- https://github.com/pbrit/hack-verilog
+- https://github.com/ccckmit/nand2tetris_verilog
+- https://nand2tetrisfpga.wordpress.com/category/uncategorized/
+- https://hackaday.io/project/161283-nand2tetris-in-verilog-part4-pong-simulation
