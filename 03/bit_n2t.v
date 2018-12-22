@@ -1,7 +1,7 @@
-module bit_n2t(out, in, load, reset, clk);
+module bit_n2t(in, load, reset, clk, out, );
    input in, load, clk, reset;
    output out;
 
-   // Put your code here:
+   dff
 
 endmodule
