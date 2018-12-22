@@ -6,10 +6,7 @@ module bit_n2t(
     output out
 );
 
-    always @(posedge clock)
-        begin
-            mux mux(out, in, load, data);
-            dff dff(data, clk, out);
-        end
+    mux mux(out, in, load, data);
+    dff dff(data, clk, out);
 
 endmodule

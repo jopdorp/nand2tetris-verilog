@@ -1,6 +1,6 @@
 module bit_n2t_tb();
     reg  in, load, exp_out;
-    reg  clk, reset;
+    reg  clk;
     wire out;
 
     bit_n2t u1(in, load, reset, clk, out);
@@ -13,15 +13,7 @@ module bit_n2t_tb();
 
     initial
         begin
-            // initially; reset
-            in = 0; load = 0; clk = 0; reset = 1;
-            #1 assert_else_error(x);
-
-            #1 in = 0; load = 0; clk = 1;
-            #1 assert_else_error(0);
-
-            #1 in = 0; load = 1; clk = 0;
-            #1 assert_else_error(0);
+            #1 clk = 0;
             #1 in = 0; load = 1; clk = 1;
             #1 assert_else_error(0);
 
@@ -60,7 +52,5 @@ module bit_n2t_tb();
             #1 in = 1; load = 1; clk = 1;
             #1 assert_else_error(1);
         end
-
-    initial
 
 endmodule
