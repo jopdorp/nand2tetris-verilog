@@ -1,9 +1,10 @@
 module bit_n2t_tb();
     reg  in, load, exp_out;
     reg  clk;
+    reg  reset;
     wire out;
 
-    bit_n2t u1(in, load, reset, clk, out);
+    bit_n2t u1(in, load, clk, out);
 
     function void assert_else_error(exp_out);
         assert (out == exp_out) else begin
@@ -13,7 +14,7 @@ module bit_n2t_tb();
 
     initial
         begin
-            #1 clk = 0;
+            #1 in = 0; load = 1; clk = 0;
             #1 in = 0; load = 1; clk = 1;
             #1 assert_else_error(0);
 
@@ -29,6 +30,7 @@ module bit_n2t_tb();
 
             #1 in = 0; load = 1; clk = 0;
             #1 assert_else_error(1);
+
             #1 in = 0; load = 1; clk = 1;
             #1 assert_else_error(0);
 
