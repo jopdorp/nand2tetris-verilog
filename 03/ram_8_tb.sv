@@ -1,11 +1,11 @@
-module ram8_tb();
+module ram_8_tb();
     reg [15:0]  in;
     reg [2:0]   addr;
     reg         load, clk;
 
     wire [15:0] out;
 
-    ram8 u1(in, addr, load, clk, out);
+    ram_8 u1(in, addr, load, clk, out);
 
     function void assert_else_error(reg [15:0] exp_out);
         assert (out === exp_out) else begin
@@ -47,35 +47,35 @@ module ram8_tb();
 
             #1 addr = 3'b000; clk = 0;
             #1 clk = 1;
-            assert_else_error(16'b0000000000000000);
+            #1 assert_else_error(16'b0000000000000000);
 
             #1 addr = 3'b001; clk = 0;
             #1 clk = 1;
-            assert_else_error(16'b1111111111111111);
+            #1 assert_else_error(16'b1111111111111111);
 
             #1 addr = 3'b010; clk = 0;
             #1 clk = 1;
-            assert_else_error(16'b0000000011111111);
+            #1 assert_else_error(16'b0000000011111111);
 
             #1 addr = 3'b011; clk = 0;
             #1 clk = 1;
-            assert_else_error(16'b1111111100000000);
+            #1 assert_else_error(16'b1111111100000000);
 
             #1 addr = 3'b100; clk = 0;
             #1 clk = 1;
-            assert_else_error(16'b0000111100001111);
+            #1 assert_else_error(16'b0000111100001111);
 
             #1 addr = 3'b101; clk = 0;
             #1 clk = 1;
-            assert_else_error(16'b1111000011110000);
+            #1 assert_else_error(16'b1111000011110000);
 
             #1 addr = 3'b110; clk = 0;
             #1 clk = 1;
-            assert_else_error(16'b0011001100110011);
+            #1 assert_else_error(16'b0011001100110011);
 
             #1 addr = 3'b111; clk = 0;
             #1 clk = 1;
-            assert_else_error(16'b1100110011001100);
+            #1 assert_else_error(16'b1100110011001100);
         end
 
 endmodule

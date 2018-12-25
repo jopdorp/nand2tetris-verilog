@@ -1,4 +1,4 @@
-module ram8(
+module ram_8(
     input  [15:0] in,
     input  [2:0]  address,
     input         load,
@@ -21,14 +21,14 @@ module ram8(
         selected_7
     );
 
-    and_n2t a0(load, selected_0, load_0);
-    and_n2t a1(load, selected_1, load_1);
-    and_n2t a2(load, selected_2, load_2);
-    and_n2t a3(load, selected_3, load_3);
-    and_n2t a4(load, selected_4, load_4);
-    and_n2t a5(load, selected_5, load_5);
-    and_n2t a6(load, selected_6, load_6);
-    and_n2t a7(load, selected_7, load_7);
+    and_n2t and_0(load, selected_0, load_0);
+    and_n2t and_1(load, selected_1, load_1);
+    and_n2t and_2(load, selected_2, load_2);
+    and_n2t and_3(load, selected_3, load_3);
+    and_n2t and_4(load, selected_4, load_4);
+    and_n2t and_5(load, selected_5, load_5);
+    and_n2t and_6(load, selected_6, load_6);
+    and_n2t and_7(load, selected_7, load_7);
 
     register register_0(in, load_0, clock, out_0);
     register register_1(in, load_1, clock, out_1);
