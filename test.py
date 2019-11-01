@@ -19,7 +19,7 @@ def compile(filename):
     output = output.communicate()[0].decode("utf-8")
 
     if re.search(r'(Error:|Error )', output):
-        print(Fore.RED+"There were compilation errors!\n\n" + output)
+        print(Fore.YELLOW+"There were compilation errors!\n\n" + output)
     else:
         warnings = re.findall(r'Warning:.*\n.*\n.*\n', output)
         if len(warnings) > 0:
@@ -34,12 +34,12 @@ def simulate(filename):
         output = check_output(simulation_command).decode("utf-8")
         assertion_errors = len(re.findall(r'Error: ', output))
         print(output)
-        color = Fore.RED if assertion_errors > 0 else Fore.GREEN
+        color = Fore.YELLOW if assertion_errors > 0 else Fore.GREEN
         print(color + "Found " + str(assertion_errors) + " assertion errors in " + filename + Style.RESET_ALL + "\n")
         return {"assertion_errors": assertion_errors, "run_errors": 0}
     except CalledProcessError as e:
         return_code = e.returncode
-        print(Fore.RED + "Error while running " + filename + "\nError code: " + str(return_code) + "\n")
+        print(Fore.YELLOW + "Error while running " + filename + "\nError code: " + str(return_code) + "\n")
         print(e.output.decode("utf-8"))
         print(Style.RESET_ALL)
         return {"assertion_errors": 0, "run_errors": 1}
@@ -53,12 +53,12 @@ def summarise_results(results):
         unsuccessful_test_benches,
         test_benches_with_assertion_errors
     ] = results
-    color = Fore.RED if unsuccessful_test_benches > 0 else Fore.GREEN
+    color = Fore.YELLOW if unsuccessful_test_benches > 0 else Fore.GREEN
     print(color + "\nFinished testing:\n")
     print(Fore.GREEN + str(successful_test_benches) + " test benches ran without any errors\n")
 
     if unsuccessful_test_benches > 0:
-        print(Fore.RED + str(unsuccessful_test_benches) + " test benches had errors, of which:"
+        print(Fore.YELLOW + str(unsuccessful_test_benches) + " test benches had errors, of which:"
               + "\n" + str(test_benches_with_assertion_errors) + " ran, but had a total of "
               + str(assertion_errors) + " assertion errors")
     else:
