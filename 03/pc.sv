@@ -29,7 +29,7 @@ module pc(
     
     mux_16 select_increment(in, incremented, inc, select_in_incremented);
     mux_16 select_load(select_in_incremented, in, load, select_load_in_incremented);
-    mux_16 select_reset(select_load_in_incremented, 16'b0000000000000000, reset, new_or_reset_value);
+    mux_16 select_reset(select_load_in_incremented, 16'b0, reset, new_or_reset_value);
 
     or_n2t or_load_or_inc(load, inc, load_or_inc);
     or_n2t or_load_or_inc_or_reset(load_or_inc, reset, load_or_inc_or_reset);

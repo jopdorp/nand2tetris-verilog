@@ -16,53 +16,61 @@ module pc_tb();
 
     initial
         begin
-            in = 16'b0000000000000010;
-            load = 1;
+            #1 clk=1;
+            in = 0;
+            load = 0;
             inc = 0;
             reset = 0;
-            #1 clk=0;
-            #1 clk=1;
-            #1 assert_else_error(16'b0000000000000010);
+            assert_else_error(0);
             
-            #1 in = 16'b0000000000000110;
+            #1 clk=0;
+            in = 0;
             load = 0;
             inc = 0;
             reset = 0;
-            #1 clk=0;
-            #1 clk=1;
-            #1 assert_else_error(16'b0000000000000010);
+            assert_else_error(0);
 
-            #1 in = 16'b0000000000000110;
-            load = 1;
-            inc = 0;
-            reset = 0;
-            #1 clk=0;
             #1 clk=1;
-            #1 assert_else_error(16'b0000000000000110);
-
-            #1 in = 16'b0000000000000100;
+            in = 0;
             load = 0;
             inc = 1;
             reset = 0;
+            assert_else_error(0);
+            
             #1 clk=0;
-            #1 clk=1;
-            #1 assert_else_error(16'b0000000000000111);
+            in = 0;
+            load = 0;
+            inc = 1;
+            reset = 0;
+            assert_else_error(1);
 
-            #1 in = 16'b0000000000000100;
+            #1 clk=1;
+            in = -32123;
+            load = 0;
+            inc = 1;
+            reset = 0;
+            assert_else_error(1);
+            
+            #1 clk=0;
+            in = -32123;
+            load = 0;
+            inc = 1;
+            reset = 0;
+            assert_else_error(2);
+
+            #1 clk=1;
+            in = -32123;
             load = 1;
             inc = 1;
             reset = 0;
+            assert_else_error(2);
+            
             #1 clk=0;
-            #1 clk=1;
-            #1 assert_else_error(16'b0000000000000100);
-
-            #1 in = 16'b0000000000000100;
-            load = 0;
-            inc = 0;
-            reset = 1;
-            #1 clk=0;
-            #1 clk=1;
-            #1 assert_else_error(16'b0000000000000000);
+            in = -32123;
+            load = 1;
+            inc = 1;
+            reset = 0;
+            assert_else_error(-32123);
         end
 
 endmodule

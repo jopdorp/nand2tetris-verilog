@@ -107,7 +107,11 @@ def compile_and_run_simulations(project):
     # swallow the error if work already exists
     check_output(["vlib", "work"])
 
-    for i in range(project+1):
+    projects_to_compile = range(project+1)
+    if int(sys.argv[3]):
+        projects_to_compile = [project]
+
+    for i in projects_to_compile:
         os.chdir(dir_path + "/0" + str(i))
         verilog_files = [f for f in os.listdir("./") if re.search(r'.*\.sv$', f)]
         print("\nStarting compilation of project 0"+str(i)+"...")
@@ -118,7 +122,7 @@ def compile_and_run_simulations(project):
 
     summarise_results(run_tests(project))
 
-    clean_up(project)
+    # clean_up(project)
 
 
 def clean_up(project):

@@ -13,20 +13,77 @@ module register_tb();
 
     initial
         begin
-            #1 in = 16'b0000000000000000; load = 1; clk = 0;
-            #1 in = 16'b0000000000000000; load = 1; clk = 1;
-            #1 assert_else_error(16'b0000000000000000);
+            #1 in = 0; load = 0; clk = 1;
+            assert_else_error(0);
 
-            #1 in = 16'b1111111111111111; load = 0; clk = 0;
-            #1 assert_else_error(16'b0000000000000000);
-            #1 in = 16'b1111111111111111; load = 0; clk = 1;
-            #1 assert_else_error(16'b0000000000000000);
+            #1 in = 0; load = 0; clk = 0;
+            assert_else_error(0);
 
-            #1 in = 16'b1111111111111111; load = 1; clk = 0;
-            #1 assert_else_error(16'b0000000000000000);
-            #1 in = 16'b1111111111111111; load = 1; clk = 1;
-            #1 assert_else_error(16'b1111111111111111);
+            #1 in = 0; load = 1; clk = 1;
+            assert_else_error(0);
+            
+            #1 in = 0; load = 1; clk = 0;
+            assert_else_error(0);
+        
+            #1 in = -32123; load = 0; clk = 1;
+            assert_else_error(0);
 
+            #1 in = -32123; load = 0; clk = 0;
+            assert_else_error(0);
+            
+            #1 in = 11111; load = 0; clk = 1;
+            assert_else_error(0);
+
+            #1 in = 11111; load = 0; clk = 0;
+            assert_else_error(0);
+
+            #1 in = -32123; load = 1; clk = 1;
+            assert_else_error(0);
+            
+            #1 in = -32123; load = 1; clk = 0;
+            assert_else_error(-32123);
+
+            #1 in = -32123; load = 1; clk = 1;
+            assert_else_error(-32123);
+            
+            #1 in = -32123; load = 1; clk = 0;
+            assert_else_error(-32123);
+
+            #1 in = -32123; load = 0; clk = 1;
+            assert_else_error(-32123);
+
+            #1 in = -32123; load = 0; clk = 0;
+            assert_else_error(-32123);
+
+            #1 in = 12345; load = 1; clk = 1;
+            assert_else_error(-32123);
+
+            #1 in = 12345; load = 1; clk = 0;
+            assert_else_error(12345);
+
+            #1 in = 0; load = 0; clk = 1;
+            assert_else_error(12345);
+
+            #1 in = 0; load = 0; clk = 0;
+            assert_else_error(12345);
+
+            #1 in = 0; load = 1; clk = 1;
+            assert_else_error(12345);
+
+            #1 in = 0; load = 1; clk = 0;
+            assert_else_error(0);
+
+            #1 in = 1; load = 0; clk = 1;
+            assert_else_error(0);
+
+            #1 in = 1; load = 0; clk = 0;
+            assert_else_error(0);
+
+            #1 in = 1; load = 1; clk = 1;
+            assert_else_error(0);
+
+            #1 in = 1; load = 1; clk = 0;
+            assert_else_error(1);
         end
 
 endmodule
