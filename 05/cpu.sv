@@ -5,17 +5,15 @@ module cpu(
     input         clock,
     output [15:0] outM,
     output        writeM,
-    output [14:0] addressM,
-    output [14:0] pc
+    output [15:0] addressM,
+    output [15:0] pc
 );
 
     // alu
-    wire [15:0] a_register_out;
     wire [15:0] second_alu_input_value;
-    mux_16 select_m_or_a(a_register_out, inM, instruction[12], second_alu_input_value);
+    mux_16 select_m_or_a(addressM, inM, instruction[12], second_alu_input_value);
 
     wire [15:0] d_register_out;
-    wire [15:0] alu_out;
     wire alu_out_is_zero;
     wire alu_out_is_negative;
     alu calculations(
@@ -27,7 +25,7 @@ module cpu(
         instruction[8],
         instruction[7],
         instruction[6],
-        alu_out, 
+        outM, 
         alu_out_is_zero, 
         alu_out_is_negative
     );
@@ -40,23 +38,21 @@ module cpu(
     and_16 instruction_to_address(instruction, 16'b0111111111111111, address_from_a_instruction);
 
     wire [15:0] value_for_a_register;
-    mux_16 choose_address_source(address_from_a_instruction, alu_out, instruction[15], value_for_a_register);
+    mux_16 choose_address_source(address_from_a_instruction, outM, instruction[15], value_for_a_register);
 
     wire should_load_a_register;
     or_n2t instruction_or_alu_into_a(instruction[5], should_load_address_into_a_register, should_load_a_register);
 
-    register a_register(value_for_a_register, should_load_a_register, clock, a_register_out);
+    register a_register(value_for_a_register, should_load_a_register, clock, addressM);
 
     // d register
     wire should_load_d_register;
     and_n2t c_instruction_and_dest_d(instruction[15], instruction[4], should_load_d_register);
 
-    register d_register(alu_out, should_load_d_register, clock, d_register_out);
+    register d_register(outM, should_load_d_register, clock, d_register_out);
 
     // m
     and_n2t should_write_m(instruction[15], instruction[3], writeM);
-    assign outM = alu_out;
-    assign addressM = a_register_out[14:0];
 
     // pc
 
@@ -90,9 +86,8 @@ module cpu(
     and_n2t is_c_and_should_jump(instruction[15], should_jump_for_c_instruction, should_jump);
 
     // pc itself
-    wire [15:0] pc_out;
-    pc program_counter(a_register_out, should_jump, 1'b1, reset, clock, pc_out);
-    assign pc = pc_out[14:0];
-
+    wire not_clock;
+    not_n2t clock_not(clock, not_clock);
+    pc program_counter(addressM, should_jump, 1'b1, reset, not_clock, pc);
 
 endmodule

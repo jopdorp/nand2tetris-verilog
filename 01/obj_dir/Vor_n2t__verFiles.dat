@@ -1,0 +1,13 @@
+# DESCRIPTION: Verilator output: Timestamp data for --skip-identical.  Delete at will.
+C "--cc or_n2t.sv"
+S   3834335        0  1573134849           0  1519118199           0 "C:\msys64\mingw64\bin\verilator_bin.exe"
+S        81        0  1545244976           0  1572369019           0 "not_n2t.sv"
+T      4158        0  1573135376           0  1573135404           0 "obj_dir/Vor_n2t.cpp"
+T      2424        0  1573135376           0  1573135404           0 "obj_dir/Vor_n2t.h"
+T      1491        0  1573135376           0  1573135404           0 "obj_dir/Vor_n2t.mk"
+T       549        0  1573135376           0  1573135404           0 "obj_dir/Vor_n2t__Syms.cpp"
+T       745        0  1573135376           0  1573135404           0 "obj_dir/Vor_n2t__Syms.h"
+T       265        0  1573135404           0  1573135404           0 "obj_dir/Vor_n2t__ver.d"
+T         0        0  1573135404           0  1573135404           0 "obj_dir/Vor_n2t__verFiles.dat"
+T      1197        0  1573135376           0  1573135404           0 "obj_dir/Vor_n2t_classes.mk"
+S       190        0  1545244976           0  1573135402           0 "or_n2t.sv"

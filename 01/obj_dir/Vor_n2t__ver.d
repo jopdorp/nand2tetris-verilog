@@ -1,0 +1,1 @@
+obj_dir/Vor_n2t.cpp obj_dir/Vor_n2t.h obj_dir/Vor_n2t.mk obj_dir/Vor_n2t__Syms.cpp obj_dir/Vor_n2t__Syms.h obj_dir/Vor_n2t__ver.d obj_dir/Vor_n2t_classes.mk  : C:\msys64\mingw64\bin\verilator_bin.exe   C:\msys64\mingw64\bin\verilator_bin.exe not_n2t.sv or_n2t.sv 
