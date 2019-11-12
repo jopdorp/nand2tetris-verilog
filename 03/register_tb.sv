@@ -1,15 +1,15 @@
-`include "register.sv"
+`include "register_n2t.sv"
 
-module register_tb();
+module register_n2t_tb();
     reg [15:0]  in;
     reg         load, clk;
     wire [15:0] out;
 
-    register u1(in, load, clk, out);
+    register_n2t u1(in, load, clk, out);
 
     task assert_else_error(reg [15:0] exp_out);
         assert (out == exp_out) else begin
-            $error("register %b %b %b (%b %b)", in, load, clk, out, exp_out);
+            $error("register_n2t %b %b %b (%b %b)", in, load, clk, out, exp_out);
         end
     endtask
 

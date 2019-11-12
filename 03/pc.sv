@@ -7,8 +7,8 @@
 `ifndef or_n2t
     `include "../01/or_n2t.sv"
 `endif
-`ifndef register
-    `include "register.sv"
+`ifndef register_n2t
+    `include "register_n2t.sv"
 `endif
 `define pc 1
 
@@ -36,6 +36,6 @@ module pc(
     or_n2t load_or_inc_or(load, inc, load_or_inc);
     or_n2t load_or_inc_or_reset_or(load_or_inc, reset, load_or_inc_or_reset);
     
-    register count(new_or_reset_value, load_or_inc_or_reset, clk, out);
+    register_n2t count(new_or_reset_value, load_or_inc_or_reset, clk, out);
 
 endmodule

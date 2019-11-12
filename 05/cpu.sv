@@ -46,13 +46,13 @@ module cpu(
     wire should_load_a_register;
     or_n2t instruction_or_alu_into_a(instruction[5], should_load_address_into_a_register, should_load_a_register);
 
-    register a_register(value_for_a_register, should_load_a_register, clock, addressM);
+    register_n2t a_register(value_for_a_register, should_load_a_register, clock, addressM);
 
     // d register
     wire should_load_d_register;
     and_n2t c_instruction_and_dest_d(instruction[15], instruction[4], should_load_d_register);
 
-    register d_register(outM, should_load_d_register, clock, d_register_out);
+    register_n2t d_register(outM, should_load_d_register, clock, d_register_out);
 
     // m
     and_n2t should_write_m(instruction[15], instruction[3], writeM);

@@ -67,9 +67,11 @@ module alu(
     mux_16 alu_out(function_output, not_function_output, no, out);
 
     assign ng = out[15];
-
+    wire or_first;
     or_8_way first_byte_or(out[7:0], or_first);
+    wire or_second;
     or_8_way second_byte_or(out[15:8], or_second);
+    wire not_zero;
     or_n2t is_not_zero(or_first, or_second, not_zero);
     not_n2t is_zero(not_zero, zr);
 

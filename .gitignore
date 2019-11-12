@@ -3,3 +3,6 @@ work
 **/.*
 venv
 transcript
+.vs
+.idea
+**/obj_dir
