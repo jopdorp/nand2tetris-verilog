@@ -1,3 +1,5 @@
+`include "xor_n2t.sv"
+
 module xor_n2t_tb();
     reg  a;
     reg  b;
@@ -5,9 +7,9 @@ module xor_n2t_tb();
 
     xor_n2t xor_n2t(a, b, out);
 
-    function void assert_else_error;
+    task assert_else_error;
         assert (a ^ b == out) else $error("xor a: %b,  b: %b, out: %b,  expected: %b", a, b, out, a ^ b);
-    endfunction
+    endtask
     
     initial begin
         a = 0;

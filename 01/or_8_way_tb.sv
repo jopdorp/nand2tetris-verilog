@@ -1,3 +1,5 @@
+`include "or_8_way.sv"
+
 module or_8_way_tb();
     reg [7:0] in;
     wire      out;
@@ -6,7 +8,7 @@ module or_8_way_tb();
     or_8_way or_8_way(in, out);
 
 
-    function void assert_else_error;
+    task assert_else_error;
         if (in > 0) begin
             expected = 1;
         end
@@ -15,7 +17,7 @@ module or_8_way_tb();
         end
 
         assert (out == expected) else $error("in: %b, out: %b, expected: %b", in, out, expected);
-    endfunction
+    endtask
 
     initial begin
         in = 8'b00000000;

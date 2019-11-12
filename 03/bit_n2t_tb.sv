@@ -1,3 +1,5 @@
+`include "bit_n2t.sv"
+
 module bit_n2t_tb();
     reg  in, load, exp_out;
     reg  clk;
@@ -6,11 +8,11 @@ module bit_n2t_tb();
 
     bit_n2t u1(in, load, clk, out);
 
-    function void assert_else_error(exp_out);
+    task assert_else_error(exp_out);
         assert (out == exp_out) else begin
             $error("bit %b %b %b (%b %b)", in, load, clk, out, exp_out);
         end
-    endfunction
+    endtask
 
     initial
         begin

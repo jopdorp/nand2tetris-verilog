@@ -1,3 +1,5 @@
+`include "ram_8.sv"
+
 module ram_8_tb();
     reg [15:0]  in;
     reg [2:0]   addr;
@@ -7,11 +9,11 @@ module ram_8_tb();
 
     ram_8 u1(in, addr, load, clk, out);
 
-    function void assert_else_error(reg [15:0] exp_out);
+    task assert_else_error(reg [15:0] exp_out);
         assert (out === exp_out) else begin
             $error("ram8 %b %b %b %b (%b %b)", in, addr, load, clk, out, exp_out);
         end
-    endfunction
+    endtask
 
     initial
         begin

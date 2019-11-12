@@ -1,3 +1,8 @@
+`ifndef mux_4_way_16
+  `include "mux_4_way_16.sv"
+`endif
+`define mux_8_way_16 1
+
 module mux_8_way_16(
     input  [15:0] a,
     input  [15:0] b,

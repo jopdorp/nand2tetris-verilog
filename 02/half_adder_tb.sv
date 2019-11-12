@@ -1,14 +1,16 @@
+`include "half_adder.sv"
+
 module half_adder_tb();
     reg  a, b;
     wire carry, sum;
 
     half_adder add(a, b, carry, sum);
 
-    function void assert_else_error(reg exp_carry, reg exp_sum);
+    task assert_else_error(reg exp_carry, reg exp_sum);
         assert (exp_carry == carry && exp_sum == sum) else begin
             $error("half_adder %b %b (%b %b) (%b %b)", a, b, carry, exp_carry, sum, exp_sum);
         end
-    endfunction
+    endtask
 
     initial
         begin

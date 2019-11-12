@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import shutil
 import re
 import sys
 from subprocess import check_output, CalledProcessError, Popen, PIPE
@@ -14,25 +15,28 @@ class TestBenchRunner(object):
     def __init__(self, filename):
         self.name = filename
 
-def compile(filename):
-    output = Popen(" ".join(["vlog","-work","../work",filename]), stdout=PIPE, shell=True)
-    output = output.communicate()[0].decode("utf-8")
+def compile(filename, project):
+    project_dir = dir_path + "/0" + str(project) + "/"
+    command = ["iverilog","-g2012","-o ./build/"+filename+".vvp",project_dir + filename]
+    for i in range(project+1):
+        command.append("-I" + dir_path + "/0" + str(i) + "/")
 
-    if re.search(r'(Error:|Error )', output):
-        print(Fore.YELLOW+"There were compilation errors!\n\n" + output)
-    else:
-        warnings = re.findall(r'Warning:.*\n.*\n.*\n', output)
-        if len(warnings) > 0:
-            print(Fore.YELLOW+"\n".join(warnings))
+    command = " ".join(command)
+    print(command)
+    try:
+        check_output(command, shell=True)
+    except CalledProcessError as e:
+        return_code = e.returncode
+        print(Fore.YELLOW + "Error while compiling " + filename + "\nError code: " + str(return_code) + "\n")
+        print(e.output.decode("utf-8"))
+        print(Style.RESET_ALL)
+        exit()
 
 def simulate(filename):
-    simulation_command = ["vsim", "-c","-work","../work"]
-    simulation_command.append(filename[0:-3])
-    simulation_command = simulation_command + ["-do", "run 2000", "-do", "quit"]
-
+    simulation_command = ["vvp",dir_path+"/build/"+filename]
     try:
         output = check_output(simulation_command).decode("utf-8")
-        assertion_errors = len(re.findall(r'Error: ', output))
+        assertion_errors = len(re.findall(r'(Error: |ERROR: )', output))
         print(output)
         color = Fore.YELLOW if assertion_errors > 0 else Fore.GREEN
         print(color + "Found " + str(assertion_errors) + " assertion errors in " + filename + Style.RESET_ALL + "\n")
@@ -55,7 +59,8 @@ def summarise_results(results):
     ] = results
     color = Fore.YELLOW if unsuccessful_test_benches > 0 else Fore.GREEN
     print(color + "\nFinished testing:\n")
-    print(Fore.GREEN + str(successful_test_benches) + " test benches ran without any errors\n")
+    print(Fore.BLUE + "From a total of " + str(successful_test_benches + unsuccessful_test_benches) + " test benches.\n")
+    print(Fore.GREEN + str(successful_test_benches) + " test benches ran without any runtime errors\n")
 
     if unsuccessful_test_benches > 0:
         print(Fore.YELLOW + str(unsuccessful_test_benches) + " test benches had errors, of which:"
@@ -70,10 +75,10 @@ def summarise_results(results):
 
 def run_tests(project):
     print("Starting tests in project 0"+str(project))
-    os.chdir(dir_path + "/0" + str(project))
-    test_files = [] if len(sys.argv) <= 2 else [sys.argv[2]]
+    os.chdir(dir_path + "/build")
+    test_files = [] if len(sys.argv) <= 3 else [sys.argv[3]]
     if len(test_files) == 0:
-        test_files = [f for f in os.listdir("./") if re.search(r'.*_tb\.sv$', f)]
+        test_files = [f for f in os.listdir("./") if re.search(r'.*_tb\.sv.vvp$', f)]
 
     assertion_errors = 0
     run_errors = 0
@@ -104,42 +109,17 @@ def run_tests(project):
 
 
 def compile_and_run_simulations(project):
-    # swallow the error if work already exists
-    check_output(["vlib", "work"])
-
-    projects_to_compile = range(project+1)
-    if int(sys.argv[3]):
-        projects_to_compile = [project]
-
-    for i in projects_to_compile:
-        os.chdir(dir_path + "/0" + str(i))
-        verilog_files = [f for f in os.listdir("./") if re.search(r'.*\.sv$', f)]
-        print("\nStarting compilation of project 0"+str(i)+"...")
-        for file in verilog_files:
-            compile(file)
-        print(Fore.BLUE + "Finished compiling!\n" + Style.RESET_ALL)
-
-
+    if os.path.exists(dir_path + "/build"):
+        shutil.rmtree(dir_path + "/build")
+    os.mkdir(dir_path + "/build")
+    project_dir = dir_path + "/0" + str(project)
+    verilog_files = [f for f in os.listdir(project_dir) if re.search(r'.*\.sv$', f)]
+    print("\nStarting compilation of project 0"+str(project)+"...")
+    for file in verilog_files:
+        compile(file, project)
+    print(Fore.BLUE + "Finished compiling!\n" + Style.RESET_ALL)
     summarise_results(run_tests(project))
-
-    # clean_up(project)
-
-
-def clean_up(project):
-    for i in range(project+1):
-        os.chdir(dir_path + "/0" + str(i))
-        for file in glob.glob(".*"):
-            os.remove(file)
-        for file in glob.glob("transcript"):
-            os.remove(file)
-
-    os.chdir(dir_path)
-
-    # we want to recompile all files next time
-    for file in glob.glob("work/*"):
-        os.remove(file)
-    for dir in glob.glob("work"):
-        os.removedirs(dir)
+    shutil.rmtree(dir_path + "/build")
 
 
 if __name__ == '__main__':

@@ -1,3 +1,5 @@
+`include "dmux.sv"
+
 module dmux_tb();
     reg  in = 0;
     reg  select = 0;
@@ -6,12 +8,12 @@ module dmux_tb();
     wire b;
 
     dmux u1(in, select, a, b);
-    function void assert_else_error(reg expected_a, reg expected_b);
+    task assert_else_error(input expected_a, input expected_b);
         assert (a == expected_a && b == expected_b) else begin
             $error("dmux in: %b, select: %b, (a: %b, expected_a: %b) (b: %b, expected_b %b)",
                 in, select, a, expected_a, b, expected_b);
         end
-    endfunction
+    endtask
 
     initial
         begin

@@ -1,3 +1,14 @@
+`ifndef ram_4K
+    `include "ram_4K.sv"
+`endif
+`ifndef dmux_4_way
+    `include "../01/dmux_4_way.sv"
+`endif
+`ifndef mux_4_way_16
+    `include "../01/mux_4_way_16.sv"
+`endif
+`define ram_16K 1
+
 module ram_16K(
     input  [15:0] in,
     input  [13:0] address,
@@ -17,10 +28,10 @@ module ram_16K(
         selected_3
     );
 
-    and_n2t and_0(load, selected_0, load_0);
-    and_n2t and_1(load, selected_1, load_1);
-    and_n2t and_2(load, selected_2, load_2);
-    and_n2t and_3(load, selected_3, load_3);
+    and_n2t _and_0(load, selected_0, load_0);
+    and_n2t _and_1(load, selected_1, load_1);
+    and_n2t _and_2(load, selected_2, load_2);
+    and_n2t _and_3(load, selected_3, load_3);
 
     ram_4K ram_4K_0(in, address[11:0], load_0, clock, out_0);
     ram_4K ram_4K_1(in, address[11:0], load_1, clock, out_1);

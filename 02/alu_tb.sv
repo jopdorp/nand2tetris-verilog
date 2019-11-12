@@ -1,3 +1,5 @@
+`include "alu.sv"
+
 module alu_tb();
     reg         zx, zy, nx, ny, f, no;
     reg [15:0]  x;
@@ -11,12 +13,12 @@ module alu_tb();
 
     alu u1(x, y, zx, nx, zy, ny, f, no, out, zr, ng);
 
-    function void assert_else_error(reg [15:0] exp_out, reg exp_zr, reg exp_ng);
+    task assert_else_error(reg [15:0] exp_out, reg exp_zr, reg exp_ng);
         assert (out == exp_out && zr == exp_zr && exp_ng == ng) else begin
             $error("alu %b %b %b %b %b %b %b %b (%b %b) (%b %b) (%b %b)",
                 x, y, zx, nx, zy, ny, f, no, out, exp_out, zr, exp_zr, ng, exp_ng);
         end
-    endfunction
+    endtask
 
     initial
         begin

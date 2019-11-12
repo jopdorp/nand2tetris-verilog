@@ -1,3 +1,6 @@
+`include "../02/alu.sv"
+`include "../03/pc.sv"
+
 module cpu(
     input  [15:0] inM,
     input  [15:0] instruction,

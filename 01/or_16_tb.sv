@@ -1,3 +1,5 @@
+`include "or_16.sv"
+
 module or_16_tb();
     reg [15:0]  a;
     reg [15:0]  b;
@@ -8,9 +10,9 @@ module or_16_tb();
 
     or_16 or_16(a, b, out);
 
-    function void display_and_assert;
+    task display_and_assert;
         assert (out == a | b) else $error("out: %b expected: %b, a: %b, b %b", out, a | b, a, b);
-    endfunction
+    endtask
     
     initial
         begin

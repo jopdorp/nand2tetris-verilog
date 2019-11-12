@@ -1,3 +1,5 @@
+`include "dmux_4_way.sv"
+
 module dmux_4_way_tb();
     reg       in = 1;
     reg [1:0] select;
@@ -9,7 +11,7 @@ module dmux_4_way_tb();
 
     dmux_4_way u1(in, select, a, b, c, d);
 
-    function void assert_else_error(reg a_exp, reg b_exp, reg c_exp, reg d_exp);
+    task assert_else_error(input a_exp, input b_exp, input c_exp, input d_exp);
         assert (a == a_exp &&
             b == b_exp &&
             c == c_exp &&
@@ -19,7 +21,7 @@ module dmux_4_way_tb();
                 in, select, a, b, c, d, a_exp, b_exp, c_exp, d_exp);
 
         end
-    endfunction
+    endtask
 
     initial
         begin

@@ -1,14 +1,16 @@
+`include "inc_16.sv"
+
 module inc_16_tb();
     reg [15:0]  in;
     wire [15:0] out;
 
     inc_16 increment(in, out);
 
-    function void assert_else_error(reg [15:0] exp_out);
+    task assert_else_error(reg [15:0] exp_out);
         assert (out == exp_out) else begin
             $error("inc_16 %b (%b %b)", in, out, exp_out);
         end
-    endfunction
+    endtask
 
     initial
         begin

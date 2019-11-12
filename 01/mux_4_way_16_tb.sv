@@ -1,3 +1,5 @@
+`include "mux_4_way_16.sv"
+
 module mux_4_way_16_tb();
     reg [15:0]  a;
     reg [15:0]  b;
@@ -9,12 +11,12 @@ module mux_4_way_16_tb();
 
     mux_4_way_16 tested_mux_4_way_16(a, b, c, d, select, out);
 
-    function void assert_else_error(reg[15:0] expected);
+    task assert_else_error(input [15:0] expected);
         assert (out == expected) else begin
             $error("mux_4_way_16 a: %b b: %b c: %b d: %b select: %b out: %b expected: %b",
                 a, b, c, d, select, out, expected);
         end
-    endfunction
+    endtask
 
     initial
         begin

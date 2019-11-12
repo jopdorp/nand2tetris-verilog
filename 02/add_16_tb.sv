@@ -1,9 +1,5 @@
-/* ok, I'll confess that i have no idea how propagation delays work here, but
- * it looks like carry propagation happens instantaneously.
- * 
- * a more refined test should ensure that propagation follows realistic 
- * expectations.
- */
+`include "add_16.sv"
+
 module add_16_tb();
     reg [15:0]  a;
     reg [15:0]  b;
@@ -12,11 +8,12 @@ module add_16_tb();
 
     add_16 u1(a, b, out);
 
-    function void assert_else_error(reg exp_out);
+    task assert_else_error(input [15:0] exp_out);
         assert (out == exp_out) else begin
-            $display("add16 %b %b (%b %b)", a, b, out, exp_out);
+            $error("add16 %b %b (%b %b)", a, b, out, exp_out);
         end
-    endfunction
+    endtask
+
     initial
         begin
             a = 16'b0000000000000000;

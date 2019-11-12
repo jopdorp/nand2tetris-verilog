@@ -1,3 +1,5 @@
+`include "not_n2t.sv"
+
 module not_n2t_tb();
     reg in;
     wire out;
@@ -5,11 +7,11 @@ module not_n2t_tb();
 
     not_n2t gate1(in, out);
 
-    function assert_else_error(input exp_out);
+    task assert_else_error(input exp_out);
         assert (out == exp_out) else begin
             $display("assertion fail! in %b out %b, expected: %b)", in, out, exp_out);
         end
-    endfunction
+    endtask
 
     initial begin
         in = 0;

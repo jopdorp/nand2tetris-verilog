@@ -1,3 +1,5 @@
+`include "cpu.sv"
+
 module cpu_tb();
     reg  [15:0] inM;
     reg  [15:0] instruction;
@@ -10,7 +12,7 @@ module cpu_tb();
 
     cpu u1(inM, instruction, reset, clock, outM, writeM, addressM, pc);
 
-    function void assert_else_error(
+    task assert_else_error(
             reg [15:0] exp_outM, 
             reg exp_writeM, 
             reg[14:0] exp_addressM, 
@@ -38,10 +40,10 @@ module cpu_tb();
                 u1.d_register_out,
                 exp_d_register_out,
                 u1.should_load_d_register,
-                u1.second_alu_input_value
+                u1.second_alu_input_value,
              );
         end
-    endfunction
+    endtask
 
     initial
         begin
@@ -235,68 +237,69 @@ module cpu_tb();
                 11110 // d_register
             ); 
 
-            // // 9+
-            // #1 clock = 1;
-            // instruction = 16'b1111010011010000;
-            // assert_else_error(
-            //     16'bx,//outM
-            //     0, //writeM
-            //     1000, //addressM
-            //     9, //pc
-            //     -1 // d_register
-            // ); 
+            // 9+
+            #1 instruction = 16'b1111010011010000;
+            inM = 11111;
+            #1 clock = 1;
+            #1 assert_else_error(
+                16'bx,//outM
+                0, //writeM
+                1000, //addressM
+                9, //pc
+                -1 // d_register
+            ); 
 
-            // // 10
-            // #1 clock = 0;
-            // assert_else_error(
-            //     16'bx,//outM
-            //     0, //writeM
-            //     1000, //addressM
-            //     10, //pc
-            //     -1 // d_register
-            // );
+            // 10
+            #1 clock = 0;
+            #1 assert_else_error(
+                16'bx,//outM
+                0, //writeM
+                1000, //addressM
+                10, //pc
+                -1 // d_register
+            );
 
-            // // 10+
-            // #1 clock = 1;
-            // instruction = 16'b0000000000001110;
-            // assert_else_error(
-            //     16'bx,//outM
-            //     0, //writeM
-            //     1000, //addressM
-            //     10, //pc
-            //     -1 // d_register
-            // ); 
+            // 10+
+            #1 instruction = 16'b0000000000001110;
+            #1 clock = 1;
+            #1 assert_else_error(
+                16'bx,//outM
+                0, //writeM
+                14, //addressM
+                10, //pc
+                -1 // d_register
+            ); 
 
-            // // 11
-            // #1 clock = 0;
-            // assert_else_error(
-            //     16'bx,//outM
-            //     0, //writeM
-            //     14, //addressM
-            //     11, //pc
-            //     -1 // d_register
-            // ); 
+            // 11
+            #1 clock = 0;
+            #1 assert_else_error(
+                16'bx,//outM
+                0, //writeM
+                14, //addressM
+                11, //pc
+                -1 // d_register
+            ); 
 
-            // // 11+
-            // #1 clock = 1;
-            // instruction = 16'b1110001100000100;
-            // assert_else_error(
-            //     16'bx,//outM
-            //     0, //writeM
-            //     14, //addressM
-            //     11, //pc
-            //     -1 // d_register
-            // ); 
+            // 11+
+            #1 instruction = 16'b1110001100000100;
+            #1 clock = 1;
+            #1 assert_else_error(
+                16'bx,//outM
+                0, //writeM
+                14, //addressM
+                11, //pc
+                -1 // d_register
+            ); 
 
-            // // 12
-            // #1 clock = 0;
-            // assert_else_error(
-            //     16'bx,//outM
-            //     0, //writeM
-            //     14, //addressM
-            //     14, //pc
-            //     -1 // d_register
-            // ); 
+            // 12
+            #1 clock = 0;
+            #1 assert_else_error(
+                16'bx,//outM
+                0, //writeM
+                14, //addressM
+                14, //pc
+                -1 // d_register
+            ); 
             
         end
 endmodule

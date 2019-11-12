@@ -1,3 +1,20 @@
+`ifndef or_8_way
+  `include "../01/or_8_way.sv"
+`endif
+`ifndef mux_16
+  `include "../01/mux_16.sv"
+`endif
+`ifndef add_16
+  `include "add_16.sv"
+`endif
+`ifndef and_16
+  `include "and_16.sv"
+`endif
+`ifndef not_16
+  `include "not_16.sv"
+`endif
+`define alu 1
+
 module alu(
     input  [15:0] x,
     input  [15:0] y,
@@ -43,7 +60,7 @@ module alu(
     mux_16 mux_y_noty(y_after_zy, not_y_after_zy, ny, y_after_ny);
 
     add_16 sum(y_after_ny, x_after_nx, sum_x_y);
-    and_16 and_xy(y_after_ny, x_after_nx, x_and_y);
+    and_16 x_y_and(y_after_ny, x_after_nx, x_and_y);
     mux_16 func(x_and_y, sum_x_y, f, function_output);
 
     not_16 not_func(function_output, not_function_output);
@@ -51,8 +68,8 @@ module alu(
 
     assign ng = out[15];
 
-    or_8_way or_first_byte(out[7:0], or_first);
-    or_8_way or_second_byte(out[15:8], or_second);
+    or_8_way first_byte_or(out[7:0], or_first);
+    or_8_way second_byte_or(out[15:8], or_second);
     or_n2t is_not_zero(or_first, or_second, not_zero);
     not_n2t is_zero(not_zero, zr);
 

@@ -1,3 +1,17 @@
+`ifndef and_n2t
+    `include "../01/and_n2t.sv"
+`endif
+`ifndef dmux_8_way
+    `include "../01/dmux_8_way.sv"
+`endif
+`ifndef mux_8_way_16
+    `include "../01/mux_8_way_16.sv"
+`endif
+`ifndef register
+    `include "register.sv"
+`endif
+`define ram_8 1
+
 module ram_8(
     input  [15:0] in,
     input  [2:0]  address,
@@ -21,14 +35,14 @@ module ram_8(
         selected_7
     );
 
-    and_n2t and_0(load, selected_0, load_0);
-    and_n2t and_1(load, selected_1, load_1);
-    and_n2t and_2(load, selected_2, load_2);
-    and_n2t and_3(load, selected_3, load_3);
-    and_n2t and_4(load, selected_4, load_4);
-    and_n2t and_5(load, selected_5, load_5);
-    and_n2t and_6(load, selected_6, load_6);
-    and_n2t and_7(load, selected_7, load_7);
+    and_n2t _and_0(load, selected_0, load_0);
+    and_n2t _and_1(load, selected_1, load_1);
+    and_n2t _and_2(load, selected_2, load_2);
+    and_n2t _and_3(load, selected_3, load_3);
+    and_n2t _and_4(load, selected_4, load_4);
+    and_n2t _and_5(load, selected_5, load_5);
+    and_n2t _and_6(load, selected_6, load_6);
+    and_n2t _and_7(load, selected_7, load_7);
 
     register register_0(in, load_0, clock, out_0);
     register register_1(in, load_1, clock, out_1);
@@ -39,6 +53,6 @@ module ram_8(
     register register_6(in, load_6, clock, out_6);
     register register_7(in, load_7, clock, out_7);
 
-    mux_8_way_16 mux(out_0, out_1, out_2, out_3, out_4, out_5, out_6, out_7, address, out);
+    mux_8_way_16 mux_out(out_0, out_1, out_2, out_3, out_4, out_5, out_6, out_7, address, out);
     
 endmodule

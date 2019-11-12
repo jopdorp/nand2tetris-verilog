@@ -1,3 +1,8 @@
+`ifndef ram_8
+    `include "ram_8.sv"
+`endif
+`define ram_64 1
+
 module ram_64(
     input  [15:0] in,
     input  [5:0]  address,
@@ -21,14 +26,14 @@ module ram_64(
         selected_7
     );
 
-    and_n2t and_0(load, selected_0, load_0);
-    and_n2t and_1(load, selected_1, load_1);
-    and_n2t and_2(load, selected_2, load_2);
-    and_n2t and_3(load, selected_3, load_3);
-    and_n2t and_4(load, selected_4, load_4);
-    and_n2t and_5(load, selected_5, load_5);
-    and_n2t and_6(load, selected_6, load_6);
-    and_n2t and_7(load, selected_7, load_7);
+    and_n2t _and_0(load, selected_0, load_0);
+    and_n2t _and_1(load, selected_1, load_1);
+    and_n2t _and_2(load, selected_2, load_2);
+    and_n2t _and_3(load, selected_3, load_3);
+    and_n2t _and_4(load, selected_4, load_4);
+    and_n2t _and_5(load, selected_5, load_5);
+    and_n2t _and_6(load, selected_6, load_6);
+    and_n2t _and_7(load, selected_7, load_7);
 
     ram_8 ram_8_0(in, address[2:0], load_0, clock, out_0);
     ram_8 ram_8_1(in, address[2:0], load_1, clock, out_1);
@@ -39,6 +44,6 @@ module ram_64(
     ram_8 ram_8_6(in, address[2:0], load_6, clock, out_6);
     ram_8 ram_8_7(in, address[2:0], load_7, clock, out_7);
 
-    mux_8_way_16 mux(out_0, out_1, out_2, out_3, out_4, out_5, out_6, out_7, address[5:3], out);
+    mux_8_way_16 mux_out(out_0, out_1, out_2, out_3, out_4, out_5, out_6, out_7, address[5:3], out);
     
 endmodule

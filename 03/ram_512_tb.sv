@@ -1,3 +1,5 @@
+`include "ram_512.sv"
+
 module ram_512_tb();
     reg [15:0]  in;
     reg [8:0]   addr;
@@ -7,11 +9,11 @@ module ram_512_tb();
 
     ram_512 u1(in, addr, load, clk, out);
 
-    function void assert_else_error(reg [15:0] exp_out);
+    task assert_else_error(reg [15:0] exp_out);
         assert (out === exp_out) else begin
             $error("ram_512 %b %b %b %b (%b %b)", in, addr, load, clk, out, exp_out);
         end
-    endfunction
+    endtask
 
     initial
         begin

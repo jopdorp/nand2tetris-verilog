@@ -1,3 +1,5 @@
+`include "mux.sv"
+
 module mux_tb();
     reg  a;
     reg  b;
@@ -7,9 +9,9 @@ module mux_tb();
 
     mux mux_to_test(a, b, select, out);
 
-    function void assert_else_error(expected);
+    task assert_else_error(expected);
         assert (expected == out) else $error("a %b, b %b, select %b, out %b, expected %b", a, b, select, out, expected);
-    endfunction
+    endtask
 
     initial
         begin

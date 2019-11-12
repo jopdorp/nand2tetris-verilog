@@ -1,3 +1,8 @@
+`ifndef bit_n2t
+    `include "bit_n2t.sv"
+`endif
+`define register 1
+
 module register(
     input  [15:0] in,
     input         load,

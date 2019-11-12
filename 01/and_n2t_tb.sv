@@ -1,3 +1,5 @@
+`include "and_n2t.sv"
+
 module and_n2t_tb();
     reg  a;
     reg  b;
@@ -7,9 +9,9 @@ module and_n2t_tb();
 
     and_n2t tested_intance(a, b, out);
 
-    function void assert_else_error;
+    task assert_else_error;
         assert (expected == out) else $error("a was %d, b was %d, out was %d, expected %d\n", a , b, out, expected);
-    endfunction
+    endtask
 
     initial
         begin

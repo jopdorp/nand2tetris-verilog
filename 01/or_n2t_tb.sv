@@ -1,3 +1,5 @@
+`include "or_n2t.sv"
+
 module or_n2t_tb();
     reg  a;
     reg  b;
@@ -5,9 +7,9 @@ module or_n2t_tb();
 
     or_n2t or_n2t(a, b, out);
 
-    function void assert_else_error;
+    task assert_else_error;
         assert (a | b == out) else $error("xor a: %b,  b: %b, out: %b,  expected: %b", a, b, out, a | b);
-    endfunction
+    endtask
 
     initial begin
         a = 0;
