@@ -18,7 +18,8 @@ module ram_4K(
 );
 
     wire [15:0] out_0, out_1, out_2, out_3, out_4, out_5, out_6, out_7;
-
+    wire selected_0, selected_1, selected_2, selected_3, selected_4, selected_5, selected_6, selected_7;
+    wire load_0, load_1, load_2, load_3, load_4, load_5, load_6, load_7;
     dmux_8_way dmux_8_way(
         1'b1,
         address[11:9],

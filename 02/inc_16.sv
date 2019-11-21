@@ -19,6 +19,7 @@ module inc_16(input [15:0] in, output [15:0] out);
     wire carry_12;
     wire carry_13;
     wire carry_14;
+    /* verilator lint_off UNUSED */
     wire carry_15;
 
     half_adder flip_first(in[0], 1'b1, carry_0, out[0]);

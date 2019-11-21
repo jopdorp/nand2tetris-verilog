@@ -23,6 +23,7 @@ module add_16(
     wire carry_12;
     wire carry_13;
     wire carry_14;
+    /* verilator lint_off UNUSED */
     wire carry_15;
 
     half_adder half_add(a[0], b[0], carry_0, out[0]);

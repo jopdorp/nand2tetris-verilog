@@ -1,4 +1,4 @@
-`include "../02/alu.sv"
+`include "../02/alu_optimized.sv"
 `include "../03/pc.sv"
 
 module cpu(
@@ -8,18 +8,18 @@ module cpu(
     input         clock,
     output [15:0] outM,
     output        writeM,
-    output [15:0] addressM,
-    output [15:0] pc
+    output [14:0] addressM,
+    output [14:0] pc
 );
 
     // alu
     wire [15:0] second_alu_input_value;
-    mux_16 select_m_or_a(addressM, inM, instruction[12], second_alu_input_value);
+    mux_16 select_m_or_a(a_out, inM, instruction[12], second_alu_input_value);
 
     wire [15:0] d_register_out;
     wire alu_out_is_zero;
     wire alu_out_is_negative;
-    alu calculations(
+    alu_optimized calculations(
         d_register_out, 
         second_alu_input_value, 
         instruction[11],
@@ -46,7 +46,9 @@ module cpu(
     wire should_load_a_register;
     or_n2t instruction_or_alu_into_a(instruction[5], should_load_address_into_a_register, should_load_a_register);
 
-    register_n2t a_register(value_for_a_register, should_load_a_register, clock, addressM);
+    wire [15:0] a_out;
+    assign addressM = a_out[14:0];
+    register_n2t a_register(value_for_a_register, should_load_a_register, clock, a_out);
 
     // d register
     wire should_load_d_register;
@@ -64,7 +66,7 @@ module cpu(
     wire alu_out_is_positive;
     not_n2t not_negative(alu_out_is_negative, alu_out_is_positive);
     wire alu_out_is_not_zero;
-    not_n2t not_zero(alu_out_is_negative, alu_out_is_positive);
+    or_n2t not_zero(alu_out_is_negative, alu_out_is_positive, alu_out_is_not_zero);
     wire alu_out_is_positive_and_greater_than_zero;
     and_n2t and_alu_out_is_positive_and_greater_than_zero(alu_out_is_not_zero, alu_out_is_positive, alu_out_is_positive_and_greater_than_zero);
     wire jump_greater_than_zero;
@@ -91,6 +93,9 @@ module cpu(
     // pc itself
     wire not_clock;
     not_n2t clock_not(clock, not_clock);
-    pc program_counter(addressM, should_jump, 1'b1, reset, not_clock, pc);
+     /* verilator lint_off UNUSED */
+    wire [15:0] pc_out;
+    assign pc = pc_out[14:0];
+    pc program_counter(a_out, should_jump, 1'b1, reset, not_clock, pc_out);
 
 endmodule

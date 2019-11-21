@@ -8,12 +8,12 @@ module ram_512_optimized(
     output [15:0] out
 );
 
-  reg[15:0] m[0:2**9-1];
+  reg[15:0] memory[0:2**9-1];
 	
-  assign out = m[address];
+  assign out = memory[address];
 	
   always @(posedge clock) begin
-    if (load) m[address] = in;
+    if (load) memory[address] <= in;
   end
   
 endmodule
