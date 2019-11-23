@@ -8,13 +8,13 @@ module cpu(
     input         clock,
     output [15:0] outM,
     output        writeM,
-    output [14:0] addressM,
-    output [14:0] pc
+    output [15:0] addressM,
+    output [15:0] pc
 );
 
     // alu
     wire [15:0] second_alu_input_value;
-    mux_16 select_m_or_a(a_out, inM, instruction[12], second_alu_input_value);
+    mux_16 select_m_or_a(addressM, inM, instruction[12], second_alu_input_value);
 
     wire [15:0] d_register_out;
     wire alu_out_is_zero;
@@ -46,9 +46,7 @@ module cpu(
     wire should_load_a_register;
     or_n2t instruction_or_alu_into_a(instruction[5], should_load_address_into_a_register, should_load_a_register);
 
-    wire [15:0] a_out;
-    assign addressM = a_out[14:0];
-    register_n2t a_register(value_for_a_register, should_load_a_register, clock, a_out);
+    register_n2t a_register(value_for_a_register, should_load_a_register, clock, addressM);
 
     // d register
     wire should_load_d_register;
@@ -62,40 +60,26 @@ module cpu(
     // pc
 
     // jump logic
-    // greater than zero
-    wire alu_out_is_positive;
-    not_n2t not_negative(alu_out_is_negative, alu_out_is_positive);
-    wire alu_out_is_not_zero;
-    or_n2t not_zero(alu_out_is_negative, alu_out_is_positive, alu_out_is_not_zero);
-    wire alu_out_is_positive_and_greater_than_zero;
-    and_n2t and_alu_out_is_positive_and_greater_than_zero(alu_out_is_not_zero, alu_out_is_positive, alu_out_is_positive_and_greater_than_zero);
-    wire jump_greater_than_zero;
-    and_n2t and_greater_than_zero(instruction[0], alu_out_is_positive_and_greater_than_zero, jump_greater_than_zero);
-
-    // negative
-    wire jump_smaller_than_zero;
-    and_n2t and_smaller_than_zero(instruction[2], alu_out_is_negative, jump_smaller_than_zero);
-
-    // zero
-    wire should_jump_zero;
-    and_n2t jump_zero(instruction[1], alu_out_is_zero, should_jump_zero);
-
-    wire should_jump_pos_neg;
-    or_n2t or_should_jump_post_neg_zero(jump_greater_than_zero, jump_smaller_than_zero, should_jump_pos_neg);
-
-    
-    wire should_jump_for_c_instruction;
-    or_n2t or_should_jump(should_jump_pos_neg, should_jump_zero, should_jump_for_c_instruction);
-
-    wire should_jump;
-    and_n2t is_c_and_should_jump(instruction[15], should_jump_for_c_instruction, should_jump);
-
-    // pc itself
+    wire jeq;
+    and_n2t jump_is_zero(alu_out_is_zero, instruction[1], jeq);
+    wire jlt;
+    and_n2t jump_is_negative(alu_out_is_negative, instruction[2], jlt);
+    wire zeroOrNeg;
+    or_n2t is_zero_or_neg(alu_out_is_zero, alu_out_is_negative, zeroOrNeg);
+    wire positive;
+    not_n2t is_positive(zeroOrNeg, positive);
+    wire jgt;
+    and_n2t jump_if_positive(positive, instruction[0], jgt);
+    wire jle;
+    or_n2t jump_if_negative(jeq, jlt, jle);
+    wire jumpToA;
+    or_n2t should_jump_to_a(jle, jgt, jumpToA);
+    wire PCload;
+    and_n2t jump_if_c_instruction(instruction[15], jumpToA, PCload);
+    wire inc;
+    not_n2t should_inc(PCload, inc);
     wire not_clock;
     not_n2t clock_not(clock, not_clock);
-     /* verilator lint_off UNUSED */
-    wire [15:0] pc_out;
-    assign pc = pc_out[14:0];
-    pc program_counter(a_out, should_jump, 1'b1, reset, not_clock, pc_out);
+    pc program_counter(addressM, PCload, inc, reset, not_clock, pc);
 
 endmodule

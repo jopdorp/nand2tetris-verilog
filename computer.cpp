@@ -14,11 +14,11 @@ using namespace std;
 SDL_Renderer *renderer;
 Vcomputer *top;
 
- void step()
- {
- 	top->clock = 1;
+void step()
+{
+	top->clock = 0;
  	top->eval();
- 	top->clock = 0;
+	top->clock = 1;
  	top->eval();
  }
 
@@ -44,7 +44,6 @@ int handleInput()
 	 		break;
 	 	}
 	 }
-	cout << top->computer->scancode;
 	return 0;
 }
 
@@ -90,9 +89,10 @@ int main( int argc, char* args[] )
 {
 	top = new Vcomputer;
 	//ifstream rom("Add.hack");
-	//ifstream rom("Rect.hack");
-	 ifstream rom("Fill.hack");
-//	ifstream rom("Pong.hack");
+	// ifstream rom("Rect.hack");
+	// ifstream rom("JopdorpFill.hack");
+	ifstream rom("Fill.hack");
+	// ifstream rom("Pong.hack");
 	assert(rom);
 
 	string line;
