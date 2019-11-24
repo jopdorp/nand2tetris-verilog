@@ -49,9 +49,6 @@ module cpu_tb();
     initial
         begin
             // 0+
-            #1 reset = 1;
-            #1 clock = 1;
-            #1 clock = 0;
             #1 instruction = 16'b0011000000111001;  // @12345
             inM = 0; 
             reset = 0;
