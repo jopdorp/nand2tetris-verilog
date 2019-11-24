@@ -7,6 +7,7 @@
 #include "Vcomputer_computer.h"
 #include "Vcomputer_rom_32K.h"
 #include "Vcomputer_screen_8K.h"
+#include "Vcomputer_memory.h"
 #include <iostream>
 
 using namespace std;
@@ -33,14 +34,14 @@ int handleInput()
 	 		if (event.key.keysym.sym == SDLK_ESCAPE)
 	 			return -2;
 	 		if (event.key.keysym.sym == SDLK_LEFT)
-				top->computer->scancode = 130;
+				top->computer->memory->scancode = 130;
 	 		else if (event.key.keysym.sym == SDLK_RIGHT)
-				top->computer->scancode = 132;
+				top->computer->memory->scancode = 132;
 	 		else
-				top->computer->scancode = event.key.keysym.sym;
+				top->computer->memory->scancode = event.key.keysym.sym;
 	 		break;
 	 	case SDL_KEYUP:
-			top->computer->scancode = 0;
+			top->computer->memory->scancode = 0;
 	 		break;
 	 	}
 	 }
@@ -56,7 +57,7 @@ int handleInput()
 
  void drawScreen()
  {
-	uint16_t *smem = top->computer->screen->memory;
+	uint16_t *smem = top->computer->memory->screen->memory;
 	for (int y = 0; y < 256; y++) {
 		uint16_t *row = &smem[y << 5];
 		int x = 0;
@@ -88,11 +89,8 @@ int handleInput()
 int main( int argc, char* args[] )
 {
 	top = new Vcomputer;
-	//ifstream rom("Add.hack");
-	// ifstream rom("Rect.hack");
-	ifstream rom("JopdorpFill.hack");
-	// ifstream rom("Fill.hack");
-	// ifstream rom("Pong.hack");
+	// ifstream rom("fill.hack");
+	ifstream rom("pong.hack");
 	assert(rom);
 
 	string line;
@@ -106,11 +104,18 @@ int main( int argc, char* args[] )
 		mem[i] = v;
 	}
 	assert(i);
-	
+
+	top->reset = 1;
+	top->clock = 0;
+ 	top->eval();
+	top->reset = 0;
+	top->clock = 1;
+ 	top->eval();
+
     initVideo();
 
     do {
-        for (int c = 0; c < 10000; c++)
+        for (int c = 0; c < 100000; c++)
             step();
         draw();
     } while (handleInput() >= 0);

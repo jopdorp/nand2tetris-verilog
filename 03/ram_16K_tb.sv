@@ -1,17 +1,23 @@
-`include "ram_16k.sv"
+`include "ram_16K_optimized.sv"
+`include "ram_16K.sv"
 
 module ram_16K_tb();
     reg [15:0]  in;
     reg [13:0]   addr;
     reg         load, clk;
 
+    wire [15:0] out_optimized;
     wire [15:0] out;
 
-    ram_16K u1(in, addr, load, clk, out);
+    ram_16K_optimized u1(in, addr, load, clk, out_optimized);
+    ram_16K u2(in, addr, load, clk, out);
 
     task assert_else_error(reg [15:0] exp_out);
         assert (out === exp_out) else begin
             $error("ram_16K %b %b %b %b (%b %b)", in, addr, load, clk, out, exp_out);
+        end
+        assert (out_optimized === exp_out) else begin
+            $error("ram_16K_optimized %b %b %b %b (%b %b)", in, addr, load, clk, out, exp_out);
         end
     endtask
 

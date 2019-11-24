@@ -1,4 +1,4 @@
-`include "cpu.sv"
+`include "cpu_jopdorp_optimized.sv"
 
 module cpu_tb();
     reg  [15:0] inM;
@@ -7,10 +7,10 @@ module cpu_tb();
     reg         clock;
     wire [15:0] outM;
     wire        writeM;
-    wire [15:0] addressM;
-    wire [15:0] pc;
+    wire [14:0] addressM;
+    wire [14:0] pc;
 
-    cpu u1(inM, instruction, reset, clock, outM, writeM, addressM, pc);
+    cpu_jopdorp_optimized u1(inM, instruction, reset, clock, outM, writeM, addressM, pc);
 
     task assert_else_error(
             reg [15:0] exp_outM, 
@@ -23,9 +23,9 @@ module cpu_tb();
           writeM ==? exp_writeM &&
           (addressM ==? exp_addressM || addressM === exp_addressM) &&
           pc ==? exp_pc &&
-          (u1.d_register_out ==? exp_d_register_out ||
-          u1.d_register_out === exp_d_register_out)) else begin
-            $error("clock %b, inM %b instruction %b reset %b (real exp, \noutM %b %b \nwriteM %b %b \naddressM %b %b \npc %b %b \nd_register_out %b %b \nshould_load_d_register %b \nsecond_alu_input_value %b\n)",
+          (u1.d ==? exp_d_register_out ||
+          u1.d === exp_d_register_out)) else begin
+            $error("clock %b, inM %b instruction %b reset %b (real exp, \noutM %b %b \nwriteM %b %b \naddressM %b %b \npc %b %b \nd_register_out %b %b \n)",
                 clock,
                 inM, 
                 instruction, 
@@ -38,10 +38,8 @@ module cpu_tb();
                 exp_addressM,
                 pc,
                 exp_pc,
-                u1.d_register_out,
+                u1.d,
                 exp_d_register_out,
-                u1.should_load_d_register,
-                u1.second_alu_input_value,
              );
         end
     endtask
