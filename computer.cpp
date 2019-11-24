@@ -106,14 +106,7 @@ int main( int argc, char* args[] )
 		mem[i] = v;
 	}
 	assert(i);
-
-	top->reset = 1;
-	top->clock = 0;
- 	top->eval();
-	top->reset = 0;
-	top->clock = 1;
- 	top->eval();
-
+	
     initVideo();
 
     do {
