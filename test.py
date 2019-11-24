@@ -17,10 +17,7 @@ class TestBenchRunner(object):
 
 def compile(filename, project):
     project_dir = dir_path + "/0" + str(project) + "/"
-    command = ["iverilog","-g2012","-o ./build/"+filename+".vvp",project_dir + filename]
-    for i in range(project+1):
-        command.append("-I" + dir_path + "/0" + str(i) + "/")
-
+    command = ["iverilog","-grelative-include","-g2012","-o ./build/"+filename+".vvp",project_dir + filename]
     command = " ".join(command)
     print(command)
     try:

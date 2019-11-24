@@ -110,7 +110,7 @@ int main( int argc, char* args[] )
     initVideo();
 
     do {
-        for (int c = 0; c < 100000; c++)
+        for (int c = 0; c < 10000; c++)
             step();
         draw();
     } while (handleInput() >= 0);

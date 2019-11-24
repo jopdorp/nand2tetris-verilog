@@ -1,5 +1,8 @@
 `include "../02/alu_optimized.sv"
 `include "../03/pc.sv"
+`ifndef and_16
+  `include "../01/and_16.sv"
+`endif
 
 module cpu(
     input  [15:0] inM,
@@ -46,7 +49,9 @@ module cpu(
     wire should_load_a_register;
     or_n2t instruction_or_alu_into_a(instruction[5], should_load_address_into_a_register, should_load_a_register);
 
-    register_n2t a_register(value_for_a_register, should_load_a_register, clock, addressM);
+    wire not_clock;
+    not_n2t clock_not(clock, not_clock);
+    register_n2t a_register(value_for_a_register, should_load_a_register, not_clock, addressM);
 
     // d register
     wire should_load_d_register;
@@ -78,8 +83,6 @@ module cpu(
     and_n2t jump_if_c_instruction(instruction[15], jumpToA, PCload);
     wire inc;
     not_n2t should_inc(PCload, inc);
-    wire not_clock;
-    not_n2t clock_not(clock, not_clock);
     pc program_counter(addressM, PCload, inc, reset, not_clock, pc);
 
 endmodule

@@ -14,26 +14,26 @@ module cpu_optimized(
     reg[15:0] pc;
     reg[15:0] a;
     reg[15:0] d;
-    
-    alu_optimized2 alu0(.x(d), .y(am), .out(alu_out), .fn(alu_fn), .zero(zero));
+    wire zero;
+    wire sel_am = inst[12];
+    wire[15:0] am = sel_am ? m : a;
+    wire sel_a = inst[15];
     wire load_a = !inst[15] || inst[5];
     wire load_d = inst[15] && inst[4];
-    wire sel_a = inst[15];
-    wire sel_am = inst[12];
     wire jump = (less_than_zero && inst[2])
-                || (zero && inst[1])
-                || (greater_than_zero && inst[0]);
+            || (zero && inst[1])
+            || (greater_than_zero && inst[0]);
     wire sel_pc = inst[15] && jump;
-    wire zero;
     wire less_than_zero = alu_out[15];
     wire greater_than_zero = !(less_than_zero || zero);
     wire[15:0] next_pc = sel_pc ? a[15:0] : pc + 16'b1;
     wire[15:0] next_a = sel_a ? alu_out : {1'b0, inst[14:0]};
     wire[15:0] next_d = alu_out;
-    wire[15:0] am = sel_am ? m : a;
     wire[15:0] alu_out;
     wire[5:0] alu_fn = inst[11:6];
     wire[15:0] m = rdata;
+    alu_optimized2 alu0(.x(d), .y(am), .out(alu_out), .fn(alu_fn), .zero(zero));
+
 
     assign inst_addr = pc;
     assign data_addr = a[15:0];
