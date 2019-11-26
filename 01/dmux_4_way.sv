@@ -12,9 +12,6 @@ module dmux_4_way(
     output      d
 );
 
-    wire a1;
-    wire b1;
-    dmux dmux_step1(in, sel[0], a1, b1);
-    dmux dmux_ab(a1, sel[1], a, c);
-    dmux dmux_cd(b1, sel[1], b, d);
+    // Put your code here
+
 endmodule

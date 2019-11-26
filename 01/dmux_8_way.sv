@@ -15,9 +15,7 @@ module dmux_8_way(
     output      g,
     output      h
 );
-    wire low, high;
-    dmux split(in, select[2], low, high);
-    dmux_4_way dmux_low_nibble(low, select[1:0], a, b, c, d);
-    dmux_4_way dmux_high_nibble(high, select[1:0], e, f, g, h);
+
+    // Put your code here
 
 endmodule

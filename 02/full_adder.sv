@@ -10,10 +10,7 @@ module full_adder(
     output carry,
     output sum
 );
-  wire sum_a_b;
-  wire carry_a_b;
-  half_adder sum_ab(a, b, carry_a_b, sum_a_b);
-  wire carry_a_b_c;
-  half_adder sum_abc(sum_a_b, c, carry_a_b_c, sum);
-  or_n2t full_add(carry_a_b, carry_a_b_c, carry);
+
+    // Put your code here
+
 endmodule
