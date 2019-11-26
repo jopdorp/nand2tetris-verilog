@@ -79,7 +79,7 @@ Linux:
 ```console
     sudo apt-get install -y verilator
 ```
-MacOsX
+Mac OS X:
 ```console
     brew install verilator
 ```
