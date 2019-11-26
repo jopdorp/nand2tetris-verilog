@@ -6,3 +6,4 @@ transcript
 .vs
 .idea
 **/obj_dir
+./cmake-build-debug-mingw
