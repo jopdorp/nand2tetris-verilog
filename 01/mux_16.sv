@@ -9,7 +9,11 @@ module mux_16(
     input         select,
     output [15:0] out
 );
-
-    // Put your code here
+    generate
+        genvar i;
+        for (i = 0; i <= 15; i = i+1) begin
+            mux mux(a[i], b[i], select, out[i]);
+        end
+    endgenerate
 
 endmodule

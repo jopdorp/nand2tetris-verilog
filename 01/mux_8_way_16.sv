@@ -15,7 +15,10 @@ module mux_8_way_16(
     input  [2:0]  select,
     output [15:0] out
 );
+    wire[15:0] first_four_out;
+    wire[15:0] second_four_out;
 
-    // Put your code here
-
+    mux_4_way_16  first_four(a,b,c,d, select[1:0], first_four_out);
+    mux_4_way_16  second_four(e,f,g,h, select[1:0], second_four_out);
+    mux_16  mux_8_way_16(first_four_out, second_four_out, select[2], out);
 endmodule

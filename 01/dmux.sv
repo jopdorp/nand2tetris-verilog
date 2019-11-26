@@ -10,6 +10,9 @@ module dmux(
     output b
 );
 
-    // Put your code here
+    and_n2t b_if_in_select_and(select, in, b);
+    wire not_select;
+    not_n2t not_sel(select, not_select);
+    and_n2t a_if_in_and_not_select(not_select, in, a);
 
 endmodule
