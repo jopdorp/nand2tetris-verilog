@@ -54,7 +54,7 @@ $ brew install python
 
 ### Python libraries
 When you have python installed, you can:
-```
+```console
 $ cd nand2tetris-verilog
 $ pip install -r requirements.txt
 ```
@@ -64,12 +64,12 @@ For windows you will first need to install Msys2 64 bit which can be found here:
 - https://sourceforge.net/projects/mingw-w64/files/External%20binary%20packages%20%28Win64%20hosted%29/MSYS%20%2832-bit%29/
 - do the following to build and install iverilog:
 ```console
-    git clone https://github.com/steveicarus/iverilog.git
-    cd iverilog
-    sh autoconf.sh
-    ./configure
-    make
-    make install
+$ git clone https://github.com/steveicarus/iverilog.git
+$ cd iverilog
+$ sh autoconf.sh
+$ ./configure
+$ make
+$ make install
 ```
 #### Verilator: 
 When you have implemented all chips, you can test the computer with verilator.
@@ -77,16 +77,16 @@ It will open a window and poll your keyboard, which are integrated with the prov
 
 Linux:
 ```console
-    sudo apt-get install -y verilator
+$ sudo apt-get install -y verilator
 ```
 Mac OS X:
 ```console
-    brew install verilator
+$ brew install verilator
 ```
 Windows:
 Open Msys2 64 bit
 ```console
-    pacman -S mingw-w64-x86_64-verilator
+$ pacman -S mingw-w64-x86_64-verilator
 ```
 #### A note about editors  
 There is an editor in the ModelSim graphical interface, but it's not the best.  
