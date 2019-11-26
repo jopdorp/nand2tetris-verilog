@@ -8,7 +8,7 @@ Then a virtual machine and a java-like language called Jack.
 
 ### Why this repo?
 This is a SystemVerilog version of the course materials on hardware design.  
-The purpose of is usage by other students, so go ahead, give it a try!  
+The purpose is usage by other students, so go ahead, give it a try!  
 The course Nand2Tetris is on coursera https://www.coursera.org/learn/build-a-computer
 There is also a website https://www.nand2tetris.org/  
 I can also highly recommend the book from the course:  
@@ -17,17 +17,9 @@ I can also highly recommend the book from the course:
 *Building a Modern Computer from First Principles*
 
 This project is an implementation of the HACK architecture in SysytemVerilog.  
-The no-solutions branch is meant for students to implement the architecture themselves.  
+The there is a branch per week, with the solutions of previous weeks but not the current one.
+Use this to implement the architecture yourself every week.  
 For each chip, there is a testbench to test its functionctionality.  
-
-## Current state
-
-Project 01 and 02 are entirely finished.
-There are individual branches for each project, named project-00, project-01 etc.
-If you use the branches, you'll be sure that the solutions of previous projects are correct.
-03  don't have automated tests or solutions yet,  
-but it can be verified by looking at the test outputs.  
-Will update soon!
 
 ## Installation
 So, you want to try to build hack in SystemVerilog!  
@@ -41,7 +33,8 @@ https://bitbucket.org/jopdorp/nand2tetris-verilog/downloads/
 
 ### Requirements
 - python
-- ModelSim starter edition
+- iverilog
+- verilator
 
 #### Python:
 If you don't already have python installed, you can install it as follows:
@@ -65,41 +58,26 @@ When you have python installed, you can:
 $ cd nand2tetris-verilog
 $ pip install -r requirements.txt
 ```
-#### ModelSim:
-This should work with any licensed edition of ModelSim  
-You can get a free, licensed copy of ModelSim starter edition from Intel:  
-http://fpgasoftware.intel.com/18.1/?edition=standard&download_manager=dlm3&product=modelsim_ae#tabs-2  
-First you have to register, then you can download the ModelSim installer.  
-Follow the instructions in the installer.  
-
-#### Configuration:
-
-
-Put the ModelSim bin directory and python in your PATH environment variable.   
-I added to the bottom of ~/.zshrc, ~/.bashrc for bash and ~/.bash_profile for Mac OS X
+#### Iverilog: 
+At the time this was writte, you need to buuld iverilog yourself beause we need new functionality which has not yet been released in a stable release.
+For windows you will first need to install Msys 64 bit which can be found here:
+https://sourceforge.net/projects/mingw-w64/files/External%20binary%20packages%20%28Win64%20hosted%29/MSYS%20%2832-bit%29/
+do the following to build and isntall iverilog:
 ```
-export PATH="$PATH:/home/jegor/intelFPGA/18.1/modelsim_ase/bin"
+    git clone https://github.com/steveicarus/iverilog.git
+    cd iverilog
+    sh autoconf.sh
+    ./configure
+    make
+    make install
 ```
-Replace the the path with your modelsim installation location.
-
-Windows 10 and Windows 8:
-1. In Search, search for and then select: System (Control Panel)  
-1. Click the Advanced system settings link.  
-1. Click Environment Variables. In the section System Variables, find the PATH environment variable and select it. Click Edit. If the PATH environment variable does not exist, click New.  
-1. In the Edit System Variable (or New System Variable) window, specify the value of the PATH environment variable. 
-    For me the path to modelsim was C:\intelFPGA_pro\18.1\modelsim_ase\win32aloem
-    Click OK. Close all remaining windows by clicking OK. 
-1. Open a new command prompt or power shell
+#### Verilator: 
 
 
 #### A note about editors  
 There is an editor in the ModelSim graphical interface, but it's not the best.  
 A good editor is vital for comfort during development.  
--   I recommend using IntelliJ Community edition which can be obtained here:  
-    https://www.jetbrains.com/idea/download  
-    You will need a verilog plugin:  
-    https://plugins.jetbrains.com/plugin/10695-systemverilog  
-    The above plugin might be paid when you read this
+-   I recommend using VSCode from microsift, which has as nice system verilog plugin which it will suggest to isntall when you open a .sv file.
 
 If you don't want a big program like that, there are other options:
 -   Emacs https://www.gnu.org/software/emacs/download.html  
@@ -131,31 +109,23 @@ $ python test.py 00
 You should see the following output:
 ```console
 Starting compilation of project 00...
+iverilog -grelative-include -g2012 -o ./build/hello_verilog_tb.sv.vvp /c/dev/nand2tetris-verilog/00/hello_verilog_tb.sv
 Finished compiling!
 
 Starting tests in project 00
-Reading pref.tcl
+Hello world!
 
-# 10.5b
-
-# vsim -c hello_verilog_tb -do "run 2000" -do "quit" 
-# Start time: 15:58:14 on Dec 18,2018
-# Loading sv_std.std
-# Loading ../work.hello_verilog_tb
-# run 2000
-# Hello world!
-# quit
-# End time: 15:58:14 on Dec 18,2018, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0, Suppressed Warnings: 1
-
-Found 0 assertion errors in hello_verilog_tb.sv
+Found 0 assertion errors in hello_verilog_tb.sv.vvp
 
 
 Finished testing:
 
-1 test benches ran without any errors
+From a total of 1 test benches.
+
+1 test benches ran without any runtime errors
 
 All tests succeeded!
+
 ```
 Note that there is `# Hello world!` before the script quits the simulator.  
 If there are not errors and you see this message, it means everything is good to go!  
@@ -276,7 +246,7 @@ someone with no experience in hardware design,
 to implement the HACK architecture in SystemVerilog.
 
 ### Cool links
-####Verilog learning material:
+#### Verilog learning material:
 - https://www.nandland.com/verilog/tutorials/tutorial-introduction-to-verilog-for-beginners.html
 - http://www.asic-world.com/verilog/veritut.html
 #### nand2tetris stuff in (System)Verilog:
