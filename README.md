@@ -60,10 +60,10 @@ $ pip install -r requirements.txt
 ```
 #### Iverilog: 
 At the time this was writte, you need to buuld iverilog yourself beause we need new functionality which has not yet been released in a stable release.
-For windows you will first need to install Msys 64 bit which can be found here:
+For windows you will first need to install Msys2 64 bit which can be found here:
 https://sourceforge.net/projects/mingw-w64/files/External%20binary%20packages%20%28Win64%20hosted%29/MSYS%20%2832-bit%29/
 do the following to build and isntall iverilog:
-```
+```console
     git clone https://github.com/steveicarus/iverilog.git
     cd iverilog
     sh autoconf.sh
@@ -72,8 +72,22 @@ do the following to build and isntall iverilog:
     make install
 ```
 #### Verilator: 
+When you have implemented all chips, you can test the computer with verilator.
+It will open a window and poll your keyboard, which are integrated with the provided screen chip and the keyboard register in the computer chip template.
 
-
+Linux:
+```console
+    sudo apt-get install -y verilator
+```
+MacOsX
+```console
+    brew install verilator
+```
+Windows:
+Open Msys2 64 bit
+```console
+    pacman -S mingw-w64-x86_64-verilator
+```
 #### A note about editors  
 There is an editor in the ModelSim graphical interface, but it's not the best.  
 A good editor is vital for comfort during development.  
@@ -97,6 +111,7 @@ There should also be plugins for vim and sublime text, but don't know the detail
 ## You're ready!
 
 ## Usage
+If you use windows, always yous your MSYS2 64 bit terminal.
 
 The testbenches can be run using "test.py".  
 1. It compiles all verilog files in the project
@@ -139,105 +154,54 @@ $ python test.py 01 not_n2t_tb.sv
 This should give you an assertion error:
 
 ```console
-Starting compilation...
+Starting compilation of project 01...
+iverilog -grelative-include -g2012 -o ./build/not_n2t_tb.sv.vvp /c/dev/newnand/nand2tetris-verilog/01/not_n2t_tb.sv
 Finished compiling!
 
-Reading pref.tcl
+Starting tests in project 01
+not_n2t_tb.sv.vvp
+ERROR: C:/dev/newnand/nand2tetris-verilog/01/not_n2t_tb.sv:12: assertion fail! in 0 out z, expected: 1
+       Time: 1 Scope: not_n2t_tb.assert_else_error
+ERROR: C:/dev/newnand/nand2tetris-verilog/01/not_n2t_tb.sv:12: assertion fail! in 1 out z, expected: 0
+       Time: 3 Scope: not_n2t_tb.assert_else_error
 
-# 10.5b
-
-# vsim -c not_n2t_tb -do "run 2000" -do "quit" 
-# Start time: 12:55:04 on Dec 18,2018
-# Loading sv_std.std
-# Loading work.not_n2t_tb
-# Loading work.not_n2t
-# run 2000
-# ** Error: Assertion error.
-#    Time: 1 ps  Scope: not_n2t_tb File: not_n2t_tb.sv Line: 10
-# ** Error: Assertion error.
-#    Time: 3 ps  Scope: not_n2t_tb File: not_n2t_tb.sv Line: 12
-# quit
-# End time: 12:55:04 on Dec 18,2018, Elapsed time: 0:00:00
-# Errors: 2, Warnings: 0, Suppressed Warnings: 1
-
-Found 2 assertion errors in not_n2t_tb.sv
+Found 2 assertion errors in not_n2t_tb.sv.vvp
 
 
 Finished testing:
 
-0 test benches ran without any errors
+From a total of 1 test benches.
+
+0 test benches ran without any runtime errors
 
 1 test benches had errors, of which:
 1 ran, but had a total of 2 assertion errors
-
 ```
 
 Implement the chip and rerun the test to see if it works!  
 When you chip is correctly implemented you should see the following:
 
 ```console
-Starting compilation...
+$ python test.py 01 not_n2t_tb.sv
+
+Starting compilation of project 01...
+iverilog -grelative-include -g2012 -o ./build/not_n2t_tb.sv.vvp /c/dev/newnand/nand2tetris-verilog/01/not_n2t_tb.sv
 Finished compiling!
 
-Reading pref.tcl
+Starting tests in project 01
+not_n2t_tb.sv.vvp
 
-# 10.5b
-
-# vsim -c not_n2t_tb -do "run 2000" -do "quit" 
-# Start time: 12:57:45 on Dec 18,2018
-# Loading sv_std.std
-# Loading work.not_n2t_tb
-# Loading work.not_n2t
-# run 2000
-# quit
-# End time: 12:57:46 on Dec 18,2018, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0, Suppressed Warnings: 1
-
-Found 0 assertion errors in not_n2t_tb.sv
+Found 0 assertion errors in not_n2t_tb.sv.vvp
 
 
 Finished testing:
 
-1 test benches ran without any errors
+From a total of 1 test benches.
+
+1 test benches ran without any runtime errors
 
 All tests succeeded!
 ```
-## Troubleshooting
-
-#### Linux:
-
--   When installing in Ubuntu, you might encounter some problems.
-    This link should have most, if not all, solutions:  
-    https://gist.github.com/PrieureDeSion/e2c0945cc78006b00d4206846bdb7657  
-
--   It's not really needed to use the gui, but if the editor in modelsim is showing a really small font:  
-    https://stackoverflow.com/questions/31555431/the-font-of-my-modelsim-is-too-small-to-see  
-    This is the answer I found:
-    1. Open ~/.modelsim (use "nano ~/.modelsim" in terminal)
-    1. Find: PrefDefault = ... textFontV2 {{Courier 10 Pitch} 12 normal roman} (the name of the font may differ)
-    1. Change 12 to -12, so it will looks like this: textFontV2 {{Courier 10 Pitch} -12 normal roman} 
-    1. Save ~/.modelsim (Ctrl+O and then Enter)
-    1. Reopen modelsim
-
--   When starting a simulation in vsim, it will always issue the following warning:   
-
-    `Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.`
-
-    This seems to be related to this GDB bug report.  
-    The warning is harmless, as linux-gate.so.1 does not really exist.  
-    It is an interface provided by the Linux kernel to load ELF files.  
-    A better method to fix this issue batch modelsim.ini located in the modelsim installation directory.  
-    Use the following command:
-    ```
-    $ sudo nano modelsim.ini
-    ```
-
-    Go to the bottom of the file and find `[msg_system]` add `suppress = 3116`:
-    ```
-    [msg_system]
-    suppress = 3116
-    ```
-
 ### Thanks
 - Thanks to Noam Nisan and Shimon Schocken for creating this awesome course!
 - This repo was originally forked from https://github.com/f2xeb/n2t.  

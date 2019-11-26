@@ -9,7 +9,7 @@ module not_n2t_tb();
 
     task assert_else_error(input exp_out);
         assert (out == exp_out) else begin
-            $display("assertion fail! in %b out %b, expected: %b)", in, out, exp_out);
+            $error("in %b out %b, expected: %b", in, out, exp_out);
         end
     endtask
 

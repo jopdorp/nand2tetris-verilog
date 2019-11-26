@@ -31,6 +31,7 @@ def compile(filename, project):
 
 def simulate(filename):
     simulation_command = ["vvp",dir_path+"/build/"+filename]
+    print(filename)
     try:
         output = check_output(simulation_command).decode("utf-8")
         assertion_errors = len(re.findall(r'(Error: |ERROR: )', output))
@@ -73,7 +74,7 @@ def summarise_results(results):
 def run_tests(project):
     print("Starting tests in project 0"+str(project))
     os.chdir(dir_path + "/build")
-    test_files = [] if len(sys.argv) <= 3 else [sys.argv[3]]
+    test_files = [] if len(sys.argv) <= 2 else [sys.argv[2] + '.vvp']
     if len(test_files) == 0:
         test_files = [f for f in os.listdir("./") if re.search(r'.*_tb\.sv.vvp$', f)]
 
@@ -110,7 +111,10 @@ def compile_and_run_simulations(project):
         shutil.rmtree(dir_path + "/build")
     os.mkdir(dir_path + "/build")
     project_dir = dir_path + "/0" + str(project)
-    verilog_files = [f for f in os.listdir(project_dir) if re.search(r'.*\.sv$', f)]
+    verilog_files = [] if len(sys.argv) <= 2 else [sys.argv[2]]
+    if len(verilog_files) == 0:
+        verilog_files = [f for f in os.listdir(project_dir) if re.search(r'.*\.sv$', f)]
+
     print("\nStarting compilation of project 0"+str(project)+"...")
     for file in verilog_files:
         compile(file, project)
