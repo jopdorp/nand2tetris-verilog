@@ -61,8 +61,8 @@ $ pip install -r requirements.txt
 #### Iverilog: 
 At the time this was writte, you need to buuld iverilog yourself beause we need new functionality which has not yet been released in a stable release.
 For windows you will first need to install Msys2 64 bit which can be found here:
-https://sourceforge.net/projects/mingw-w64/files/External%20binary%20packages%20%28Win64%20hosted%29/MSYS%20%2832-bit%29/
-do the following to build and isntall iverilog:
+- https://sourceforge.net/projects/mingw-w64/files/External%20binary%20packages%20%28Win64%20hosted%29/MSYS%20%2832-bit%29/
+- do the following to build and install iverilog:
 ```console
     git clone https://github.com/steveicarus/iverilog.git
     cd iverilog
@@ -79,7 +79,7 @@ Linux:
 ```console
     sudo apt-get install -y verilator
 ```
-MacOsX
+Mac OS X:
 ```console
     brew install verilator
 ```
