@@ -6,7 +6,7 @@ module rom_32K(
 );
   reg[15:0] memory[0:2**15-1];
   initial begin
-      $readmemb("../Fill.hack", memory);
+      $readmemb("../Pattern.hack", memory);
   end
   assign out = memory[address];  
 endmodule

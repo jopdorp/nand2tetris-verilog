@@ -1,5 +1,5 @@
 Assembler report for Hack
-Sat Nov 30 11:01:04 2019
+Sat Nov 30 22:49:30 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,8 +10,8 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/dev/newnand3/nand2tetris-verilog/output_files/Hack.sof
-  6. Assembler Device Options: C:/dev/newnand3/nand2tetris-verilog/output_files/Hack.rbf
+  5. Assembler Device Options: C:/dev/newnand4/nand2tetris-verilog/output_files/Hack.sof
+  6. Assembler Device Options: C:/dev/newnand4/nand2tetris-verilog/output_files/Hack.rbf
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Nov 30 11:01:04 2019 ;
+; Assembler Status      ; Successful - Sat Nov 30 22:49:30 2019 ;
 ; Revision Name         ; Hack                                  ;
 ; Top-level Entity Name ; sys_top                               ;
 ; Family                ; Cyclone V                             ;
@@ -58,13 +58,13 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------+
 ; File Name                                                 ;
 +-----------------------------------------------------------+
-; C:/dev/newnand3/nand2tetris-verilog/output_files/Hack.sof ;
-; C:/dev/newnand3/nand2tetris-verilog/output_files/Hack.rbf ;
+; C:/dev/newnand4/nand2tetris-verilog/output_files/Hack.sof ;
+; C:/dev/newnand4/nand2tetris-verilog/output_files/Hack.rbf ;
 +-----------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/dev/newnand3/nand2tetris-verilog/output_files/Hack.sof ;
+; Assembler Device Options: C:/dev/newnand4/nand2tetris-verilog/output_files/Hack.sof ;
 +----------------+--------------------------------------------------------------------+
 ; Option         ; Setting                                                            ;
 +----------------+--------------------------------------------------------------------+
@@ -74,7 +74,7 @@ refer to the applicable agreement for further details.
 
 
 +-------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/dev/newnand3/nand2tetris-verilog/output_files/Hack.rbf ;
+; Assembler Device Options: C:/dev/newnand4/nand2tetris-verilog/output_files/Hack.rbf ;
 +---------------------+---------------------------------------------------------------+
 ; Option              ; Setting                                                       ;
 +---------------------+---------------------------------------------------------------+
@@ -89,7 +89,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Nov 30 11:00:46 2019
+    Info: Processing started: Sat Nov 30 22:49:14 2019
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off HACK -c Hack
 Warning (125092): Tcl Script File OcmRAM.qip not found
     Info (125063): set_global_assignment -name QIP_FILE OcmRAM.qip
@@ -97,9 +97,9 @@ Warning (125092): Tcl Script File OcmROM.qip not found
     Info (125063): set_global_assignment -name QIP_FILE OcmROM.qip
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4921 megabytes
-    Info: Processing ended: Sat Nov 30 11:01:05 2019
-    Info: Elapsed time: 00:00:19
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Peak virtual memory: 4920 megabytes
+    Info: Processing ended: Sat Nov 30 22:49:30 2019
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:15
 
 
