@@ -17,6 +17,8 @@ module emu
 	//Must be passed to hps_io module
 	inout  [44:0] HPS_BUS,
 
+	output CLK_VIDEO,
+
 	//Base video clock. Usually equals to CLK_SYS.
 	output        VGA_CLK,
 
@@ -131,6 +133,7 @@ wire r, g, b, hsync, vsync, hblank, vblank;
 
 cpu_jopdorp_optimized cpu(memOut, instruction, reset, clk_sys, outM, writeM, addressM, pc);
 
+assign CLK_VIDEO = clk_vid;
 assign HDMI_CLK = clk_sys;
 assign HDMI_R = {8{r}};
 assign HDMI_G = {8{g}};
@@ -220,6 +223,6 @@ end
 ////////////////////////////  MEMORY & VIDEO ///////////////////////////////////
 
 	rom_32K rom(pc, instruction);
-    memory mem(outM, !clk_sys, writeM, addressM, memOut, ps2_ascii, r, g, b, hsync, vsync, hblank, vblank);
+    memory mem(outM, !clk_sys, writeM, addressM, memOut, ps2_ascii, r, g, b, hsync, vsync, hblank, vblank, clk_vid);
 
 endmodule

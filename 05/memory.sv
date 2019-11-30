@@ -10,7 +10,7 @@ module memory(
   input[14:0] address, 
   output[15:0] out,
   input[15:0] scancode,
-  output r, g, b, hsync, vsync, hblank, vblank
+  output r, g, b, hsync, vsync, hblank, vblank, clk_vid
 );
 
   wire[15:0] outM, outS, outSK;
@@ -21,7 +21,7 @@ module memory(
   and_n2t g3(address[14], load, Sload);
   
   ram_16K_optimized ram16k(in, address[13:0], Mload,clock, outM);
-  Screen screen(in, address[12:0], Sload,clock, outS, r, g, b, hsync, vsync, hblank, vblank); 
+  Screen screen(in, address[12:0], Sload,clock, outS, r, g, b, hsync, vsync, hblank, vblank, clk_vid); 
 
   mux_16 g4(outM, outSK, address[14], out);
   mux_16 g5(outS, scancode,  address[13], outSK);
