@@ -1,5 +1,5 @@
 Fitter report for Hack
-Sat Nov 30 11:00:41 2019
+Sat Nov 30 22:04:13 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -69,7 +69,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Sat Nov 30 11:00:41 2019       ;
+; Fitter Status                   ; Successful - Sat Nov 30 22:04:13 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; Hack                                        ;
 ; Top-level Entity Name           ; sys_top                                     ;
@@ -160,14 +160,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.26        ;
+; Average used               ; 1.28        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   9.2%      ;
-;     Processor 3            ;   8.6%      ;
-;     Processor 4            ;   8.2%      ;
+;     Processor 2            ;   9.8%      ;
+;     Processor 3            ;   9.1%      ;
+;     Processor 4            ;   8.7%      ;
 +----------------------------+-------------+
 
 
@@ -3986,23 +3986,23 @@ Info (176235): Finished register packing
     Extra Info (176218): Packed 705 registers into blocks of type DSP block
     Extra Info (176218): Packed 27 registers into blocks of type I/O output buffer
     Extra Info (176220): Created 213 register duplicates
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:26
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:19
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:23
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:22
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:18
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 3% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 18% of the available device resources in the region that extends from location X11_Y23 to location X21_Y34
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:17
-Info (11888): Total time spent on timing analysis during the Fitter is 19.67 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:19
+Info (11888): Total time spent on timing analysis during the Fitter is 20.57 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:32
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:34
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169064): Following 24 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
     Info (169065): Pin SDIO_DAT[0] has a permanently disabled output enable File: C:/dev/newnand3/nand2tetris-verilog/sys/sys_top.v Line: 81
@@ -4031,10 +4031,10 @@ Warning (169064): Following 24 pins have no output enable or a GND or VCC output
     Info (169065): Pin USER_IO[3] has a permanently disabled output enable File: C:/dev/newnand3/nand2tetris-verilog/sys/sys_top.v Line: 97
 Info (144001): Generated suppressed messages file C:/dev/newnand3/nand2tetris-verilog/output_files/Hack.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 7152 megabytes
-    Info: Processing ended: Sat Nov 30 11:00:45 2019
-    Info: Elapsed time: 00:02:53
-    Info: Total CPU time (on all processors): 00:06:23
+    Info: Peak virtual memory: 7135 megabytes
+    Info: Processing ended: Sat Nov 30 22:04:17 2019
+    Info: Elapsed time: 00:02:47
+    Info: Total CPU time (on all processors): 00:06:26
 
 
 +----------------------------+

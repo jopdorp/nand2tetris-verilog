@@ -11,7 +11,7 @@ module memory(
   output[15:0] out,
   input[15:0] scancode,
   input clk_vid,
-  output r, g, b, hsync, vsync, hblank, vblank,
+  output r, g, b, hsync, vsync, hblank, vblank
 );
 
   wire[15:0] outM, outS, outSK;

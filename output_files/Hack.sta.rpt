@@ -1,5 +1,5 @@
 Timing Analyzer report for Hack
-Sat Nov 30 11:01:12 2019
+Sat Nov 30 22:04:51 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -84,9 +84,9 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   7.1%      ;
-;     Processor 3            ;   6.5%      ;
-;     Processor 4            ;   6.2%      ;
+;     Processor 2            ;   7.2%      ;
+;     Processor 3            ;   6.8%      ;
+;     Processor 4            ;   6.5%      ;
 +----------------------------+-------------+
 
 
@@ -95,7 +95,7 @@ refer to the applicable agreement for further details.
 +-----------------+--------+--------------------------+
 ; SDC File Path   ; Status ; Read at                  ;
 +-----------------+--------+--------------------------+
-; sys/sys_top.sdc ; OK     ; Sat Nov 30 11:01:10 2019 ;
+; sys/sys_top.sdc ; OK     ; Sat Nov 30 22:04:49 2019 ;
 +-----------------+--------+--------------------------+
 
 
@@ -752,7 +752,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Nov 30 11:01:06 2019
+    Info: Processing started: Sat Nov 30 22:04:42 2019
 Info: Command: quartus_sta HACK -c Hack
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -856,8 +856,8 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 5059 megabytes
-    Info: Processing ended: Sat Nov 30 11:01:12 2019
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Processing ended: Sat Nov 30 22:04:51 2019
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:08
 
 

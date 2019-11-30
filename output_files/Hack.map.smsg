@@ -1,20 +1,13 @@
-Warning (10273): Verilog HDL warning at Hack.sv(167): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 167
-Warning (10273): Verilog HDL warning at Hack.sv(168): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 168
-Warning (10273): Verilog HDL warning at Hack.sv(169): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 169
-Warning (10273): Verilog HDL warning at Hack.sv(170): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 170
-Warning (10273): Verilog HDL warning at Hack.sv(171): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 171
-Warning (10273): Verilog HDL warning at Hack.sv(172): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 172
-Warning (10273): Verilog HDL warning at Hack.sv(173): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 173
 Warning (10273): Verilog HDL warning at Hack.sv(174): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 174
 Warning (10273): Verilog HDL warning at Hack.sv(175): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 175
 Warning (10273): Verilog HDL warning at Hack.sv(176): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 176
+Warning (10273): Verilog HDL warning at Hack.sv(177): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 177
 Warning (10273): Verilog HDL warning at Hack.sv(178): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 178
 Warning (10273): Verilog HDL warning at Hack.sv(179): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 179
 Warning (10273): Verilog HDL warning at Hack.sv(180): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 180
 Warning (10273): Verilog HDL warning at Hack.sv(181): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 181
 Warning (10273): Verilog HDL warning at Hack.sv(182): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 182
 Warning (10273): Verilog HDL warning at Hack.sv(183): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 183
-Warning (10273): Verilog HDL warning at Hack.sv(184): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 184
 Warning (10273): Verilog HDL warning at Hack.sv(185): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 185
 Warning (10273): Verilog HDL warning at Hack.sv(186): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 186
 Warning (10273): Verilog HDL warning at Hack.sv(187): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 187
@@ -44,6 +37,13 @@ Warning (10273): Verilog HDL warning at Hack.sv(210): extended using "x" or "z" 
 Warning (10273): Verilog HDL warning at Hack.sv(211): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 211
 Warning (10273): Verilog HDL warning at Hack.sv(212): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 212
 Warning (10273): Verilog HDL warning at Hack.sv(213): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 213
+Warning (10273): Verilog HDL warning at Hack.sv(214): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 214
+Warning (10273): Verilog HDL warning at Hack.sv(215): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 215
+Warning (10273): Verilog HDL warning at Hack.sv(216): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 216
+Warning (10273): Verilog HDL warning at Hack.sv(217): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 217
+Warning (10273): Verilog HDL warning at Hack.sv(218): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 218
+Warning (10273): Verilog HDL warning at Hack.sv(219): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 219
+Warning (10273): Verilog HDL warning at Hack.sv(220): extended using "x" or "z" File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 220
 Info (10281): Verilog HDL Declaration information at Hack.sv(15): object "RESET" differs only in case from object "reset" in the same scope File: C:/dev/newnand3/nand2tetris-verilog/Hack.sv Line: 15
 Info (10281): Verilog HDL Declaration information at sys_top.v(76): object "BTN_USER" differs only in case from object "btn_user" in the same scope File: C:/dev/newnand3/nand2tetris-verilog/sys/sys_top.v Line: 76
 Info (10281): Verilog HDL Declaration information at sys_top.v(77): object "BTN_OSD" differs only in case from object "btn_osd" in the same scope File: C:/dev/newnand3/nand2tetris-verilog/sys/sys_top.v Line: 77
