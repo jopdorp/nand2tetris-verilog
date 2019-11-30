@@ -8,3 +8,5 @@ transcript
 **/obj_dir
 ./cmake-build-debug-mingw
 db/
+ouput_files
+incremental_db
