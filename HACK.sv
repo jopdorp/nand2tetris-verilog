@@ -147,6 +147,7 @@ assign LED_USER  = ioctl_download;
 assign LED_DISK  = 0;
 assign LED_POWER = 0;
 
+reg clk_vid;
 always @(posedge clk_sys) begin
     clk_vid <= ~clk_vid;
 end
