@@ -7,3 +7,4 @@ transcript
 .idea
 **/obj_dir
 ./cmake-build-debug-mingw
+db/

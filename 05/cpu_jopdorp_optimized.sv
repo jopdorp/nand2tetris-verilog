@@ -8,9 +8,9 @@ module cpu_jopdorp_optimized(
     output [15:0] outM,
     output        writeM,
     output [14:0] addressM,
-    output [14:0] pc
+    output [14:0] pc_out
 );
-
+    assign pc_out = pc;
     reg[14:0] pc = 0;
     reg[15:0] a = 0;
     reg[15:0] d = 0;
