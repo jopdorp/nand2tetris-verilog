@@ -22,31 +22,23 @@ module Screen(
 	reg [14:0] vindex; // index into line array
 	reg [15:0] vshift; // shift register with current word to output
 
-	reg idle;
-  
 	always @(posedge clk) begin
-	    idle <= idle + 1'd1;
-        if (!idle) begin
-            clk_vid <= ~clk_vid;
-            if (~(hblank || vblank)) begin
-                vshift <= vram[address]; 
-                r <= vshift[0];
-                g <= vshift[0];
-                b <= vshift[0];
-                vindex <= vindex + 1;
-                vshift <= vshift << 1;
-            end else begin
-                r <= 1'd0;
-                g <= 1'd0;
-                b <= 1'd0;
-                if (vsync) vindex <= 0; // reset vindex every frame
-            end
+	    clk_vid <= ~clk_vid;
+	end
+
+    always @(posedge clk_vid) begin
+        if (~(hblank || vblank)) begin
+            vshift <= vram[address]; 
+            r <= vshift[0];
+            g <= vshift[0];
+            b <= vshift[0];
+            vindex <= vindex + 1;
+            vshift <= vshift << 1;
         end else begin
-            vshift <= vshift;
-            vindex <= vindex;
-            r <= r;
-            g <= g;
-            b <= b;
+            r <= 1'd0;
+            g <= 1'd0;
+            b <= 1'd0;
+            if (vsync) vindex <= 0; // reset vindex every frame
         end
 	end
 	
