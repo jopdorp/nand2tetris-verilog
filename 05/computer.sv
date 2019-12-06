@@ -27,7 +27,7 @@ module computer(
   /* verilator lint_off UNUSED */
   wire [9:0] hpos, vpos;
 
-  memory memory(reset, cpuValueToMemory, !clock, writeM, addressM, value_to_cpu, scancode, clk_vid, r, g, b, hsync, vsync, display_on, hpos, vpos);
+  memory memory(reset, cpuValueToMemory, clock, writeM, addressM, value_to_cpu, scancode, clk_vid, r, g, b, hsync, vsync, display_on, hpos, vpos);
 
   rom_32K rom(pc, instruction);
 

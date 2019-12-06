@@ -7,7 +7,7 @@ module rom_32K(
   
   reg[15:0] memory[0:2**15-1] /*verilator public*/;
   initial begin
-      $readmemb("./Pattern.hack", memory);
+      $readmemb("./pong.hack", memory);
   end
   assign out = memory[address];  
 endmodule

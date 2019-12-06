@@ -54,12 +54,12 @@ module cpu_jopdorp_optimized(
     assign outM = alu_out;
     assign writeM = instruction[15] && instruction[3];
 
-    always @(negedge clock)
+    always @(posedge clock)
     if (reset)
         pc <= 15'b0;
     else
         pc <= next_pc;
-        always @(negedge clock)
+        always @(posedge clock)
             if (load_a)
                 a <= next_a;
     

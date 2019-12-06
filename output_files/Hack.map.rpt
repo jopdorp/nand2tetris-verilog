@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Hack
-Fri Dec 06 11:41:39 2019
+Fri Dec 06 12:04:04 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -157,13 +157,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Dec 06 11:41:39 2019       ;
+; Analysis & Synthesis Status     ; Successful - Fri Dec 06 12:04:04 2019       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Hack                                        ;
 ; Top-level Entity Name           ; sys_top                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 7606                                        ;
+; Total registers                 ; 7605                                        ;
 ; Total pins                      ; 145                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 327,043                                     ;
@@ -273,18 +273,18 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 2.23        ;
+; Average used               ; 2.28        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  25.5%      ;
-;     Processor 3            ;  25.4%      ;
-;     Processor 4            ;  25.4%      ;
-;     Processor 5            ;  25.4%      ;
-;     Processor 6            ;   9.9%      ;
-;     Processor 7            ;   5.8%      ;
-;     Processor 8            ;   5.8%      ;
+;     Processor 2            ;  26.4%      ;
+;     Processor 3            ;  26.4%      ;
+;     Processor 4            ;  26.4%      ;
+;     Processor 5            ;  26.4%      ;
+;     Processor 6            ;  10.3%      ;
+;     Processor 7            ;   6.0%      ;
+;     Processor 8            ;   6.0%      ;
 +----------------------------+-------------+
 
 
@@ -333,7 +333,7 @@ refer to the applicable agreement for further details.
 ; ../03/ram_16K_optimized.sv             ; yes             ; Auto-Found SystemVerilog HDL File                     ; C:/Users/supra/dev/nand2tetris-verilog/03/ram_16K_optimized.sv                     ;          ;
 ; 05/Screen.v                            ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/supra/dev/nand2tetris-verilog/05/Screen.v                                 ;          ;
 ; ./05/memory.sv                         ; yes             ; Auto-Found SystemVerilog HDL File                     ; C:/Users/supra/dev/nand2tetris-verilog/05/memory.sv                                ;          ;
-; pattern.hack                           ; yes             ; Auto-Found Unspecified File                           ; C:/Users/supra/dev/nand2tetris-verilog/pattern.hack                                ;          ;
+; pong.hack                              ; yes             ; Auto-Found Unspecified File                           ; C:/Users/supra/dev/nand2tetris-verilog/pong.hack                                   ;          ;
 ; altsyncram.tdf                         ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf              ;          ;
 ; stratix_ram_block.inc                  ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_ram_block.inc       ;          ;
 ; lpm_mux.inc                            ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.inc                 ;          ;
@@ -384,16 +384,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                                  ;
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 6110                                                                                                                   ;
+; Estimate of Logic utilization (ALMs needed) ; 6109                                                                                                                   ;
 ;                                             ;                                                                                                                        ;
-; Combinational ALUT usage for logic          ; 9142                                                                                                                   ;
+; Combinational ALUT usage for logic          ; 9141                                                                                                                   ;
 ;     -- 7 input functions                    ; 183                                                                                                                    ;
 ;     -- 6 input functions                    ; 1661                                                                                                                   ;
 ;     -- 5 input functions                    ; 1296                                                                                                                   ;
 ;     -- 4 input functions                    ; 1031                                                                                                                   ;
-;     -- <=3 input functions                  ; 4971                                                                                                                   ;
+;     -- <=3 input functions                  ; 4970                                                                                                                   ;
 ;                                             ;                                                                                                                        ;
-; Dedicated logic registers                   ; 7606                                                                                                                   ;
+; Dedicated logic registers                   ; 7605                                                                                                                   ;
 ;                                             ;                                                                                                                        ;
 ; I/O pins                                    ; 145                                                                                                                    ;
 ; Total MLAB memory bits                      ; 0                                                                                                                      ;
@@ -406,7 +406,7 @@ refer to the applicable agreement for further details.
 ;                                             ;                                                                                                                        ;
 ; Maximum fan-out node                        ; pll_hdmi:pll_hdmi|pll_hdmi_0002:pll_hdmi_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll|cascade_wire[0] ;
 ; Maximum fan-out                             ; 2509                                                                                                                   ;
-; Total fan-out                               ; 69147                                                                                                                  ;
+; Total fan-out                               ; 69144                                                                                                                  ;
 ; Average fan-out                             ; 3.91                                                                                                                   ;
 +---------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
@@ -416,7 +416,7 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
 ; Compilation Hierarchy Node                                                                     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                       ; Entity Name                ; Library Name ;
 +------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------+--------------+
-; |sys_top                                                                                       ; 9142 (606)          ; 7606 (609)                ; 327043            ; 29         ; 145  ; 0            ; |sys_top                                                                                                                                                                                                                  ; sys_top                    ; work         ;
+; |sys_top                                                                                       ; 9141 (606)          ; 7605 (609)                ; 327043            ; 29         ; 145  ; 0            ; |sys_top                                                                                                                                                                                                                  ; sys_top                    ; work         ;
 ;    |alsa:alsa|                                                                                 ; 206 (206)           ; 516 (516)                 ; 0                 ; 0          ; 0    ; 0            ; |sys_top|alsa:alsa                                                                                                                                                                                                        ; alsa                       ; work         ;
 ;    |ascal:ascal|                                                                               ; 2093 (2085)         ; 2600 (2594)               ; 261336            ; 26         ; 0    ; 0            ; |sys_top|ascal:ascal                                                                                                                                                                                                      ; ascal                      ; work         ;
 ;       |altshift_taps:o_dcptv_rtl_0|                                                            ; 8 (0)               ; 6 (0)                     ; 88                ; 0          ; 0    ; 0            ; |sys_top|ascal:ascal|altshift_taps:o_dcptv_rtl_0                                                                                                                                                                          ; altshift_taps              ; work         ;
@@ -453,7 +453,7 @@ refer to the applicable agreement for further details.
 ;       |sigma_delta_dac:sd_r|                                                                   ; 19 (19)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |sys_top|audio_out:audio_out|sigma_delta_dac:sd_r                                                                                                                                                                         ; sigma_delta_dac            ; work         ;
 ;       |spdif:toslink|                                                                          ; 35 (35)             ; 55 (55)                   ; 0                 ; 0          ; 0    ; 0            ; |sys_top|audio_out:audio_out|spdif:toslink                                                                                                                                                                                ; spdif                      ; work         ;
 ;    |csync:csync_hdmi|                                                                          ; 43 (43)             ; 51 (51)                   ; 0                 ; 0          ; 0    ; 0            ; |sys_top|csync:csync_hdmi                                                                                                                                                                                                 ; csync                      ; work         ;
-;    |emu:emu|                                                                                   ; 117 (1)             ; 128 (1)                   ; 0                 ; 0          ; 0    ; 0            ; |sys_top|emu:emu                                                                                                                                                                                                          ; emu                        ; work         ;
+;    |emu:emu|                                                                                   ; 116 (0)             ; 127 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |sys_top|emu:emu                                                                                                                                                                                                          ; emu                        ; work         ;
 ;       |hps_io:hps_io|                                                                          ; 116 (116)           ; 127 (127)                 ; 0                 ; 0          ; 0    ; 0            ; |sys_top|emu:emu|hps_io:hps_io                                                                                                                                                                                            ; hps_io                     ; work         ;
 ;       |pll:pll|                                                                                ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |sys_top|emu:emu|pll:pll                                                                                                                                                                                                  ; pll                        ; pll          ;
 ;          |pll_0002:pll_inst|                                                                   ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |sys_top|emu:emu|pll:pll|pll_0002:pll_inst                                                                                                                                                                                ; pll_0002                   ; pll          ;
@@ -2170,7 +2170,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 7606  ;
+; Total registers                              ; 7605  ;
 ; Number of registers using Synchronous Clear  ; 1659  ;
 ; Number of registers using Synchronous Load   ; 938   ;
 ; Number of registers using Asynchronous Clear ; 154   ;
@@ -4800,198 +4800,199 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "emu:emu|hps_io:hps_io"                                                                                                                                     ;
-+--------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port               ; Type   ; Severity ; Details                                                                                                                                      ;
-+--------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; conf_str[217..216] ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[209..208] ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[205..203] ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[201..200] ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[197..195] ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[193..192] ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[186..185] ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[179..178] ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[155..153] ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[149..147] ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[145..144] ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[133..132] ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[123..122] ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[110..109] ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[102..100] ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[97..96]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[94..93]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[86..84]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[77..75]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[73..72]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[66..65]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[59..58]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[54..52]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[50..49]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[45..44]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[37..35]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[29..28]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[21..20]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[5..4]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[2..1]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[237..236] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[234..231] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[229..225] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[221..218] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[213..212] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[207..206] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[199..198] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[189..187] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[184..182] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[177..175] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[173..170] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[168..167] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[165..164] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[162..161] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[157..156] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[152..150] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[139..138] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[136..134] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[131..126] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[121..119] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[115..114] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[112..111] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[108..107] ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[99..98]   ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[92..91]   ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[81..78]   ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[64..62]   ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[57..55]   ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[48..46]   ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[43..41]   ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[39..38]   ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[34..33]   ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[31..30]   ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[27..25]   ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[23..22]   ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[19..18]   ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[16..14]   ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[11..6]    ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[239]      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[238]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[235]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[230]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[224]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[223]      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[222]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[215]      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[214]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[211]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[210]      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[202]      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[194]      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[191]      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[190]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[181]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[180]      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[174]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[169]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[166]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[163]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[160]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[159]      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[158]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[146]      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[143]      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[142]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[141]      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[140]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[137]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[125]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[124]      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[118]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[117]      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[116]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[113]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[106]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[105]      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[104]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[103]      ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[95]       ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[90]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[89]       ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[88]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[87]       ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[83]       ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[82]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[74]       ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[71]       ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[70]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[69]       ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[68]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[67]       ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[61]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[60]       ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[51]       ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[40]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[32]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[24]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[17]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
-; conf_str[3]        ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; conf_str[0]        ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; ioctl_wr           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; ioctl_addr         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; ioctl_dout         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; ioctl_wait         ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; buttons            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; status             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; joystick_0         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; joystick_1         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; joystick_2         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; joystick_3         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; joystick_4         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; joystick_5         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; joystick_analog_0  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; joystick_analog_1  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; joystick_analog_2  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; joystick_analog_3  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; joystick_analog_4  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; joystick_analog_5  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; forced_scandoubler ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; status_in          ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; status_set         ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; status_menumask    ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; new_vmode          ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; img_mounted        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; img_readonly       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; img_size           ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; sd_lba             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; sd_rd              ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; sd_wr              ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; sd_ack             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; sd_conf            ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; sd_ack_conf        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; sd_buff_addr       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; sd_buff_dout       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; sd_buff_din        ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; sd_buff_wr         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; sd_req_type        ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; ioctl_index        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; ioctl_file_ext     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; sdram_sz           ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; RTC                ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; TIMESTAMP          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; uart_mode          ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; ps2_kbd_clk_out    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; ps2_kbd_data_out   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; ps2_kbd_clk_in     ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; ps2_kbd_data_in    ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; ps2_kbd_led_status ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; ps2_kbd_led_use    ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; ps2_mouse_clk_out  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; ps2_mouse_data_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; ps2_mouse_clk_in   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; ps2_mouse_data_in  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; ps2_mouse          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-; ps2_mouse_ext      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-+--------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "emu:emu|hps_io:hps_io"                                                                                                                                                               ;
++--------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                                                                                                                ;
++--------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; conf_str[217..216] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[209..208] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[205..203] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[201..200] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[197..195] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[193..192] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[186..185] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[179..178] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[155..153] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[149..147] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[145..144] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[133..132] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[123..122] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[110..109] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[102..100] ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[97..96]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[94..93]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[86..84]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[77..75]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[73..72]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[66..65]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[59..58]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[54..52]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[50..49]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[45..44]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[37..35]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[29..28]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[21..20]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[13..12]   ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[5..4]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[2..1]     ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[237..236] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[234..231] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[229..225] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[221..218] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[213..212] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[207..206] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[199..198] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[189..187] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[184..182] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[177..175] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[173..170] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[168..167] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[165..164] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[162..161] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[157..156] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[152..150] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[139..138] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[136..134] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[131..126] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[121..119] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[115..114] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[112..111] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[108..107] ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[99..98]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[92..91]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[81..78]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[64..62]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[57..55]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[48..46]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[43..41]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[39..38]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[34..33]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[31..30]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[27..25]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[23..22]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[19..18]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[16..14]   ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[11..6]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[239]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[238]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[235]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[230]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[224]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[223]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[222]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[215]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[214]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[211]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[210]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[202]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[194]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[191]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[190]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[181]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[180]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[174]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[169]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[166]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[163]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[160]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[159]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[158]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[146]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[143]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[142]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[141]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[140]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[137]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[125]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[124]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[118]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[117]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[116]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[113]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[106]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[105]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[104]      ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[103]      ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[95]       ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[90]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[89]       ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[88]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[87]       ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[83]       ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[82]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[74]       ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[71]       ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[70]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[69]       ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[68]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[67]       ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[61]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[60]       ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[51]       ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[40]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[32]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[24]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[17]       ; Input  ; Info     ; Stuck at VCC                                                                                                                                                           ;
+; conf_str[3]        ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; conf_str[0]        ; Input  ; Info     ; Stuck at GND                                                                                                                                                           ;
+; ioctl_wr           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                    ;
+; ioctl_addr         ; Output ; Warning  ; Output or bidir port (27 bits) is wider than the port expression (25 bits) it drives; bit(s) "ioctl_addr[26..25]" have no fanouts                                      ;
+; ioctl_addr         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                    ;
+; ioctl_dout         ; Output ; Warning  ; Output or bidir port (8 bits) is smaller than the port expression (16 bits) it drives.  The 8 most-significant bit(s) in the port expression will be connected to GND. ;
+; ioctl_dout[7..0]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                    ;
+; buttons            ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                    ;
+; status             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                    ;
+; joystick_0         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; joystick_1         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; joystick_2         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; joystick_3         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; joystick_4         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; joystick_5         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; joystick_analog_0  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; joystick_analog_1  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; joystick_analog_2  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; joystick_analog_3  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; joystick_analog_4  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; joystick_analog_5  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; forced_scandoubler ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; status_in          ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; status_set         ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; status_menumask    ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; new_vmode          ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; img_mounted        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; img_readonly       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; img_size           ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; sd_lba             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; sd_rd              ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; sd_wr              ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; sd_ack             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; sd_conf            ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; sd_ack_conf        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; sd_buff_addr       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; sd_buff_dout       ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; sd_buff_din        ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; sd_buff_wr         ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; sd_req_type        ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; ioctl_index        ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; ioctl_file_ext     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; sdram_sz           ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; RTC                ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; TIMESTAMP          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; uart_mode          ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; ps2_kbd_clk_out    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; ps2_kbd_data_out   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; ps2_kbd_clk_in     ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; ps2_kbd_data_in    ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; ps2_kbd_led_status ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; ps2_kbd_led_use    ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; ps2_mouse_clk_out  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; ps2_mouse_data_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; ps2_mouse_clk_in   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; ps2_mouse_data_in  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                           ;
+; ps2_mouse          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
+; ps2_mouse_ext      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                               ;
++--------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -5122,7 +5123,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------------------------------------+--------+
 ; Type                                       ; Count  ;
 +--------------------------------------------+--------+
-; arriav_ff                                  ; 7606   ;
+; arriav_ff                                  ; 7605   ;
 ;     CLR                                    ; 86     ;
 ;     CLR SLD                                ; 1      ;
 ;     ENA                                    ; 3803   ;
@@ -5135,7 +5136,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR                                   ; 396    ;
 ;     SCLR SLD                               ; 32     ;
 ;     SLD                                    ; 176    ;
-;     plain                                  ; 1313   ;
+;     plain                                  ; 1312   ;
 ; arriav_hps_interface_boot_from_fpga        ; 1      ;
 ; arriav_hps_interface_clocks_resets         ; 1      ;
 ; arriav_hps_interface_dbg_apb               ; 1      ;
@@ -5148,7 +5149,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; arriav_hps_interface_peripheral_uart       ; 1      ;
 ; arriav_hps_interface_tpiu_trace            ; 1      ;
 ; arriav_io_obuf                             ; 87     ;
-; arriav_lcell_comb                          ; 9142   ;
+; arriav_lcell_comb                          ; 9141   ;
 ;     arith                                  ; 2749   ;
 ;         0 data inputs                      ; 101    ;
 ;         1 data inputs                      ; 1584   ;
@@ -5158,9 +5159,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         5 data inputs                      ; 72     ;
 ;     extend                                 ; 183    ;
 ;         7 data inputs                      ; 183    ;
-;     normal                                 ; 5153   ;
+;     normal                                 ; 5152   ;
 ;         0 data inputs                      ; 3      ;
-;         1 data inputs                      ; 98     ;
+;         1 data inputs                      ; 97     ;
 ;         2 data inputs                      ; 739    ;
 ;         3 data inputs                      ; 615    ;
 ;         4 data inputs                      ; 813    ;
@@ -5200,7 +5201,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Dec 06 11:40:18 2019
+    Info: Processing started: Fri Dec 06 12:02:45 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Hack -c Hack
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file sys/pll.v
@@ -5324,8 +5325,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file hvsyncg
     Info (12023): Found entity 1: HVSyncGenerator File: C:/Users/supra/dev/nand2tetris-verilog/HVSyncGenerator.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file keyboard.v
     Info (12023): Found entity 1: Keyboard File: C:/Users/supra/dev/nand2tetris-verilog/Keyboard.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at Hack.sv(168): created implicit net for "clk_video" File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 168
-Warning (10236): Verilog HDL Implicit Net warning at Hack.sv(240): created implicit net for "clk_vid" File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 240
+Warning (10236): Verilog HDL Implicit Net warning at Hack.sv(233): created implicit net for "clk_vid" File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 233
 Info (12127): Elaborating entity "sys_top" for the top level hierarchy
 Info (12128): Elaborating entity "mcp23009" for hierarchy "mcp23009:mcp23009" File: C:/Users/supra/dev/nand2tetris-verilog/sys/sys_top.v Line: 186
 Info (12128): Elaborating entity "i2c" for hierarchy "mcp23009:mcp23009|i2c:i2c" File: C:/Users/supra/dev/nand2tetris-verilog/sys/mcp23009.sv Line: 39
@@ -5636,12 +5636,10 @@ Info (12128): Elaborating entity "lpf_aud" for hierarchy "audio_out:audio_out|lp
 Info (12128): Elaborating entity "alsa" for hierarchy "alsa:alsa" File: C:/Users/supra/dev/nand2tetris-verilog/sys/sys_top.v Line: 1046
 Info (12128): Elaborating entity "sync_fix" for hierarchy "sync_fix:sync_v" File: C:/Users/supra/dev/nand2tetris-verilog/sys/sys_top.v Line: 1095
 Info (12128): Elaborating entity "emu" for hierarchy "emu:emu" File: C:/Users/supra/dev/nand2tetris-verilog/sys/sys_top.v Line: 1197
-Warning (10230): Verilog HDL assignment warning at Hack.sv(159): truncated value with size 32 to match size of target (1) File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 159
-Warning (10030): Net "ioctl_wait" at Hack.sv(127) has no driver or initial value, using a default initial value '0' File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 127
 Info (12128): Elaborating entity "hps_io" for hierarchy "emu:emu|hps_io:hps_io" File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 147
 Info (10264): Verilog HDL Case Statement information at hps_io.v(418): all case item expressions in this case statement are onehot File: C:/Users/supra/dev/nand2tetris-verilog/sys/hps_io.v Line: 418
 Info (10264): Verilog HDL Case Statement information at hps_io.v(486): all case item expressions in this case statement are onehot File: C:/Users/supra/dev/nand2tetris-verilog/sys/hps_io.v Line: 486
-Info (12128): Elaborating entity "pll" for hierarchy "emu:emu|pll:pll" File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 170
+Info (12128): Elaborating entity "pll" for hierarchy "emu:emu|pll:pll" File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 163
 Info (12128): Elaborating entity "pll_0002" for hierarchy "emu:emu|pll:pll|pll_0002:pll_inst" File: C:/Users/supra/dev/nand2tetris-verilog/sys/pll.v Line: 26
 Info (12128): Elaborating entity "altera_pll" for hierarchy "emu:emu|pll:pll|pll_0002:pll_inst|altera_pll:altera_pll_i" File: C:/Users/supra/dev/nand2tetris-verilog/sys/pll/pll_0002.v Line: 242
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
@@ -5857,15 +5855,15 @@ Info (12128): Elaborating entity "altera_cyclonev_pll" for hierarchy "emu:emu|pl
 Info (12131): Elaborated megafunction instantiation "emu:emu|pll:pll|pll_0002:pll_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll", which is child of megafunction instantiation "emu:emu|pll:pll|pll_0002:pll_inst|altera_pll:altera_pll_i" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altera_pll.v Line: 2223
 Info (12128): Elaborating entity "altera_cyclonev_pll_base" for hierarchy "emu:emu|pll:pll|pll_0002:pll_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll|altera_cyclonev_pll_base:fpll_0" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altera_cyclonev_pll.v Line: 1152
 Info (12131): Elaborated megafunction instantiation "emu:emu|pll:pll|pll_0002:pll_inst|altera_pll:altera_pll_i|altera_cyclonev_pll:cyclonev_pll|altera_cyclonev_pll_base:fpll_0", which is child of megafunction instantiation "emu:emu|pll:pll|pll_0002:pll_inst|altera_pll:altera_pll_i" File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altera_cyclonev_pll.v Line: 1152
-Info (12128): Elaborating entity "cpu_jopdorp_optimized" for hierarchy "emu:emu|cpu_jopdorp_optimized:cpu" File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 182
+Info (12128): Elaborating entity "cpu_jopdorp_optimized" for hierarchy "emu:emu|cpu_jopdorp_optimized:cpu" File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 175
 Info (12128): Elaborating entity "alu_optimized" for hierarchy "emu:emu|cpu_jopdorp_optimized:cpu|alu_optimized:calculations" File: C:/Users/supra/dev/nand2tetris-verilog/05/cpu_jopdorp_optimized.sv Line: 49
-Info (12128): Elaborating entity "Keyboard" for hierarchy "emu:emu|Keyboard:keyboard" File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 223
-Info (12128): Elaborating entity "rom_32K" for hierarchy "emu:emu|rom_32K:rom" File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 239
-Warning (10850): Verilog HDL warning at rom_32K.sv(10): number of words (16) in memory file does not match the number of elements in the address range [0:32767] File: C:/Users/supra/dev/nand2tetris-verilog/05/rom_32K.sv Line: 10
+Info (12128): Elaborating entity "Keyboard" for hierarchy "emu:emu|Keyboard:keyboard" File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 216
+Info (12128): Elaborating entity "rom_32K" for hierarchy "emu:emu|rom_32K:rom" File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 232
+Warning (10850): Verilog HDL warning at rom_32K.sv(10): number of words (27483) in memory file does not match the number of elements in the address range [0:32767] File: C:/Users/supra/dev/nand2tetris-verilog/05/rom_32K.sv Line: 10
 Warning (10030): Net "memory.data_a" at rom_32K.sv(8) has no driver or initial value, using a default initial value '0' File: C:/Users/supra/dev/nand2tetris-verilog/05/rom_32K.sv Line: 8
 Warning (10030): Net "memory.waddr_a" at rom_32K.sv(8) has no driver or initial value, using a default initial value '0' File: C:/Users/supra/dev/nand2tetris-verilog/05/rom_32K.sv Line: 8
 Warning (10030): Net "memory.we_a" at rom_32K.sv(8) has no driver or initial value, using a default initial value '0' File: C:/Users/supra/dev/nand2tetris-verilog/05/rom_32K.sv Line: 8
-Info (12128): Elaborating entity "memory" for hierarchy "emu:emu|memory:mem" File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 240
+Info (12128): Elaborating entity "memory" for hierarchy "emu:emu|memory:mem" File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 233
 Info (12128): Elaborating entity "not_n2t" for hierarchy "emu:emu|memory:mem|not_n2t:g1" File: C:/Users/supra/dev/nand2tetris-verilog/05/memory.sv Line: 22
 Info (12128): Elaborating entity "and_n2t" for hierarchy "emu:emu|memory:mem|and_n2t:g2" File: C:/Users/supra/dev/nand2tetris-verilog/05/memory.sv Line: 23
 Info (12128): Elaborating entity "ram_16K_optimized" for hierarchy "emu:emu|memory:mem|ram_16K_optimized:ram16k" File: C:/Users/supra/dev/nand2tetris-verilog/05/memory.sv Line: 26
@@ -6206,18 +6204,18 @@ Info (17016): Found the following redundant logic cells in design
 Info (144001): Generated suppressed messages file C:/Users/supra/dev/nand2tetris-verilog/output_files/Hack.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 26 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 14816 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 14815 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 97 output pins
     Info (21060): Implemented 32 bidirectional pins
-    Info (21061): Implemented 14074 logic cells
+    Info (21061): Implemented 14073 logic cells
     Info (21064): Implemented 548 RAM segments
     Info (21062): Implemented 29 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 55 warnings
-    Info: Peak virtual memory: 5513 megabytes
-    Info: Processing ended: Fri Dec 06 11:41:40 2019
-    Info: Elapsed time: 00:01:22
-    Info: Total CPU time (on all processors): 00:01:55
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 52 warnings
+    Info: Peak virtual memory: 5498 megabytes
+    Info: Processing ended: Fri Dec 06 12:04:04 2019
+    Info: Elapsed time: 00:01:19
+    Info: Total CPU time (on all processors): 00:01:54
 
 
 +------------------------------------------+

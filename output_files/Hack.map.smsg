@@ -12,6 +12,7 @@ Info (10281): Verilog HDL Declaration information at sys_top.v(92): object "LED_
 Info (10281): Verilog HDL Declaration information at scandoubler.v(29): object "hq2x" differs only in case from object "Hq2x" in the same scope File: C:/Users/supra/dev/nand2tetris-verilog/sys/scandoubler.v Line: 29
 Warning (10268): Verilog HDL information at audio_out.v(38): always construct contains both blocking and non-blocking assignments File: C:/Users/supra/dev/nand2tetris-verilog/sys/audio_out.v Line: 38
 Info (10281): Verilog HDL Declaration information at Hack.sv(48): object "BUTTONS" differs only in case from object "buttons" in the same scope File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 48
+Info (10281): Verilog HDL Declaration information at Hack.sv(18): object "CLK_VIDEO" differs only in case from object "clk_video" in the same scope File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 18
 Info (10281): Verilog HDL Declaration information at Hack.sv(12): object "RESET" differs only in case from object "reset" in the same scope File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 12
 Warning (10034): Output port "lvds_clk" at altera_pll.v(319) has no driver File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altera_pll.v Line: 319
 Warning (10034): Output port "loaden" at altera_pll.v(320) has no driver File: c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altera_pll.v Line: 320
