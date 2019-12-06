@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Hack
-Fri Dec 06 12:04:04 2019
+Fri Dec 06 12:39:59 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -157,7 +157,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Dec 06 12:04:04 2019       ;
+; Analysis & Synthesis Status     ; Successful - Fri Dec 06 12:39:59 2019       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Hack                                        ;
 ; Top-level Entity Name           ; sys_top                                     ;
@@ -273,17 +273,17 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 2.28        ;
+; Average used               ; 2.33        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  26.4%      ;
-;     Processor 3            ;  26.4%      ;
-;     Processor 4            ;  26.4%      ;
-;     Processor 5            ;  26.4%      ;
+;     Processor 2            ;  26.5%      ;
+;     Processor 3            ;  26.5%      ;
+;     Processor 4            ;  26.5%      ;
+;     Processor 5            ;  26.5%      ;
 ;     Processor 6            ;  10.3%      ;
-;     Processor 7            ;   6.0%      ;
+;     Processor 7            ;  10.3%      ;
 ;     Processor 8            ;   6.0%      ;
 +----------------------------+-------------+
 
@@ -333,7 +333,7 @@ refer to the applicable agreement for further details.
 ; ../03/ram_16K_optimized.sv             ; yes             ; Auto-Found SystemVerilog HDL File                     ; C:/Users/supra/dev/nand2tetris-verilog/03/ram_16K_optimized.sv                     ;          ;
 ; 05/Screen.v                            ; yes             ; Auto-Found Verilog HDL File                           ; C:/Users/supra/dev/nand2tetris-verilog/05/Screen.v                                 ;          ;
 ; ./05/memory.sv                         ; yes             ; Auto-Found SystemVerilog HDL File                     ; C:/Users/supra/dev/nand2tetris-verilog/05/memory.sv                                ;          ;
-; pong.hack                              ; yes             ; Auto-Found Unspecified File                           ; C:/Users/supra/dev/nand2tetris-verilog/pong.hack                                   ;          ;
+; pattern.hack                           ; yes             ; Auto-Found Unspecified File                           ; C:/Users/supra/dev/nand2tetris-verilog/pattern.hack                                ;          ;
 ; altsyncram.tdf                         ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/altsyncram.tdf              ;          ;
 ; stratix_ram_block.inc                  ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/stratix_ram_block.inc       ;          ;
 ; lpm_mux.inc                            ; yes             ; Megafunction                                          ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_mux.inc                 ;          ;
@@ -5201,7 +5201,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Dec 06 12:02:45 2019
+    Info: Processing started: Fri Dec 06 12:38:40 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Hack -c Hack
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file sys/pll.v
@@ -5859,7 +5859,7 @@ Info (12128): Elaborating entity "cpu_jopdorp_optimized" for hierarchy "emu:emu|
 Info (12128): Elaborating entity "alu_optimized" for hierarchy "emu:emu|cpu_jopdorp_optimized:cpu|alu_optimized:calculations" File: C:/Users/supra/dev/nand2tetris-verilog/05/cpu_jopdorp_optimized.sv Line: 49
 Info (12128): Elaborating entity "Keyboard" for hierarchy "emu:emu|Keyboard:keyboard" File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 216
 Info (12128): Elaborating entity "rom_32K" for hierarchy "emu:emu|rom_32K:rom" File: C:/Users/supra/dev/nand2tetris-verilog/Hack.sv Line: 232
-Warning (10850): Verilog HDL warning at rom_32K.sv(10): number of words (27483) in memory file does not match the number of elements in the address range [0:32767] File: C:/Users/supra/dev/nand2tetris-verilog/05/rom_32K.sv Line: 10
+Warning (10850): Verilog HDL warning at rom_32K.sv(10): number of words (16) in memory file does not match the number of elements in the address range [0:32767] File: C:/Users/supra/dev/nand2tetris-verilog/05/rom_32K.sv Line: 10
 Warning (10030): Net "memory.data_a" at rom_32K.sv(8) has no driver or initial value, using a default initial value '0' File: C:/Users/supra/dev/nand2tetris-verilog/05/rom_32K.sv Line: 8
 Warning (10030): Net "memory.waddr_a" at rom_32K.sv(8) has no driver or initial value, using a default initial value '0' File: C:/Users/supra/dev/nand2tetris-verilog/05/rom_32K.sv Line: 8
 Warning (10030): Net "memory.we_a" at rom_32K.sv(8) has no driver or initial value, using a default initial value '0' File: C:/Users/supra/dev/nand2tetris-verilog/05/rom_32K.sv Line: 8
@@ -6212,8 +6212,8 @@ Info (21057): Implemented 14815 device resources after synthesis - the final res
     Info (21064): Implemented 548 RAM segments
     Info (21062): Implemented 29 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 52 warnings
-    Info: Peak virtual memory: 5498 megabytes
-    Info: Processing ended: Fri Dec 06 12:04:04 2019
+    Info: Peak virtual memory: 5501 megabytes
+    Info: Processing ended: Fri Dec 06 12:39:59 2019
     Info: Elapsed time: 00:01:19
     Info: Total CPU time (on all processors): 00:01:54
 

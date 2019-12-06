@@ -1,12 +1,12 @@
-Fitter Status : Successful - Fri Dec 06 11:44:21 2019
+Fitter Status : Successful - Fri Dec 06 12:42:36 2019
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : Hack
 Top-level Entity Name : sys_top
 Family : Cyclone V
 Device : 5CSEBA6U23I7
 Timing Models : Final
-Logic utilization (in ALMs) : 5,780 / 41,910 ( 14 % )
-Total registers : 7370
+Logic utilization (in ALMs) : 5,756 / 41,910 ( 14 % )
+Total registers : 7443
 Total pins : 145 / 314 ( 46 % )
 Total virtual pins : 0
 Total block memory bits : 327,043 / 5,662,720 ( 6 % )

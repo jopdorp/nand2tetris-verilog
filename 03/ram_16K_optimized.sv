@@ -9,11 +9,13 @@ module ram_16K_optimized(
 );
 
   reg[15:0] memory[0:2**14-1];
-	
-  assign out = memory[address];
-	
+		
   always @(posedge clock) begin
     if (load) memory[address] <= in;
+  end
+
+  always @* begin
+    out <= memory[address];
   end
   
 endmodule

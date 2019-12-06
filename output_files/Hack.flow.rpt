@@ -1,5 +1,5 @@
 Flow report for Hack
-Fri Dec 06 12:04:04 2019
+Fri Dec 06 12:43:11 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,25 +40,25 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Fri Dec 06 12:04:04 2019       ;
+; Flow Status                     ; Successful - Fri Dec 06 12:42:52 2019       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Hack                                        ;
 ; Top-level Entity Name           ; sys_top                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEBA6U23I7                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 7605                                        ;
-; Total pins                      ; 145                                         ;
+; Logic utilization (in ALMs)     ; 5,756 / 41,910 ( 14 % )                     ;
+; Total registers                 ; 7443                                        ;
+; Total pins                      ; 145 / 314 ( 46 % )                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 327,043                                     ;
-; Total DSP Blocks                ; 29                                          ;
+; Total block memory bits         ; 327,043 / 5,662,720 ( 6 % )                 ;
+; Total DSP Blocks                ; 29 / 112 ( 26 % )                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
 ; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 2                                           ;
-; Total DLLs                      ; 0                                           ;
+; Total PLLs                      ; 2 / 6 ( 33 % )                              ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
 +---------------------------------+---------------------------------------------+
 
 
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/06/2019 12:02:46 ;
+; Start date & time ; 12/06/2019 12:38:41 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Hack                ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 18121613312252.157563016611324         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 18121613312252.157563232109328         ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 100                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; -40                                    ; --            ; --          ; --         ;
 ; MISC_FILE                           ; sys/pll.cmp                            ; --            ; --          ; --         ;
@@ -102,29 +102,38 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:17     ; 2.3                     ; 5498 MB             ; 00:01:52                           ;
-; Total                ; 00:01:17     ; --                      ; --                  ; 00:01:52                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:01:17     ; 2.3                     ; 5501 MB             ; 00:01:52                           ;
+; Fitter                    ; 00:02:36     ; 1.4                     ; 7515 MB             ; 00:08:42                           ;
+; Assembler                 ; 00:00:11     ; 1.0                     ; 4974 MB             ; 00:00:11                           ;
+; TimeQuest Timing Analyzer ; 00:00:18     ; 2.7                     ; 5625 MB             ; 00:00:45                           ;
+; Total                     ; 00:04:22     ; --                      ; --                  ; 00:11:30                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-D2PJ1MM  ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++-----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                         ;
++---------------------------+------------------+------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++---------------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis      ; DESKTOP-D2PJ1MM  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; DESKTOP-D2PJ1MM  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; DESKTOP-D2PJ1MM  ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-D2PJ1MM  ; Windows 10 ; 10.0       ; x86_64         ;
++---------------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Hack -c Hack
+quartus_fit --read_settings_files=off --write_settings_files=off Hack -c Hack
+quartus_asm --read_settings_files=off --write_settings_files=off Hack -c Hack
+quartus_sta Hack -c Hack
 
 
 

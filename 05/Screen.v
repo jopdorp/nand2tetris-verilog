@@ -41,10 +41,12 @@ module Screen(
 			end
 	end
 	
-  assign out = vram[address];
-	
   always @(posedge clk) begin
     if (load) vram[address] <= in;
+  end
+
+  always @* begin
+  	out <= vram[address];
   end
 endmodule
 

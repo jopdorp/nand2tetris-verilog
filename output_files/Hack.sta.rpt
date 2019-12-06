@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Hack
-Fri Dec 06 11:44:59 2019
+Fri Dec 06 12:43:11 2019
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -102,18 +102,18 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 2.73        ;
+; Average used               ; 2.72        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  26.5%      ;
-;     Processor 3            ;  26.2%      ;
+;     Processor 2            ;  26.4%      ;
+;     Processor 3            ;  26.1%      ;
 ;     Processor 4            ;  26.1%      ;
-;     Processor 5            ;  23.6%      ;
-;     Processor 6            ;  23.6%      ;
-;     Processor 7            ;  23.6%      ;
-;     Processor 8            ;  23.6%      ;
+;     Processor 5            ;  23.3%      ;
+;     Processor 6            ;  23.3%      ;
+;     Processor 7            ;  23.3%      ;
+;     Processor 8            ;  23.3%      ;
 +----------------------------+-------------+
 
 
@@ -122,7 +122,7 @@ refer to the applicable agreement for further details.
 +-----------------+--------+--------------------------+
 ; SDC File Path   ; Status ; Read at                  ;
 +-----------------+--------+--------------------------+
-; sys/sys_top.sdc ; OK     ; Fri Dec 06 11:44:43 2019 ;
+; sys/sys_top.sdc ; OK     ; Fri Dec 06 12:42:56 2019 ;
 +-----------------+--------+--------------------------+
 
 
@@ -150,14 +150,14 @@ refer to the applicable agreement for further details.
 +------------+-----------------+-----------------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                        ; Note ;
 +------------+-----------------+-----------------------------------------------------------------------------------+------+
-; 63.98 MHz  ; 63.98 MHz       ; FPGA_CLK1_50                                                                      ;      ;
-; 85.56 MHz  ; 85.56 MHz       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ;      ;
-; 93.42 MHz  ; 93.42 MHz       ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ;      ;
-; 96.36 MHz  ; 96.36 MHz       ; FPGA_CLK3_50                                                                      ;      ;
-; 153.47 MHz ; 153.47 MHz      ; FPGA_CLK2_50                                                                      ;      ;
-; 187.55 MHz ; 187.55 MHz      ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ;      ;
-; 264.55 MHz ; 264.55 MHz      ; spi_sck                                                                           ;      ;
-; 346.5 MHz  ; 346.5 MHz       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ;      ;
+; 59.03 MHz  ; 59.03 MHz       ; FPGA_CLK1_50                                                                      ;      ;
+; 89.17 MHz  ; 89.17 MHz       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ;      ;
+; 94.12 MHz  ; 94.12 MHz       ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ;      ;
+; 100.36 MHz ; 100.36 MHz      ; FPGA_CLK3_50                                                                      ;      ;
+; 109.36 MHz ; 109.36 MHz      ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ;      ;
+; 157.63 MHz ; 157.63 MHz      ; FPGA_CLK2_50                                                                      ;      ;
+; 175.69 MHz ; 175.69 MHz      ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ;      ;
+; 243.37 MHz ; 243.37 MHz      ; spi_sck                                                                           ;      ;
 +------------+-----------------+-----------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -168,21 +168,21 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 HTML report is unavailable in plain text report export.
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; Slow 1100mV 100C Model Setup Summary                                                                        ;
-+-----------------------------------------------------------------------------------+---------+---------------+
-; Clock                                                                             ; Slack   ; End Point TNS ;
-+-----------------------------------------------------------------------------------+---------+---------------+
-; HDMI_CLK                                                                          ; -10.059 ; -111.741      ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -3.972  ; -173.394      ;
-; FPGA_CLK1_50                                                                      ; 4.369   ; 0.000         ;
-; FPGA_CLK3_50                                                                      ; 4.637   ; 0.000         ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 4.668   ; 0.000         ;
-; spi_sck                                                                           ; 6.220   ; 0.000         ;
-; FPGA_CLK2_50                                                                      ; 13.484  ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 15.491  ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 17.114  ; 0.000         ;
-+-----------------------------------------------------------------------------------+---------+---------------+
++------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 100C Model Setup Summary                                                                       ;
++-----------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                             ; Slack  ; End Point TNS ;
++-----------------------------------------------------------------------------------+--------+---------------+
+; HDMI_CLK                                                                          ; -9.298 ; -133.894      ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -3.893 ; -120.495      ;
+; FPGA_CLK1_50                                                                      ; 3.059  ; 0.000         ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 4.308  ; 0.000         ;
+; FPGA_CLK3_50                                                                      ; 4.561  ; 0.000         ;
+; spi_sck                                                                           ; 5.891  ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 10.582 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 10.856 ; 0.000         ;
+; FPGA_CLK2_50                                                                      ; 13.656 ; 0.000         ;
++-----------------------------------------------------------------------------------+--------+---------------+
 
 
 +-----------------------------------------------------------------------------------------------------------+
@@ -190,15 +190,15 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                             ; Slack ; End Point TNS ;
 +-----------------------------------------------------------------------------------+-------+---------------+
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0.181 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 0.253 ; 0.000         ;
-; FPGA_CLK3_50                                                                      ; 0.274 ; 0.000         ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0.320 ; 0.000         ;
-; FPGA_CLK1_50                                                                      ; 0.349 ; 0.000         ;
-; FPGA_CLK2_50                                                                      ; 0.356 ; 0.000         ;
-; spi_sck                                                                           ; 0.384 ; 0.000         ;
-; HDMI_CLK                                                                          ; 0.757 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 2.030 ; 0.000         ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0.200 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 0.261 ; 0.000         ;
+; FPGA_CLK3_50                                                                      ; 0.311 ; 0.000         ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0.311 ; 0.000         ;
+; FPGA_CLK1_50                                                                      ; 0.335 ; 0.000         ;
+; spi_sck                                                                           ; 0.344 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 0.408 ; 0.000         ;
+; FPGA_CLK2_50                                                                      ; 0.422 ; 0.000         ;
+; HDMI_CLK                                                                          ; 0.653 ; 0.000         ;
 +-----------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -207,10 +207,10 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                             ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------+--------+---------------+
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 3.022  ; 0.000         ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 7.040  ; 0.000         ;
-; FPGA_CLK1_50                                                                      ; 15.106 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 37.347 ; 0.000         ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 3.192  ; 0.000         ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 6.453  ; 0.000         ;
+; FPGA_CLK1_50                                                                      ; 15.607 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 37.841 ; 0.000         ;
 +-----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -219,10 +219,10 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                             ; Slack ; End Point TNS ;
 +-----------------------------------------------------------------------------------+-------+---------------+
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0.821 ; 0.000         ;
-; FPGA_CLK1_50                                                                      ; 1.126 ; 0.000         ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 1.182 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 1.655 ; 0.000         ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0.866 ; 0.000         ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0.934 ; 0.000         ;
+; FPGA_CLK1_50                                                                      ; 1.259 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 1.343 ; 0.000         ;
 +-----------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -233,14 +233,14 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------------------------------+--------+---------------+
 ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]             ; 1.122  ; 0.000         ;
 ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]                   ; 1.666  ; 0.000         ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 1.927  ; 0.000         ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 1.936  ; 0.000         ;
 ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 3.593  ; 0.000         ;
-; spi_sck                                                                           ; 4.206  ; 0.000         ;
-; FPGA_CLK3_50                                                                      ; 8.803  ; 0.000         ;
-; FPGA_CLK1_50                                                                      ; 9.164  ; 0.000         ;
-; FPGA_CLK2_50                                                                      ; 9.175  ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 9.281  ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 18.563 ; 0.000         ;
+; spi_sck                                                                           ; 4.215  ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 8.570  ; 0.000         ;
+; FPGA_CLK3_50                                                                      ; 8.791  ; 0.000         ;
+; FPGA_CLK1_50                                                                      ; 9.167  ; 0.000         ;
+; FPGA_CLK2_50                                                                      ; 9.174  ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 18.559 ; 0.000         ;
 +-----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -250,10 +250,10 @@ HTML report is unavailable in plain text report export.
 Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-Number of Synchronizer Chains Found: 158
+Number of Synchronizer Chains Found: 210
 Shortest Synchronizer Chain: 2 Registers
-Fraction of Chains for which MTBFs Could Not be Calculated: 0.994
-Worst Case Available Settling Time: 7.385 ns
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.995
+Worst Case Available Settling Time: 7.540 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 8.0
@@ -267,14 +267,14 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +------------+-----------------+-----------------------------------------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                                                        ; Note ;
 +------------+-----------------+-----------------------------------------------------------------------------------+------+
-; 64.27 MHz  ; 64.27 MHz       ; FPGA_CLK1_50                                                                      ;      ;
-; 83.5 MHz   ; 83.5 MHz        ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ;      ;
-; 89.97 MHz  ; 89.97 MHz       ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ;      ;
-; 91.41 MHz  ; 91.41 MHz       ; FPGA_CLK3_50                                                                      ;      ;
-; 147.62 MHz ; 147.62 MHz      ; FPGA_CLK2_50                                                                      ;      ;
-; 187.02 MHz ; 187.02 MHz      ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ;      ;
-; 269.25 MHz ; 269.25 MHz      ; spi_sck                                                                           ;      ;
-; 343.05 MHz ; 343.05 MHz      ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ;      ;
+; 59.53 MHz  ; 59.53 MHz       ; FPGA_CLK1_50                                                                      ;      ;
+; 88.65 MHz  ; 88.65 MHz       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ;      ;
+; 89.41 MHz  ; 89.41 MHz       ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ;      ;
+; 94.68 MHz  ; 94.68 MHz       ; FPGA_CLK3_50                                                                      ;      ;
+; 115.69 MHz ; 115.69 MHz      ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ;      ;
+; 149.39 MHz ; 149.39 MHz      ; FPGA_CLK2_50                                                                      ;      ;
+; 180.73 MHz ; 180.73 MHz      ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ;      ;
+; 251.07 MHz ; 251.07 MHz      ; spi_sck                                                                           ;      ;
 +------------+-----------------+-----------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -284,15 +284,15 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                             ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------+--------+---------------+
-; HDMI_CLK                                                                          ; -9.717 ; -108.808      ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -4.383 ; -167.849      ;
-; FPGA_CLK1_50                                                                      ; 4.441  ; 0.000         ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 4.653  ; 0.000         ;
-; FPGA_CLK3_50                                                                      ; 5.181  ; 0.000         ;
-; spi_sck                                                                           ; 6.286  ; 0.000         ;
-; FPGA_CLK2_50                                                                      ; 13.226 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 15.562 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 17.085 ; 0.000         ;
+; HDMI_CLK                                                                          ; -8.987 ; -129.767      ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -4.452 ; -96.518       ;
+; FPGA_CLK1_50                                                                      ; 3.202  ; 0.000         ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 4.467  ; 0.000         ;
+; FPGA_CLK3_50                                                                      ; 5.143  ; 0.000         ;
+; spi_sck                                                                           ; 6.017  ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 10.906 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 11.356 ; 0.000         ;
+; FPGA_CLK2_50                                                                      ; 13.306 ; 0.000         ;
 +-----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -301,15 +301,15 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                             ; Slack ; End Point TNS ;
 +-----------------------------------------------------------------------------------+-------+---------------+
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0.112 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 0.246 ; 0.000         ;
-; FPGA_CLK3_50                                                                      ; 0.262 ; 0.000         ;
-; FPGA_CLK2_50                                                                      ; 0.335 ; 0.000         ;
-; FPGA_CLK1_50                                                                      ; 0.338 ; 0.000         ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0.338 ; 0.000         ;
-; spi_sck                                                                           ; 0.366 ; 0.000         ;
-; HDMI_CLK                                                                          ; 0.718 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 2.017 ; 0.000         ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0.092 ; 0.000         ;
+; FPGA_CLK3_50                                                                      ; 0.244 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 0.253 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 0.309 ; 0.000         ;
+; FPGA_CLK1_50                                                                      ; 0.324 ; 0.000         ;
+; spi_sck                                                                           ; 0.334 ; 0.000         ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0.337 ; 0.000         ;
+; FPGA_CLK2_50                                                                      ; 0.398 ; 0.000         ;
+; HDMI_CLK                                                                          ; 0.854 ; 0.000         ;
 +-----------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -318,10 +318,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                             ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------+--------+---------------+
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 3.212  ; 0.000         ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 7.246  ; 0.000         ;
-; FPGA_CLK1_50                                                                      ; 15.328 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 37.462 ; 0.000         ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 3.373  ; 0.000         ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 6.662  ; 0.000         ;
+; FPGA_CLK1_50                                                                      ; 15.737 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 37.989 ; 0.000         ;
 +-----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -330,10 +330,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                             ; Slack ; End Point TNS ;
 +-----------------------------------------------------------------------------------+-------+---------------+
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0.779 ; 0.000         ;
-; FPGA_CLK1_50                                                                      ; 1.034 ; 0.000         ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 1.081 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 1.608 ; 0.000         ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0.810 ; 0.000         ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0.888 ; 0.000         ;
+; FPGA_CLK1_50                                                                      ; 1.168 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 1.248 ; 0.000         ;
 +-----------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -344,14 +344,14 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------------------------------------------------------+--------+---------------+
 ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]             ; 1.122  ; 0.000         ;
 ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]                   ; 1.666  ; 0.000         ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 1.902  ; 0.000         ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 1.912  ; 0.000         ;
 ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 3.564  ; 0.000         ;
-; spi_sck                                                                           ; 4.221  ; 0.000         ;
-; FPGA_CLK3_50                                                                      ; 8.756  ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 9.205  ; 0.000         ;
-; FPGA_CLK1_50                                                                      ; 9.282  ; 0.000         ;
-; FPGA_CLK2_50                                                                      ; 9.289  ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 18.537 ; 0.000         ;
+; spi_sck                                                                           ; 4.217  ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 8.548  ; 0.000         ;
+; FPGA_CLK3_50                                                                      ; 8.754  ; 0.000         ;
+; FPGA_CLK1_50                                                                      ; 9.281  ; 0.000         ;
+; FPGA_CLK2_50                                                                      ; 9.295  ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 18.540 ; 0.000         ;
 +-----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -361,10 +361,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-Number of Synchronizer Chains Found: 158
+Number of Synchronizer Chains Found: 210
 Shortest Synchronizer Chain: 2 Registers
-Fraction of Chains for which MTBFs Could Not be Calculated: 0.994
-Worst Case Available Settling Time: 7.584 ns
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.995
+Worst Case Available Settling Time: 7.759 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.7
@@ -378,15 +378,15 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +-----------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                             ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------+--------+---------------+
-; HDMI_CLK                                                                          ; -7.545 ; -85.021       ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 1.241  ; 0.000         ;
-; FPGA_CLK3_50                                                                      ; 5.910  ; 0.000         ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 7.022  ; 0.000         ;
-; spi_sck                                                                           ; 8.086  ; 0.000         ;
-; FPGA_CLK1_50                                                                      ; 10.638 ; 0.000         ;
-; FPGA_CLK2_50                                                                      ; 16.789 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 17.186 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 18.526 ; 0.000         ;
+; HDMI_CLK                                                                          ; -6.820 ; -93.896       ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 1.307  ; 0.000         ;
+; FPGA_CLK3_50                                                                      ; 5.862  ; 0.000         ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 6.765  ; 0.000         ;
+; spi_sck                                                                           ; 7.854  ; 0.000         ;
+; FPGA_CLK1_50                                                                      ; 9.791  ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 14.016 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 14.347 ; 0.000         ;
+; FPGA_CLK2_50                                                                      ; 16.818 ; 0.000         ;
 +-----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -395,15 +395,15 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +-----------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                             ; Slack ; End Point TNS ;
 +-----------------------------------------------------------------------------------+-------+---------------+
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 0.090 ; 0.000         ;
-; FPGA_CLK3_50                                                                      ; 0.155 ; 0.000         ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0.159 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 0.099 ; 0.000         ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0.160 ; 0.000         ;
 ; FPGA_CLK1_50                                                                      ; 0.178 ; 0.000         ;
+; FPGA_CLK3_50                                                                      ; 0.179 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 0.180 ; 0.000         ;
 ; FPGA_CLK2_50                                                                      ; 0.181 ; 0.000         ;
-; spi_sck                                                                           ; 0.200 ; 0.000         ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0.202 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 1.079 ; 0.000         ;
-; HDMI_CLK                                                                          ; 2.028 ; 0.000         ;
+; spi_sck                                                                           ; 0.186 ; 0.000         ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0.187 ; 0.000         ;
+; HDMI_CLK                                                                          ; 1.953 ; 0.000         ;
 +-----------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -412,10 +412,10 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +-----------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                             ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------+--------+---------------+
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 4.472  ; 0.000         ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 8.188  ; 0.000         ;
-; FPGA_CLK1_50                                                                      ; 17.077 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 38.398 ; 0.000         ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 4.542  ; 0.000         ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 7.861  ; 0.000         ;
+; FPGA_CLK1_50                                                                      ; 17.507 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 38.702 ; 0.000         ;
 +-----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -424,10 +424,10 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +-----------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                             ; Slack ; End Point TNS ;
 +-----------------------------------------------------------------------------------+-------+---------------+
-; FPGA_CLK1_50                                                                      ; 0.561 ; 0.000         ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0.624 ; 0.000         ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0.643 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 0.847 ; 0.000         ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0.398 ; 0.000         ;
+; FPGA_CLK1_50                                                                      ; 0.632 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 0.688 ; 0.000         ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0.713 ; 0.000         ;
 +-----------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -438,14 +438,14 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +-----------------------------------------------------------------------------------+--------+---------------+
 ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]             ; 1.122  ; 0.000         ;
 ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]                   ; 1.666  ; 0.000         ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 2.239  ; 0.000         ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 3.899  ; 0.000         ;
-; spi_sck                                                                           ; 4.580  ; 0.000         ;
-; FPGA_CLK3_50                                                                      ; 8.521  ; 0.000         ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 2.244  ; 0.000         ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 3.900  ; 0.000         ;
+; spi_sck                                                                           ; 4.575  ; 0.000         ;
+; FPGA_CLK3_50                                                                      ; 8.526  ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 8.878  ; 0.000         ;
 ; FPGA_CLK1_50                                                                      ; 9.104  ; 0.000         ;
-; FPGA_CLK2_50                                                                      ; 9.108  ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 9.553  ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 18.880 ; 0.000         ;
+; FPGA_CLK2_50                                                                      ; 9.107  ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 18.878 ; 0.000         ;
 +-----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -455,10 +455,10 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-Number of Synchronizer Chains Found: 158
+Number of Synchronizer Chains Found: 210
 Shortest Synchronizer Chain: 2 Registers
-Fraction of Chains for which MTBFs Could Not be Calculated: 0.994
-Worst Case Available Settling Time: 8.397 ns
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.995
+Worst Case Available Settling Time: 8.470 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 8.0
@@ -472,15 +472,15 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +-----------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                             ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------+--------+---------------+
-; HDMI_CLK                                                                          ; -7.099 ; -82.092       ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 1.519  ; 0.000         ;
-; FPGA_CLK3_50                                                                      ; 6.886  ; 0.000         ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 7.382  ; 0.000         ;
-; spi_sck                                                                           ; 8.366  ; 0.000         ;
-; FPGA_CLK1_50                                                                      ; 11.781 ; 0.000         ;
-; FPGA_CLK2_50                                                                      ; 17.100 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 17.619 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 18.699 ; 0.000         ;
+; HDMI_CLK                                                                          ; -6.534 ; -87.988       ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 1.629  ; 0.000         ;
+; FPGA_CLK3_50                                                                      ; 6.851  ; 0.000         ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 7.222  ; 0.000         ;
+; spi_sck                                                                           ; 8.185  ; 0.000         ;
+; FPGA_CLK1_50                                                                      ; 11.014 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 15.049 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 15.460 ; 0.000         ;
+; FPGA_CLK2_50                                                                      ; 17.151 ; 0.000         ;
 +-----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -489,15 +489,15 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +-----------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                             ; Slack ; End Point TNS ;
 +-----------------------------------------------------------------------------------+-------+---------------+
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 0.072 ; 0.000         ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0.108 ; 0.000         ;
-; FPGA_CLK3_50                                                                      ; 0.133 ; 0.000         ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0.140 ; 0.000         ;
-; FPGA_CLK2_50                                                                      ; 0.160 ; 0.000         ;
-; FPGA_CLK1_50                                                                      ; 0.165 ; 0.000         ;
-; spi_sck                                                                           ; 0.176 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 0.933 ; 0.000         ;
-; HDMI_CLK                                                                          ; 2.028 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 0.079 ; 0.000         ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0.095 ; 0.000         ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0.133 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 0.155 ; 0.000         ;
+; FPGA_CLK1_50                                                                      ; 0.158 ; 0.000         ;
+; spi_sck                                                                           ; 0.163 ; 0.000         ;
+; FPGA_CLK3_50                                                                      ; 0.167 ; 0.000         ;
+; FPGA_CLK2_50                                                                      ; 0.171 ; 0.000         ;
+; HDMI_CLK                                                                          ; 1.912 ; 0.000         ;
 +-----------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -506,10 +506,10 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +-----------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                             ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------------+--------+---------------+
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 4.835  ; 0.000         ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 8.551  ; 0.000         ;
-; FPGA_CLK1_50                                                                      ; 17.556 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 38.641 ; 0.000         ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 4.944  ; 0.000         ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 8.243  ; 0.000         ;
+; FPGA_CLK1_50                                                                      ; 17.878 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 38.888 ; 0.000         ;
 +-----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -518,10 +518,10 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +-----------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                             ; Slack ; End Point TNS ;
 +-----------------------------------------------------------------------------------+-------+---------------+
-; FPGA_CLK1_50                                                                      ; 0.485 ; 0.000         ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0.501 ; 0.000         ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0.508 ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 0.734 ; 0.000         ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0.344 ; 0.000         ;
+; FPGA_CLK1_50                                                                      ; 0.515 ; 0.000         ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0.568 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 0.587 ; 0.000         ;
 +-----------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -532,14 +532,14 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +-----------------------------------------------------------------------------------+--------+---------------+
 ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]             ; 1.122  ; 0.000         ;
 ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]                   ; 1.666  ; 0.000         ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 2.249  ; 0.000         ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 2.253  ; 0.000         ;
 ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 3.903  ; 0.000         ;
-; spi_sck                                                                           ; 4.569  ; 0.000         ;
-; FPGA_CLK3_50                                                                      ; 8.449  ; 0.000         ;
+; spi_sck                                                                           ; 4.566  ; 0.000         ;
+; FPGA_CLK3_50                                                                      ; 8.452  ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 8.888  ; 0.000         ;
 ; FPGA_CLK1_50                                                                      ; 9.045  ; 0.000         ;
 ; FPGA_CLK2_50                                                                      ; 9.048  ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 9.546  ; 0.000         ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 18.885 ; 0.000         ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 18.882 ; 0.000         ;
 +-----------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -549,10 +549,10 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-Number of Synchronizer Chains Found: 158
+Number of Synchronizer Chains Found: 210
 Shortest Synchronizer Chain: 2 Registers
-Fraction of Chains for which MTBFs Could Not be Calculated: 0.994
-Worst Case Available Settling Time: 8.745 ns
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.995
+Worst Case Available Settling Time: 8.809 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.7
@@ -566,27 +566,27 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +------------------------------------------------------------------------------------+----------+-------+----------+---------+---------------------+
 ; Clock                                                                              ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------------------------------------------------------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack                                                                   ; -10.059  ; 0.072 ; 3.022    ; 0.485   ; 1.122               ;
-;  FPGA_CLK1_50                                                                      ; 4.369    ; 0.165 ; 15.106   ; 0.485   ; 9.045               ;
-;  FPGA_CLK2_50                                                                      ; 13.226   ; 0.160 ; N/A      ; N/A     ; 9.048               ;
-;  FPGA_CLK3_50                                                                      ; 4.637    ; 0.133 ; N/A      ; N/A     ; 8.449               ;
-;  HDMI_CLK                                                                          ; -10.059  ; 0.718 ; N/A      ; N/A     ; N/A                 ;
-;  emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 17.085   ; 0.933 ; N/A      ; N/A     ; 9.205               ;
-;  emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 15.491   ; 0.072 ; 37.347   ; 0.734   ; 18.537              ;
+; Worst-case Slack                                                                   ; -9.298   ; 0.079 ; 3.192    ; 0.344   ; 1.122               ;
+;  FPGA_CLK1_50                                                                      ; 3.059    ; 0.158 ; 15.607   ; 0.515   ; 9.045               ;
+;  FPGA_CLK2_50                                                                      ; 13.306   ; 0.171 ; N/A      ; N/A     ; 9.048               ;
+;  FPGA_CLK3_50                                                                      ; 4.561    ; 0.167 ; N/A      ; N/A     ; 8.452               ;
+;  HDMI_CLK                                                                          ; -9.298   ; 0.653 ; N/A      ; N/A     ; N/A                 ;
+;  emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 10.856   ; 0.155 ; N/A      ; N/A     ; 8.548               ;
+;  emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 10.582   ; 0.079 ; 37.841   ; 0.587   ; 18.540              ;
 ;  emu|pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]                   ; N/A      ; N/A   ; N/A      ; N/A     ; 1.666               ;
-;  pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -4.383   ; 0.108 ; 3.022    ; 0.508   ; 1.902               ;
+;  pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -4.452   ; 0.092 ; 3.192    ; 0.568   ; 1.912               ;
 ;  pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]             ; N/A      ; N/A   ; N/A      ; N/A     ; 1.122               ;
-;  spi_sck                                                                           ; 6.220    ; 0.176 ; N/A      ; N/A     ; 4.206               ;
-;  sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 4.653    ; 0.140 ; 7.040    ; 0.501   ; 3.564               ;
-; Design-wide TNS                                                                    ; -285.135 ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  spi_sck                                                                           ; 5.891    ; 0.163 ; N/A      ; N/A     ; 4.215               ;
+;  sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 4.308    ; 0.133 ; 6.453    ; 0.344   ; 3.564               ;
+; Design-wide TNS                                                                    ; -254.389 ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  FPGA_CLK1_50                                                                      ; 0.000    ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
 ;  FPGA_CLK2_50                                                                      ; 0.000    ; 0.000 ; N/A      ; N/A     ; 0.000               ;
 ;  FPGA_CLK3_50                                                                      ; 0.000    ; 0.000 ; N/A      ; N/A     ; 0.000               ;
-;  HDMI_CLK                                                                          ; -111.741 ; 0.000 ; N/A      ; N/A     ; N/A                 ;
+;  HDMI_CLK                                                                          ; -133.894 ; 0.000 ; N/A      ; N/A     ; N/A                 ;
 ;  emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 0.000    ; 0.000 ; N/A      ; N/A     ; 0.000               ;
 ;  emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 0.000    ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
 ;  emu|pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]                   ; N/A      ; N/A   ; N/A      ; N/A     ; 0.000               ;
-;  pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -173.394 ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
+;  pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; -120.495 ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
 ;  pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]             ; N/A      ; N/A   ; N/A      ; N/A     ; 0.000               ;
 ;  spi_sck                                                                           ; 0.000    ; 0.000 ; N/A      ; N/A     ; 0.000               ;
 ;  sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0.000    ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
@@ -704,6 +704,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; USER_IO[2]    ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; USER_IO[4]    ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; USER_IO[5]    ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; SDIO_DAT[0]   ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; SDRAM_DQ[0]   ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; SDRAM_DQ[1]   ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; SDRAM_DQ[2]   ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
@@ -720,7 +721,6 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; SDRAM_DQ[13]  ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; SDRAM_DQ[14]  ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; SDRAM_DQ[15]  ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; SDIO_DAT[0]   ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; SDIO_DAT[1]   ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; SDIO_DAT[2]   ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; USER_IO[0]    ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
@@ -747,6 +747,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; USER_IO[2]   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; USER_IO[4]   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; USER_IO[5]   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SDIO_DAT[0]  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SDRAM_DQ[0]  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SDRAM_DQ[1]  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SDRAM_DQ[2]  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
@@ -763,7 +764,6 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; SDRAM_DQ[13] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SDRAM_DQ[14] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SDRAM_DQ[15] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SDIO_DAT[0]  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SDIO_DAT[1]  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SDIO_DAT[2]  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; USER_IO[0]   ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
@@ -897,6 +897,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; USER_IO[2]    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.91e-08 V                   ; 3.17 V              ; -0.306 V            ; 0.142 V                              ; 0.425 V                              ; 4.17e-10 s                  ; 1.36e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 1.91e-08 V                  ; 3.17 V             ; -0.306 V           ; 0.142 V                             ; 0.425 V                             ; 4.17e-10 s                 ; 1.36e-10 s                 ; Yes                       ; No                        ;
 ; USER_IO[4]    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.47e-08 V                   ; 3.11 V              ; -0.195 V            ; 0.108 V                              ; 0.32 V                               ; 4.03e-10 s                  ; 1.44e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 1.47e-08 V                  ; 3.11 V             ; -0.195 V           ; 0.108 V                             ; 0.32 V                              ; 4.03e-10 s                 ; 1.44e-10 s                 ; Yes                       ; No                        ;
 ; USER_IO[5]    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2e-08 V                      ; 3.17 V              ; -0.245 V            ; 0.166 V                              ; 0.398 V                              ; 4.33e-10 s                  ; 1.46e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2e-08 V                     ; 3.17 V             ; -0.245 V           ; 0.166 V                             ; 0.398 V                             ; 4.33e-10 s                 ; 1.46e-10 s                 ; Yes                       ; No                        ;
+; SDIO_DAT[0]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2e-08 V                      ; 3.17 V              ; -0.245 V            ; 0.166 V                              ; 0.398 V                              ; 4.33e-10 s                  ; 1.46e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2e-08 V                     ; 3.17 V             ; -0.245 V           ; 0.166 V                             ; 0.398 V                             ; 4.33e-10 s                 ; 1.46e-10 s                 ; Yes                       ; No                        ;
 ; SDRAM_DQ[0]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.91e-08 V                   ; 3.17 V              ; -0.306 V            ; 0.142 V                              ; 0.425 V                              ; 4.17e-10 s                  ; 1.36e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 1.91e-08 V                  ; 3.17 V             ; -0.306 V           ; 0.142 V                             ; 0.425 V                             ; 4.17e-10 s                 ; 1.36e-10 s                 ; Yes                       ; No                        ;
 ; SDRAM_DQ[1]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2e-08 V                      ; 3.17 V              ; -0.245 V            ; 0.166 V                              ; 0.398 V                              ; 4.33e-10 s                  ; 1.46e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2e-08 V                     ; 3.17 V             ; -0.245 V           ; 0.166 V                             ; 0.398 V                             ; 4.33e-10 s                 ; 1.46e-10 s                 ; Yes                       ; No                        ;
 ; SDRAM_DQ[2]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.47e-08 V                   ; 3.11 V              ; -0.195 V            ; 0.108 V                              ; 0.32 V                               ; 4.03e-10 s                  ; 1.44e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 1.47e-08 V                  ; 3.11 V             ; -0.195 V           ; 0.108 V                             ; 0.32 V                              ; 4.03e-10 s                 ; 1.44e-10 s                 ; Yes                       ; No                        ;
@@ -913,7 +914,6 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; SDRAM_DQ[13]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.91e-08 V                   ; 3.17 V              ; -0.306 V            ; 0.142 V                              ; 0.425 V                              ; 4.17e-10 s                  ; 1.36e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 1.91e-08 V                  ; 3.17 V             ; -0.306 V           ; 0.142 V                             ; 0.425 V                             ; 4.17e-10 s                 ; 1.36e-10 s                 ; Yes                       ; No                        ;
 ; SDRAM_DQ[14]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.91e-08 V                   ; 3.17 V              ; -0.311 V            ; 0.143 V                              ; 0.424 V                              ; 4.17e-10 s                  ; 1.36e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 1.91e-08 V                  ; 3.17 V             ; -0.311 V           ; 0.143 V                             ; 0.424 V                             ; 4.17e-10 s                 ; 1.36e-10 s                 ; Yes                       ; No                        ;
 ; SDRAM_DQ[15]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.91e-08 V                   ; 3.17 V              ; -0.306 V            ; 0.142 V                              ; 0.425 V                              ; 4.17e-10 s                  ; 1.36e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 1.91e-08 V                  ; 3.17 V             ; -0.306 V           ; 0.142 V                             ; 0.425 V                             ; 4.17e-10 s                 ; 1.36e-10 s                 ; Yes                       ; No                        ;
-; SDIO_DAT[0]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2e-08 V                      ; 3.17 V              ; -0.245 V            ; 0.166 V                              ; 0.398 V                              ; 4.33e-10 s                  ; 1.46e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2e-08 V                     ; 3.17 V             ; -0.245 V           ; 0.166 V                             ; 0.398 V                             ; 4.33e-10 s                 ; 1.46e-10 s                 ; Yes                       ; No                        ;
 ; SDIO_DAT[1]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.47e-08 V                   ; 3.11 V              ; -0.195 V            ; 0.108 V                              ; 0.32 V                               ; 4.03e-10 s                  ; 1.44e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 1.47e-08 V                  ; 3.11 V             ; -0.195 V           ; 0.108 V                             ; 0.32 V                              ; 4.03e-10 s                 ; 1.44e-10 s                 ; Yes                       ; No                        ;
 ; SDIO_DAT[2]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.91e-08 V                   ; 3.17 V              ; -0.311 V            ; 0.143 V                              ; 0.424 V                              ; 4.17e-10 s                  ; 1.36e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 1.91e-08 V                  ; 3.17 V             ; -0.311 V           ; 0.143 V                             ; 0.424 V                             ; 4.17e-10 s                 ; 1.36e-10 s                 ; Yes                       ; No                        ;
 ; USER_IO[0]    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.91e-08 V                   ; 3.17 V              ; -0.306 V            ; 0.142 V                              ; 0.425 V                              ; 4.17e-10 s                  ; 1.36e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 1.91e-08 V                  ; 3.17 V             ; -0.306 V           ; 0.142 V                             ; 0.425 V                             ; 4.17e-10 s                 ; 1.36e-10 s                 ; Yes                       ; No                        ;
@@ -1034,6 +1034,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; USER_IO[2]    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-05 V                   ; 3.11 V              ; -0.104 V            ; 0.101 V                              ; 0.139 V                              ; 5.54e-10 s                  ; 3.16e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-05 V                  ; 3.11 V             ; -0.104 V           ; 0.101 V                             ; 0.139 V                             ; 5.54e-10 s                 ; 3.16e-10 s                 ; Yes                       ; Yes                       ;
 ; USER_IO[4]    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.09e-05 V                   ; 3.09 V              ; -0.0462 V           ; 0.045 V                              ; 0.085 V                              ; 5.49e-10 s                  ; 3.06e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.09e-05 V                  ; 3.09 V             ; -0.0462 V          ; 0.045 V                             ; 0.085 V                             ; 5.49e-10 s                 ; 3.06e-10 s                 ; Yes                       ; Yes                       ;
 ; USER_IO[5]    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.87e-05 V                   ; 3.11 V              ; -0.0814 V           ; 0.131 V                              ; 0.136 V                              ; 5.88e-10 s                  ; 3.2e-10 s                   ; Yes                        ; Yes                        ; 3.08 V                      ; 3.87e-05 V                  ; 3.11 V             ; -0.0814 V          ; 0.131 V                             ; 0.136 V                             ; 5.88e-10 s                 ; 3.2e-10 s                  ; Yes                       ; Yes                       ;
+; SDIO_DAT[0]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.87e-05 V                   ; 3.11 V              ; -0.0814 V           ; 0.131 V                              ; 0.136 V                              ; 5.88e-10 s                  ; 3.2e-10 s                   ; Yes                        ; Yes                        ; 3.08 V                      ; 3.87e-05 V                  ; 3.11 V             ; -0.0814 V          ; 0.131 V                             ; 0.136 V                             ; 5.88e-10 s                 ; 3.2e-10 s                  ; Yes                       ; Yes                       ;
 ; SDRAM_DQ[0]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-05 V                   ; 3.11 V              ; -0.104 V            ; 0.101 V                              ; 0.139 V                              ; 5.54e-10 s                  ; 3.16e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-05 V                  ; 3.11 V             ; -0.104 V           ; 0.101 V                             ; 0.139 V                             ; 5.54e-10 s                 ; 3.16e-10 s                 ; Yes                       ; Yes                       ;
 ; SDRAM_DQ[1]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.87e-05 V                   ; 3.11 V              ; -0.0814 V           ; 0.131 V                              ; 0.136 V                              ; 5.88e-10 s                  ; 3.2e-10 s                   ; Yes                        ; Yes                        ; 3.08 V                      ; 3.87e-05 V                  ; 3.11 V             ; -0.0814 V          ; 0.131 V                             ; 0.136 V                             ; 5.88e-10 s                 ; 3.2e-10 s                  ; Yes                       ; Yes                       ;
 ; SDRAM_DQ[2]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.09e-05 V                   ; 3.09 V              ; -0.0462 V           ; 0.045 V                              ; 0.085 V                              ; 5.49e-10 s                  ; 3.06e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.09e-05 V                  ; 3.09 V             ; -0.0462 V          ; 0.045 V                             ; 0.085 V                             ; 5.49e-10 s                 ; 3.06e-10 s                 ; Yes                       ; Yes                       ;
@@ -1050,7 +1051,6 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; SDRAM_DQ[13]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-05 V                   ; 3.11 V              ; -0.104 V            ; 0.101 V                              ; 0.139 V                              ; 5.54e-10 s                  ; 3.16e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-05 V                  ; 3.11 V             ; -0.104 V           ; 0.101 V                             ; 0.139 V                             ; 5.54e-10 s                 ; 3.16e-10 s                 ; Yes                       ; Yes                       ;
 ; SDRAM_DQ[14]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-05 V                   ; 3.11 V              ; -0.105 V            ; 0.101 V                              ; 0.142 V                              ; 5.54e-10 s                  ; 3.16e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-05 V                  ; 3.11 V             ; -0.105 V           ; 0.101 V                             ; 0.142 V                             ; 5.54e-10 s                 ; 3.16e-10 s                 ; Yes                       ; Yes                       ;
 ; SDRAM_DQ[15]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-05 V                   ; 3.11 V              ; -0.104 V            ; 0.101 V                              ; 0.139 V                              ; 5.54e-10 s                  ; 3.16e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-05 V                  ; 3.11 V             ; -0.104 V           ; 0.101 V                             ; 0.139 V                             ; 5.54e-10 s                 ; 3.16e-10 s                 ; Yes                       ; Yes                       ;
-; SDIO_DAT[0]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.87e-05 V                   ; 3.11 V              ; -0.0814 V           ; 0.131 V                              ; 0.136 V                              ; 5.88e-10 s                  ; 3.2e-10 s                   ; Yes                        ; Yes                        ; 3.08 V                      ; 3.87e-05 V                  ; 3.11 V             ; -0.0814 V          ; 0.131 V                             ; 0.136 V                             ; 5.88e-10 s                 ; 3.2e-10 s                  ; Yes                       ; Yes                       ;
 ; SDIO_DAT[1]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.09e-05 V                   ; 3.09 V              ; -0.0462 V           ; 0.045 V                              ; 0.085 V                              ; 5.49e-10 s                  ; 3.06e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.09e-05 V                  ; 3.09 V             ; -0.0462 V          ; 0.045 V                             ; 0.085 V                             ; 5.49e-10 s                 ; 3.06e-10 s                 ; Yes                       ; Yes                       ;
 ; SDIO_DAT[2]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-05 V                   ; 3.11 V              ; -0.105 V            ; 0.101 V                              ; 0.142 V                              ; 5.54e-10 s                  ; 3.16e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-05 V                  ; 3.11 V             ; -0.105 V           ; 0.101 V                             ; 0.142 V                             ; 5.54e-10 s                 ; 3.16e-10 s                 ; Yes                       ; Yes                       ;
 ; USER_IO[0]    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 3.73e-05 V                   ; 3.11 V              ; -0.104 V            ; 0.101 V                              ; 0.139 V                              ; 5.54e-10 s                  ; 3.16e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 3.73e-05 V                  ; 3.11 V             ; -0.104 V           ; 0.101 V                             ; 0.139 V                             ; 5.54e-10 s                 ; 3.16e-10 s                 ; Yes                       ; Yes                       ;
@@ -1171,6 +1171,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; USER_IO[2]    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.42e-07 V                   ; 3.75 V              ; -0.588 V            ; 0.329 V                              ; 0.704 V                              ; 2.77e-10 s                  ; 1.3e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 4.42e-07 V                  ; 3.75 V             ; -0.588 V           ; 0.329 V                             ; 0.704 V                             ; 2.77e-10 s                 ; 1.3e-10 s                  ; Yes                       ; No                        ;
 ; USER_IO[4]    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 3.38e-07 V                   ; 3.67 V              ; -0.403 V            ; 0.084 V                              ; 0.542 V                              ; 3.5e-10 s                   ; 1.32e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 3.38e-07 V                  ; 3.67 V             ; -0.403 V           ; 0.084 V                             ; 0.542 V                             ; 3.5e-10 s                  ; 1.32e-10 s                 ; Yes                       ; No                        ;
 ; USER_IO[5]    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.64e-07 V                   ; 3.74 V              ; -0.508 V            ; 0.391 V                              ; 0.647 V                              ; 3.08e-10 s                  ; 1.34e-10 s                  ; No                         ; No                         ; 3.63 V                      ; 4.64e-07 V                  ; 3.74 V             ; -0.508 V           ; 0.391 V                             ; 0.647 V                             ; 3.08e-10 s                 ; 1.34e-10 s                 ; No                        ; No                        ;
+; SDIO_DAT[0]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.64e-07 V                   ; 3.74 V              ; -0.508 V            ; 0.391 V                              ; 0.647 V                              ; 3.08e-10 s                  ; 1.34e-10 s                  ; No                         ; No                         ; 3.63 V                      ; 4.64e-07 V                  ; 3.74 V             ; -0.508 V           ; 0.391 V                             ; 0.647 V                             ; 3.08e-10 s                 ; 1.34e-10 s                 ; No                        ; No                        ;
 ; SDRAM_DQ[0]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.42e-07 V                   ; 3.75 V              ; -0.588 V            ; 0.329 V                              ; 0.704 V                              ; 2.77e-10 s                  ; 1.3e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 4.42e-07 V                  ; 3.75 V             ; -0.588 V           ; 0.329 V                             ; 0.704 V                             ; 2.77e-10 s                 ; 1.3e-10 s                  ; Yes                       ; No                        ;
 ; SDRAM_DQ[1]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.64e-07 V                   ; 3.74 V              ; -0.508 V            ; 0.391 V                              ; 0.647 V                              ; 3.08e-10 s                  ; 1.34e-10 s                  ; No                         ; No                         ; 3.63 V                      ; 4.64e-07 V                  ; 3.74 V             ; -0.508 V           ; 0.391 V                             ; 0.647 V                             ; 3.08e-10 s                 ; 1.34e-10 s                 ; No                        ; No                        ;
 ; SDRAM_DQ[2]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 3.38e-07 V                   ; 3.67 V              ; -0.403 V            ; 0.084 V                              ; 0.542 V                              ; 3.5e-10 s                   ; 1.32e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 3.38e-07 V                  ; 3.67 V             ; -0.403 V           ; 0.084 V                             ; 0.542 V                             ; 3.5e-10 s                  ; 1.32e-10 s                 ; Yes                       ; No                        ;
@@ -1187,7 +1188,6 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; SDRAM_DQ[13]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.42e-07 V                   ; 3.75 V              ; -0.588 V            ; 0.329 V                              ; 0.704 V                              ; 2.77e-10 s                  ; 1.3e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 4.42e-07 V                  ; 3.75 V             ; -0.588 V           ; 0.329 V                             ; 0.704 V                             ; 2.77e-10 s                 ; 1.3e-10 s                  ; Yes                       ; No                        ;
 ; SDRAM_DQ[14]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.42e-07 V                   ; 3.75 V              ; -0.589 V            ; 0.329 V                              ; 0.706 V                              ; 2.77e-10 s                  ; 1.3e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 4.42e-07 V                  ; 3.75 V             ; -0.589 V           ; 0.329 V                             ; 0.706 V                             ; 2.77e-10 s                 ; 1.3e-10 s                  ; Yes                       ; No                        ;
 ; SDRAM_DQ[15]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.42e-07 V                   ; 3.75 V              ; -0.588 V            ; 0.329 V                              ; 0.704 V                              ; 2.77e-10 s                  ; 1.3e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 4.42e-07 V                  ; 3.75 V             ; -0.588 V           ; 0.329 V                             ; 0.704 V                             ; 2.77e-10 s                 ; 1.3e-10 s                  ; Yes                       ; No                        ;
-; SDIO_DAT[0]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.64e-07 V                   ; 3.74 V              ; -0.508 V            ; 0.391 V                              ; 0.647 V                              ; 3.08e-10 s                  ; 1.34e-10 s                  ; No                         ; No                         ; 3.63 V                      ; 4.64e-07 V                  ; 3.74 V             ; -0.508 V           ; 0.391 V                             ; 0.647 V                             ; 3.08e-10 s                 ; 1.34e-10 s                 ; No                        ; No                        ;
 ; SDIO_DAT[1]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 3.38e-07 V                   ; 3.67 V              ; -0.403 V            ; 0.084 V                              ; 0.542 V                              ; 3.5e-10 s                   ; 1.32e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 3.38e-07 V                  ; 3.67 V             ; -0.403 V           ; 0.084 V                             ; 0.542 V                             ; 3.5e-10 s                  ; 1.32e-10 s                 ; Yes                       ; No                        ;
 ; SDIO_DAT[2]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.42e-07 V                   ; 3.75 V              ; -0.589 V            ; 0.329 V                              ; 0.706 V                              ; 2.77e-10 s                  ; 1.3e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 4.42e-07 V                  ; 3.75 V             ; -0.589 V           ; 0.329 V                             ; 0.706 V                             ; 2.77e-10 s                 ; 1.3e-10 s                  ; Yes                       ; No                        ;
 ; USER_IO[0]    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.42e-07 V                   ; 3.75 V              ; -0.588 V            ; 0.329 V                              ; 0.704 V                              ; 2.77e-10 s                  ; 1.3e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 4.42e-07 V                  ; 3.75 V             ; -0.588 V           ; 0.329 V                             ; 0.704 V                             ; 2.77e-10 s                 ; 1.3e-10 s                  ; Yes                       ; No                        ;
@@ -1308,6 +1308,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; USER_IO[2]    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000379 V                   ; 3.65 V              ; -0.289 V            ; 0.051 V                              ; 0.523 V                              ; 4.36e-10 s                  ; 1.95e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000379 V                  ; 3.65 V             ; -0.289 V           ; 0.051 V                             ; 0.523 V                             ; 4.36e-10 s                 ; 1.95e-10 s                 ; Yes                       ; No                        ;
 ; USER_IO[4]    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000307 V                   ; 3.64 V              ; -0.165 V            ; 0.022 V                              ; 0.425 V                              ; 4.58e-10 s                  ; 2e-10 s                     ; Yes                        ; No                         ; 3.63 V                      ; 0.000307 V                  ; 3.64 V             ; -0.165 V           ; 0.022 V                             ; 0.425 V                             ; 4.58e-10 s                 ; 2e-10 s                    ; Yes                       ; No                        ;
 ; USER_IO[5]    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000395 V                   ; 3.65 V              ; -0.232 V            ; 0.065 V                              ; 0.547 V                              ; 4.68e-10 s                  ; 2.07e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000395 V                  ; 3.65 V             ; -0.232 V           ; 0.065 V                             ; 0.547 V                             ; 4.68e-10 s                 ; 2.07e-10 s                 ; Yes                       ; No                        ;
+; SDIO_DAT[0]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000395 V                   ; 3.65 V              ; -0.232 V            ; 0.065 V                              ; 0.547 V                              ; 4.68e-10 s                  ; 2.07e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000395 V                  ; 3.65 V             ; -0.232 V           ; 0.065 V                             ; 0.547 V                             ; 4.68e-10 s                 ; 2.07e-10 s                 ; Yes                       ; No                        ;
 ; SDRAM_DQ[0]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000379 V                   ; 3.65 V              ; -0.289 V            ; 0.051 V                              ; 0.523 V                              ; 4.36e-10 s                  ; 1.95e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000379 V                  ; 3.65 V             ; -0.289 V           ; 0.051 V                             ; 0.523 V                             ; 4.36e-10 s                 ; 1.95e-10 s                 ; Yes                       ; No                        ;
 ; SDRAM_DQ[1]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000395 V                   ; 3.65 V              ; -0.232 V            ; 0.065 V                              ; 0.547 V                              ; 4.68e-10 s                  ; 2.07e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000395 V                  ; 3.65 V             ; -0.232 V           ; 0.065 V                             ; 0.547 V                             ; 4.68e-10 s                 ; 2.07e-10 s                 ; Yes                       ; No                        ;
 ; SDRAM_DQ[2]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000307 V                   ; 3.64 V              ; -0.165 V            ; 0.022 V                              ; 0.425 V                              ; 4.58e-10 s                  ; 2e-10 s                     ; Yes                        ; No                         ; 3.63 V                      ; 0.000307 V                  ; 3.64 V             ; -0.165 V           ; 0.022 V                             ; 0.425 V                             ; 4.58e-10 s                 ; 2e-10 s                    ; Yes                       ; No                        ;
@@ -1324,7 +1325,6 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; SDRAM_DQ[13]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000379 V                   ; 3.65 V              ; -0.289 V            ; 0.051 V                              ; 0.523 V                              ; 4.36e-10 s                  ; 1.95e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000379 V                  ; 3.65 V             ; -0.289 V           ; 0.051 V                             ; 0.523 V                             ; 4.36e-10 s                 ; 1.95e-10 s                 ; Yes                       ; No                        ;
 ; SDRAM_DQ[14]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000379 V                   ; 3.65 V              ; -0.292 V            ; 0.053 V                              ; 0.524 V                              ; 4.36e-10 s                  ; 1.95e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000379 V                  ; 3.65 V             ; -0.292 V           ; 0.053 V                             ; 0.524 V                             ; 4.36e-10 s                 ; 1.95e-10 s                 ; Yes                       ; No                        ;
 ; SDRAM_DQ[15]  ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000379 V                   ; 3.65 V              ; -0.289 V            ; 0.051 V                              ; 0.523 V                              ; 4.36e-10 s                  ; 1.95e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000379 V                  ; 3.65 V             ; -0.289 V           ; 0.051 V                             ; 0.523 V                             ; 4.36e-10 s                 ; 1.95e-10 s                 ; Yes                       ; No                        ;
-; SDIO_DAT[0]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000395 V                   ; 3.65 V              ; -0.232 V            ; 0.065 V                              ; 0.547 V                              ; 4.68e-10 s                  ; 2.07e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000395 V                  ; 3.65 V             ; -0.232 V           ; 0.065 V                             ; 0.547 V                             ; 4.68e-10 s                 ; 2.07e-10 s                 ; Yes                       ; No                        ;
 ; SDIO_DAT[1]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000307 V                   ; 3.64 V              ; -0.165 V            ; 0.022 V                              ; 0.425 V                              ; 4.58e-10 s                  ; 2e-10 s                     ; Yes                        ; No                         ; 3.63 V                      ; 0.000307 V                  ; 3.64 V             ; -0.165 V           ; 0.022 V                             ; 0.425 V                             ; 4.58e-10 s                 ; 2e-10 s                    ; Yes                       ; No                        ;
 ; SDIO_DAT[2]   ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000379 V                   ; 3.65 V              ; -0.292 V            ; 0.053 V                              ; 0.524 V                              ; 4.36e-10 s                  ; 1.95e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000379 V                  ; 3.65 V             ; -0.292 V           ; 0.053 V                             ; 0.524 V                             ; 4.36e-10 s                 ; 1.95e-10 s                 ; Yes                       ; No                        ;
 ; USER_IO[0]    ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000379 V                   ; 3.65 V              ; -0.289 V            ; 0.051 V                              ; 0.523 V                              ; 4.36e-10 s                  ; 1.95e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000379 V                  ; 3.65 V             ; -0.289 V           ; 0.051 V                             ; 0.523 V                             ; 4.36e-10 s                 ; 1.95e-10 s                 ; Yes                       ; No                        ;
@@ -1334,69 +1334,89 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Setup Transfers                                                                                                                                                                                                         ;
-+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------+------------+------------+----------+
-; From Clock                                                                        ; To Clock                                                                          ; RR Paths   ; FR Paths   ; RF Paths   ; FF Paths ;
-+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------+------------+------------+----------+
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 1          ; 0          ; 0          ; 0        ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 60772      ; 291        ; 98         ; 19840    ;
-; FPGA_CLK1_50                                                                      ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; false path ; 0          ; 0          ; 0        ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 0          ; false path ; 0          ; 0        ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; FPGA_CLK1_50                                                                      ; false path ; 0          ; 0          ; 0        ;
-; FPGA_CLK1_50                                                                      ; FPGA_CLK1_50                                                                      ; 6733035    ; 0          ; 0          ; 0        ;
-; FPGA_CLK2_50                                                                      ; FPGA_CLK1_50                                                                      ; false path ; 0          ; 0          ; 0        ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; FPGA_CLK1_50                                                                      ; 0          ; false path ; 0          ; 0        ;
-; FPGA_CLK2_50                                                                      ; FPGA_CLK2_50                                                                      ; 16970      ; 0          ; 0          ; 0        ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; FPGA_CLK2_50                                                                      ; false path ; 0          ; 0          ; 0        ;
-; FPGA_CLK2_50                                                                      ; FPGA_CLK3_50                                                                      ; false path ; 0          ; 0          ; 0        ;
-; FPGA_CLK3_50                                                                      ; FPGA_CLK3_50                                                                      ; 12287006   ; 0          ; 0          ; 0        ;
-; spi_sck                                                                           ; FPGA_CLK3_50                                                                      ; 90         ; 0          ; 0          ; 0        ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; FPGA_CLK3_50                                                                      ; false path ; 0          ; 0          ; 0        ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; HDMI_CLK                                                                          ; 0          ; 7          ; 0          ; 0        ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; HDMI_CLK                                                                          ; 0          ; 27         ; 0          ; 0        ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0          ; 0          ; false path ; 0        ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 20542      ; 102        ; 285        ; 107335   ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0          ; 0          ; false path ; 0        ;
-; spi_sck                                                                           ; spi_sck                                                                           ; 745        ; 0          ; 0          ; 0        ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; false path ; 0          ; 0          ; 0        ;
-; FPGA_CLK3_50                                                                      ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; false path ; 0          ; 0          ; 0        ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0          ; false path ; 0          ; 0        ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 4019       ; 0          ; 0          ; 0        ;
-+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------+------------+------------+----------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                                                                                                           ;
++-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+------------+------------+----------+
+; From Clock                                                                        ; To Clock                                                                          ; RR Paths     ; FR Paths   ; RF Paths   ; FF Paths ;
++-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+------------+------------+----------+
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 16161        ; 0          ; 0          ; 0        ;
+; FPGA_CLK1_50                                                                      ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; false path   ; 0          ; 0          ; 0        ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 0            ; false path ; 0          ; 0        ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; false path   ; 0          ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; > 2147483647 ; 0          ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 59856        ; 286        ; 98         ; 19821    ;
+; FPGA_CLK1_50                                                                      ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; false path   ; 0          ; 0          ; 0        ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 0            ; false path ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; FPGA_CLK1_50                                                                      ; false path   ; 0          ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; FPGA_CLK1_50                                                                      ; false path   ; 0          ; 0          ; 0        ;
+; FPGA_CLK1_50                                                                      ; FPGA_CLK1_50                                                                      ; 6733040      ; 0          ; 0          ; 0        ;
+; FPGA_CLK2_50                                                                      ; FPGA_CLK1_50                                                                      ; false path   ; 0          ; 0          ; 0        ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; FPGA_CLK1_50                                                                      ; 0            ; false path ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; FPGA_CLK2_50                                                                      ; false path   ; 0          ; 0          ; 0        ;
+; FPGA_CLK2_50                                                                      ; FPGA_CLK2_50                                                                      ; 17203        ; 0          ; 0          ; 0        ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; FPGA_CLK2_50                                                                      ; false path   ; 0          ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; FPGA_CLK3_50                                                                      ; false path   ; 0          ; 0          ; 0        ;
+; FPGA_CLK2_50                                                                      ; FPGA_CLK3_50                                                                      ; false path   ; 0          ; 0          ; 0        ;
+; FPGA_CLK3_50                                                                      ; FPGA_CLK3_50                                                                      ; 12302983     ; 0          ; 0          ; 0        ;
+; spi_sck                                                                           ; FPGA_CLK3_50                                                                      ; 90           ; 0          ; 0          ; 0        ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; FPGA_CLK3_50                                                                      ; false path   ; 0          ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; HDMI_CLK                                                                          ; 27           ; 0          ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; HDMI_CLK                                                                          ; 0            ; 7          ; 0          ; 0        ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; HDMI_CLK                                                                          ; 0            ; 27         ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0            ; 0          ; false path ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0            ; 0          ; false path ; 0        ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 20089        ; 95         ; 281        ; 107191   ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0            ; 0          ; false path ; 0        ;
+; spi_sck                                                                           ; spi_sck                                                                           ; 753          ; 0          ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; false path   ; 0          ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; false path   ; 0          ; 0          ; 0        ;
+; FPGA_CLK3_50                                                                      ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; false path   ; 0          ; 0          ; 0        ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0            ; false path ; 0          ; 0        ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 4223         ; 0          ; 0          ; 0        ;
++-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+------------+------------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Hold Transfers                                                                                                                                                                                                          ;
-+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------+------------+------------+----------+
-; From Clock                                                                        ; To Clock                                                                          ; RR Paths   ; FR Paths   ; RF Paths   ; FF Paths ;
-+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------+------------+------------+----------+
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 1          ; 0          ; 0          ; 0        ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 60772      ; 291        ; 98         ; 19840    ;
-; FPGA_CLK1_50                                                                      ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; false path ; 0          ; 0          ; 0        ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 0          ; false path ; 0          ; 0        ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; FPGA_CLK1_50                                                                      ; false path ; 0          ; 0          ; 0        ;
-; FPGA_CLK1_50                                                                      ; FPGA_CLK1_50                                                                      ; 6733035    ; 0          ; 0          ; 0        ;
-; FPGA_CLK2_50                                                                      ; FPGA_CLK1_50                                                                      ; false path ; 0          ; 0          ; 0        ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; FPGA_CLK1_50                                                                      ; 0          ; false path ; 0          ; 0        ;
-; FPGA_CLK2_50                                                                      ; FPGA_CLK2_50                                                                      ; 16970      ; 0          ; 0          ; 0        ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; FPGA_CLK2_50                                                                      ; false path ; 0          ; 0          ; 0        ;
-; FPGA_CLK2_50                                                                      ; FPGA_CLK3_50                                                                      ; false path ; 0          ; 0          ; 0        ;
-; FPGA_CLK3_50                                                                      ; FPGA_CLK3_50                                                                      ; 12287006   ; 0          ; 0          ; 0        ;
-; spi_sck                                                                           ; FPGA_CLK3_50                                                                      ; 90         ; 0          ; 0          ; 0        ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; FPGA_CLK3_50                                                                      ; false path ; 0          ; 0          ; 0        ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; HDMI_CLK                                                                          ; 0          ; 7          ; 0          ; 0        ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; HDMI_CLK                                                                          ; 0          ; 27         ; 0          ; 0        ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0          ; 0          ; false path ; 0        ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 20542      ; 102        ; 285        ; 107335   ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0          ; 0          ; false path ; 0        ;
-; spi_sck                                                                           ; spi_sck                                                                           ; 745        ; 0          ; 0          ; 0        ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; false path ; 0          ; 0          ; 0        ;
-; FPGA_CLK3_50                                                                      ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; false path ; 0          ; 0          ; 0        ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0          ; false path ; 0          ; 0        ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 4019       ; 0          ; 0          ; 0        ;
-+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------+------------+------------+----------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                                                                                                            ;
++-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+------------+------------+----------+
+; From Clock                                                                        ; To Clock                                                                          ; RR Paths     ; FR Paths   ; RF Paths   ; FF Paths ;
++-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+------------+------------+----------+
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 16161        ; 0          ; 0          ; 0        ;
+; FPGA_CLK1_50                                                                      ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; false path   ; 0          ; 0          ; 0        ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; 0            ; false path ; 0          ; 0        ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; false path   ; 0          ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; > 2147483647 ; 0          ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 59856        ; 286        ; 98         ; 19821    ;
+; FPGA_CLK1_50                                                                      ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; false path   ; 0          ; 0          ; 0        ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 0            ; false path ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; FPGA_CLK1_50                                                                      ; false path   ; 0          ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; FPGA_CLK1_50                                                                      ; false path   ; 0          ; 0          ; 0        ;
+; FPGA_CLK1_50                                                                      ; FPGA_CLK1_50                                                                      ; 6733040      ; 0          ; 0          ; 0        ;
+; FPGA_CLK2_50                                                                      ; FPGA_CLK1_50                                                                      ; false path   ; 0          ; 0          ; 0        ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; FPGA_CLK1_50                                                                      ; 0            ; false path ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; FPGA_CLK2_50                                                                      ; false path   ; 0          ; 0          ; 0        ;
+; FPGA_CLK2_50                                                                      ; FPGA_CLK2_50                                                                      ; 17203        ; 0          ; 0          ; 0        ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; FPGA_CLK2_50                                                                      ; false path   ; 0          ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; FPGA_CLK3_50                                                                      ; false path   ; 0          ; 0          ; 0        ;
+; FPGA_CLK2_50                                                                      ; FPGA_CLK3_50                                                                      ; false path   ; 0          ; 0          ; 0        ;
+; FPGA_CLK3_50                                                                      ; FPGA_CLK3_50                                                                      ; 12302983     ; 0          ; 0          ; 0        ;
+; spi_sck                                                                           ; FPGA_CLK3_50                                                                      ; 90           ; 0          ; 0          ; 0        ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; FPGA_CLK3_50                                                                      ; false path   ; 0          ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; HDMI_CLK                                                                          ; 27           ; 0          ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; HDMI_CLK                                                                          ; 0            ; 7          ; 0          ; 0        ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; HDMI_CLK                                                                          ; 0            ; 27         ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0            ; 0          ; false path ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0            ; 0          ; false path ; 0        ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 20089        ; 95         ; 281        ; 107191   ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0            ; 0          ; false path ; 0        ;
+; spi_sck                                                                           ; spi_sck                                                                           ; 753          ; 0          ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; false path   ; 0          ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; false path   ; 0          ; 0          ; 0        ;
+; FPGA_CLK3_50                                                                      ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; false path   ; 0          ; 0          ; 0        ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 0            ; false path ; 0          ; 0        ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 4223         ; 0          ; 0          ; 0        ;
++-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------+------------+------------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
@@ -1405,14 +1425,15 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------+----------+------------+----------+
 ; From Clock                                                                        ; To Clock                                                                          ; RR Paths   ; FR Paths ; RF Paths   ; FF Paths ;
 +-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------+----------+------------+----------+
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 1          ; 0        ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 2          ; 0        ; 0          ; 0        ;
 ; FPGA_CLK2_50                                                                      ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; false path ; 0        ; 0          ; 0        ;
-; FPGA_CLK1_50                                                                      ; FPGA_CLK1_50                                                                      ; 23         ; 0        ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; FPGA_CLK1_50                                                                      ; false path ; 0        ; 0          ; 0        ;
+; FPGA_CLK1_50                                                                      ; FPGA_CLK1_50                                                                      ; 21         ; 0        ; 0          ; 0        ;
 ; FPGA_CLK2_50                                                                      ; FPGA_CLK1_50                                                                      ; false path ; 0        ; 0          ; 0        ;
 ; FPGA_CLK2_50                                                                      ; FPGA_CLK3_50                                                                      ; false path ; 0        ; 0          ; 0        ;
 ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; FPGA_CLK3_50                                                                      ; false path ; 0        ; 0          ; 0        ;
 ; FPGA_CLK2_50                                                                      ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0          ; 0        ; false path ; 0        ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0          ; 0        ; 0          ; 13       ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0          ; 0        ; 0          ; 15       ;
 ; FPGA_CLK2_50                                                                      ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; false path ; 0        ; 0          ; 0        ;
 ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 8          ; 0        ; 0          ; 0        ;
 +-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------+----------+------------+----------+
@@ -1424,14 +1445,15 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------+----------+------------+----------+
 ; From Clock                                                                        ; To Clock                                                                          ; RR Paths   ; FR Paths ; RF Paths   ; FF Paths ;
 +-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------+----------+------------+----------+
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 1          ; 0        ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; 2          ; 0        ; 0          ; 0        ;
 ; FPGA_CLK2_50                                                                      ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; false path ; 0        ; 0          ; 0        ;
-; FPGA_CLK1_50                                                                      ; FPGA_CLK1_50                                                                      ; 23         ; 0        ; 0          ; 0        ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; FPGA_CLK1_50                                                                      ; false path ; 0        ; 0          ; 0        ;
+; FPGA_CLK1_50                                                                      ; FPGA_CLK1_50                                                                      ; 21         ; 0        ; 0          ; 0        ;
 ; FPGA_CLK2_50                                                                      ; FPGA_CLK1_50                                                                      ; false path ; 0        ; 0          ; 0        ;
 ; FPGA_CLK2_50                                                                      ; FPGA_CLK3_50                                                                      ; false path ; 0        ; 0          ; 0        ;
 ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; FPGA_CLK3_50                                                                      ; false path ; 0        ; 0          ; 0        ;
 ; FPGA_CLK2_50                                                                      ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0          ; 0        ; false path ; 0        ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0          ; 0        ; 0          ; 13       ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; 0          ; 0        ; 0          ; 15       ;
 ; FPGA_CLK2_50                                                                      ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; false path ; 0        ; 0          ; 0        ;
 ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; 8          ; 0        ; 0          ; 0        ;
 +-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+------------+----------+------------+----------+
@@ -1456,7 +1478,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Property                        ; Setup ; Hold ;
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
-; Unconstrained Clocks            ; 1     ; 1    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 6     ; 6    ;
 ; Unconstrained Input Port Paths  ; 24    ; 24   ;
 ; Unconstrained Output Ports      ; 20    ; 20   ;
@@ -1464,24 +1486,23 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clock Status Summary                                                                                                                                                                              ;
-+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+---------------+
-; Target                                                                            ; Clock                                                                             ; Type      ; Status        ;
-+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+---------------+
-; FPGA_CLK1_50                                                                      ; FPGA_CLK1_50                                                                      ; Base      ; Constrained   ;
-; FPGA_CLK2_50                                                                      ; FPGA_CLK2_50                                                                      ; Base      ; Constrained   ;
-; FPGA_CLK3_50                                                                      ; FPGA_CLK3_50                                                                      ; Base      ; Constrained   ;
-; HDMI_TX_CLK                                                                       ; HDMI_CLK                                                                          ; Generated ; Constrained   ;
-; emu:emu|clk_sys                                                                   ;                                                                                   ; Base      ; Unconstrained ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; Generated ; Constrained   ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; Generated ; Constrained   ;
-; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]                   ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]                   ; Generated ; Constrained   ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; Generated ; Constrained   ;
-; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]             ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]             ; Generated ; Constrained   ;
-; spi|sclk_out                                                                      ; spi_sck                                                                           ; Base      ; Constrained   ;
-; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; Base      ; Constrained   ;
-+-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+---------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                                                                                                            ;
++-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+-------------+
+; Target                                                                            ; Clock                                                                             ; Type      ; Status      ;
++-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+-------------+
+; FPGA_CLK1_50                                                                      ; FPGA_CLK1_50                                                                      ; Base      ; Constrained ;
+; FPGA_CLK2_50                                                                      ; FPGA_CLK2_50                                                                      ; Base      ; Constrained ;
+; FPGA_CLK3_50                                                                      ; FPGA_CLK3_50                                                                      ; Base      ; Constrained ;
+; HDMI_TX_CLK                                                                       ; HDMI_CLK                                                                          ; Generated ; Constrained ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk       ; Generated ; Constrained ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk       ; Generated ; Constrained ;
+; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]                   ; emu|pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]                   ; Generated ; Constrained ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk ; Generated ; Constrained ;
+; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]             ; pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]             ; Generated ; Constrained ;
+; spi|sclk_out                                                                      ; spi_sck                                                                           ; Base      ; Constrained ;
+; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk                                ; Base      ; Constrained ;
++-----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+-------------+
 
 
 +-----------------------------------------------------------------------------------------------------+
@@ -1574,7 +1595,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri Dec 06 11:44:40 2019
+    Info: Processing started: Fri Dec 06 12:42:53 2019
 Info: Command: quartus_sta Hack -c Hack
 Info: qsta_default_script.tcl version: #3
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -1587,12 +1608,10 @@ Info (332104): Reading SDC File: 'sys/sys_top.sdc'
 Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|vco0ph[0]} -divide_by 12 -duty_cycle 50.00 -name {emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk} {emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk}
     Info (332110): create_generated_clock -source {pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|vco0ph[0]} -divide_by 3 -duty_cycle 50.00 -name {pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk} {pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk}
+    Info (332110): create_generated_clock -source {emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|vco0ph[0]} -divide_by 6 -duty_cycle 50.00 -name {emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk} {emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk}
     Info (332110): create_generated_clock -source {emu|pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|refclkin} -divide_by 2 -multiply_by 12 -duty_cycle 50.00 -name {emu|pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]} {emu|pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]}
     Info (332110): create_generated_clock -source {pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|refclkin} -divide_by 512 -multiply_by 4563 -duty_cycle 50.00 -name {pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]} {pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0]}
-    Info (332110): create_generated_clock -source {emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|vco0ph[0]} -divide_by 6 -duty_cycle 50.00 -name {emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk} {emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk}
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
-Warning (332060): Node: emu:emu|clk_sys was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register emu:emu|hps_io:hps_io|io_dout[11] is being clocked by emu:emu|clk_sys
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter  from: vco0ph[0]  to: divclk
     Info (332098): Cell: emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter  from: vco0ph[0]  to: divclk
@@ -1614,65 +1633,65 @@ Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 100C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -10.059
+Info (332146): Worst-case setup slack is -9.298
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -10.059            -111.741 HDMI_CLK 
-    Info (332119):    -3.972            -173.394 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     4.369               0.000 FPGA_CLK1_50 
-    Info (332119):     4.637               0.000 FPGA_CLK3_50 
-    Info (332119):     4.668               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):     6.220               0.000 spi_sck 
-    Info (332119):    13.484               0.000 FPGA_CLK2_50 
-    Info (332119):    15.491               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
-    Info (332119):    17.114               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-Info (332146): Worst-case hold slack is 0.181
+    Info (332119):    -9.298            -133.894 HDMI_CLK 
+    Info (332119):    -3.893            -120.495 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     3.059               0.000 FPGA_CLK1_50 
+    Info (332119):     4.308               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
+    Info (332119):     4.561               0.000 FPGA_CLK3_50 
+    Info (332119):     5.891               0.000 spi_sck 
+    Info (332119):    10.582               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+    Info (332119):    10.856               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):    13.656               0.000 FPGA_CLK2_50 
+Info (332146): Worst-case hold slack is 0.200
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.181               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     0.253               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
-    Info (332119):     0.274               0.000 FPGA_CLK3_50 
-    Info (332119):     0.320               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):     0.349               0.000 FPGA_CLK1_50 
-    Info (332119):     0.356               0.000 FPGA_CLK2_50 
-    Info (332119):     0.384               0.000 spi_sck 
-    Info (332119):     0.757               0.000 HDMI_CLK 
-    Info (332119):     2.030               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-Info (332146): Worst-case recovery slack is 3.022
+    Info (332119):     0.200               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     0.261               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+    Info (332119):     0.311               0.000 FPGA_CLK3_50 
+    Info (332119):     0.311               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
+    Info (332119):     0.335               0.000 FPGA_CLK1_50 
+    Info (332119):     0.344               0.000 spi_sck 
+    Info (332119):     0.408               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     0.422               0.000 FPGA_CLK2_50 
+    Info (332119):     0.653               0.000 HDMI_CLK 
+Info (332146): Worst-case recovery slack is 3.192
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     3.022               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     7.040               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):    15.106               0.000 FPGA_CLK1_50 
-    Info (332119):    37.347               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
-Info (332146): Worst-case removal slack is 0.821
+    Info (332119):     3.192               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     6.453               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
+    Info (332119):    15.607               0.000 FPGA_CLK1_50 
+    Info (332119):    37.841               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+Info (332146): Worst-case removal slack is 0.866
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.821               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     1.126               0.000 FPGA_CLK1_50 
-    Info (332119):     1.182               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):     1.655               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+    Info (332119):     0.866               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
+    Info (332119):     0.934               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     1.259               0.000 FPGA_CLK1_50 
+    Info (332119):     1.343               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
 Info (332146): Worst-case minimum pulse width slack is 1.122
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.122               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0] 
     Info (332119):     1.666               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0] 
-    Info (332119):     1.927               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     1.936               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
     Info (332119):     3.593               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):     4.206               0.000 spi_sck 
-    Info (332119):     8.803               0.000 FPGA_CLK3_50 
-    Info (332119):     9.164               0.000 FPGA_CLK1_50 
-    Info (332119):     9.175               0.000 FPGA_CLK2_50 
-    Info (332119):     9.281               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):    18.563               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
-Info (332114): Report Metastability: Found 158 synchronizer chains.
+    Info (332119):     4.215               0.000 spi_sck 
+    Info (332119):     8.570               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     8.791               0.000 FPGA_CLK3_50 
+    Info (332119):     9.167               0.000 FPGA_CLK1_50 
+    Info (332119):     9.174               0.000 FPGA_CLK2_50 
+    Info (332119):    18.559               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+Info (332114): Report Metastability: Found 210 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-    Info (332114): Number of Synchronizer Chains Found: 158
+    Info (332114): Number of Synchronizer Chains Found: 210
     Info (332114): Shortest Synchronizer Chain: 2 Registers
-    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.994
-    Info (332114): Worst Case Available Settling Time: 7.385 ns
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.995
+    Info (332114): Worst Case Available Settling Time: 7.540 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 8.0
@@ -1681,8 +1700,6 @@ Info (332114): Report Metastability: Found 158 synchronizer chains.
 Info: Analyzing Slow 1100mV -40C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Warning (332060): Node: emu:emu|clk_sys was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register emu:emu|hps_io:hps_io|io_dout[11] is being clocked by emu:emu|clk_sys
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter  from: vco0ph[0]  to: divclk
     Info (332098): Cell: emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter  from: vco0ph[0]  to: divclk
@@ -1702,65 +1719,65 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -9.717
+Info (332146): Worst-case setup slack is -8.987
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.717            -108.808 HDMI_CLK 
-    Info (332119):    -4.383            -167.849 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     4.441               0.000 FPGA_CLK1_50 
-    Info (332119):     4.653               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):     5.181               0.000 FPGA_CLK3_50 
-    Info (332119):     6.286               0.000 spi_sck 
-    Info (332119):    13.226               0.000 FPGA_CLK2_50 
-    Info (332119):    15.562               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
-    Info (332119):    17.085               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-Info (332146): Worst-case hold slack is 0.112
+    Info (332119):    -8.987            -129.767 HDMI_CLK 
+    Info (332119):    -4.452             -96.518 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     3.202               0.000 FPGA_CLK1_50 
+    Info (332119):     4.467               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
+    Info (332119):     5.143               0.000 FPGA_CLK3_50 
+    Info (332119):     6.017               0.000 spi_sck 
+    Info (332119):    10.906               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+    Info (332119):    11.356               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):    13.306               0.000 FPGA_CLK2_50 
+Info (332146): Worst-case hold slack is 0.092
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.112               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     0.246               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
-    Info (332119):     0.262               0.000 FPGA_CLK3_50 
-    Info (332119):     0.335               0.000 FPGA_CLK2_50 
-    Info (332119):     0.338               0.000 FPGA_CLK1_50 
-    Info (332119):     0.338               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):     0.366               0.000 spi_sck 
-    Info (332119):     0.718               0.000 HDMI_CLK 
-    Info (332119):     2.017               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-Info (332146): Worst-case recovery slack is 3.212
+    Info (332119):     0.092               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     0.244               0.000 FPGA_CLK3_50 
+    Info (332119):     0.253               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+    Info (332119):     0.309               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     0.324               0.000 FPGA_CLK1_50 
+    Info (332119):     0.334               0.000 spi_sck 
+    Info (332119):     0.337               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
+    Info (332119):     0.398               0.000 FPGA_CLK2_50 
+    Info (332119):     0.854               0.000 HDMI_CLK 
+Info (332146): Worst-case recovery slack is 3.373
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     3.212               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     7.246               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):    15.328               0.000 FPGA_CLK1_50 
-    Info (332119):    37.462               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
-Info (332146): Worst-case removal slack is 0.779
+    Info (332119):     3.373               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     6.662               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
+    Info (332119):    15.737               0.000 FPGA_CLK1_50 
+    Info (332119):    37.989               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+Info (332146): Worst-case removal slack is 0.810
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.779               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     1.034               0.000 FPGA_CLK1_50 
-    Info (332119):     1.081               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):     1.608               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+    Info (332119):     0.810               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
+    Info (332119):     0.888               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     1.168               0.000 FPGA_CLK1_50 
+    Info (332119):     1.248               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
 Info (332146): Worst-case minimum pulse width slack is 1.122
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.122               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0] 
     Info (332119):     1.666               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0] 
-    Info (332119):     1.902               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     1.912               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
     Info (332119):     3.564               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):     4.221               0.000 spi_sck 
-    Info (332119):     8.756               0.000 FPGA_CLK3_50 
-    Info (332119):     9.205               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     9.282               0.000 FPGA_CLK1_50 
-    Info (332119):     9.289               0.000 FPGA_CLK2_50 
-    Info (332119):    18.537               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
-Info (332114): Report Metastability: Found 158 synchronizer chains.
+    Info (332119):     4.217               0.000 spi_sck 
+    Info (332119):     8.548               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     8.754               0.000 FPGA_CLK3_50 
+    Info (332119):     9.281               0.000 FPGA_CLK1_50 
+    Info (332119):     9.295               0.000 FPGA_CLK2_50 
+    Info (332119):    18.540               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+Info (332114): Report Metastability: Found 210 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-    Info (332114): Number of Synchronizer Chains Found: 158
+    Info (332114): Number of Synchronizer Chains Found: 210
     Info (332114): Shortest Synchronizer Chain: 2 Registers
-    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.994
-    Info (332114): Worst Case Available Settling Time: 7.584 ns
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.995
+    Info (332114): Worst Case Available Settling Time: 7.759 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.7
@@ -1769,8 +1786,6 @@ Info (332114): Report Metastability: Found 158 synchronizer chains.
 Info: Analyzing Fast 1100mV 100C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Warning (332060): Node: emu:emu|clk_sys was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register emu:emu|hps_io:hps_io|io_dout[11] is being clocked by emu:emu|clk_sys
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter  from: vco0ph[0]  to: divclk
     Info (332098): Cell: emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter  from: vco0ph[0]  to: divclk
@@ -1790,73 +1805,71 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -7.545
+Info (332146): Worst-case setup slack is -6.820
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.545             -85.021 HDMI_CLK 
-    Info (332119):     1.241               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     5.910               0.000 FPGA_CLK3_50 
-    Info (332119):     7.022               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):     8.086               0.000 spi_sck 
-    Info (332119):    10.638               0.000 FPGA_CLK1_50 
-    Info (332119):    16.789               0.000 FPGA_CLK2_50 
-    Info (332119):    17.186               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
-    Info (332119):    18.526               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-Info (332146): Worst-case hold slack is 0.090
+    Info (332119):    -6.820             -93.896 HDMI_CLK 
+    Info (332119):     1.307               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     5.862               0.000 FPGA_CLK3_50 
+    Info (332119):     6.765               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
+    Info (332119):     7.854               0.000 spi_sck 
+    Info (332119):     9.791               0.000 FPGA_CLK1_50 
+    Info (332119):    14.016               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+    Info (332119):    14.347               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):    16.818               0.000 FPGA_CLK2_50 
+Info (332146): Worst-case hold slack is 0.099
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.090               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
-    Info (332119):     0.155               0.000 FPGA_CLK3_50 
-    Info (332119):     0.159               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
+    Info (332119):     0.099               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+    Info (332119):     0.160               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
     Info (332119):     0.178               0.000 FPGA_CLK1_50 
+    Info (332119):     0.179               0.000 FPGA_CLK3_50 
+    Info (332119):     0.180               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
     Info (332119):     0.181               0.000 FPGA_CLK2_50 
-    Info (332119):     0.200               0.000 spi_sck 
-    Info (332119):     0.202               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     1.079               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     2.028               0.000 HDMI_CLK 
-Info (332146): Worst-case recovery slack is 4.472
+    Info (332119):     0.186               0.000 spi_sck 
+    Info (332119):     0.187               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     1.953               0.000 HDMI_CLK 
+Info (332146): Worst-case recovery slack is 4.542
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     4.472               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     8.188               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):    17.077               0.000 FPGA_CLK1_50 
-    Info (332119):    38.398               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
-Info (332146): Worst-case removal slack is 0.561
+    Info (332119):     4.542               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     7.861               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
+    Info (332119):    17.507               0.000 FPGA_CLK1_50 
+    Info (332119):    38.702               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+Info (332146): Worst-case removal slack is 0.398
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.561               0.000 FPGA_CLK1_50 
-    Info (332119):     0.624               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):     0.643               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     0.847               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+    Info (332119):     0.398               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
+    Info (332119):     0.632               0.000 FPGA_CLK1_50 
+    Info (332119):     0.688               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+    Info (332119):     0.713               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
 Info (332146): Worst-case minimum pulse width slack is 1.122
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.122               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0] 
     Info (332119):     1.666               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0] 
-    Info (332119):     2.239               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     3.899               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):     4.580               0.000 spi_sck 
-    Info (332119):     8.521               0.000 FPGA_CLK3_50 
+    Info (332119):     2.244               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     3.900               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
+    Info (332119):     4.575               0.000 spi_sck 
+    Info (332119):     8.526               0.000 FPGA_CLK3_50 
+    Info (332119):     8.878               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
     Info (332119):     9.104               0.000 FPGA_CLK1_50 
-    Info (332119):     9.108               0.000 FPGA_CLK2_50 
-    Info (332119):     9.553               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):    18.880               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
-Info (332114): Report Metastability: Found 158 synchronizer chains.
+    Info (332119):     9.107               0.000 FPGA_CLK2_50 
+    Info (332119):    18.878               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+Info (332114): Report Metastability: Found 210 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-    Info (332114): Number of Synchronizer Chains Found: 158
+    Info (332114): Number of Synchronizer Chains Found: 210
     Info (332114): Shortest Synchronizer Chain: 2 Registers
-    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.994
-    Info (332114): Worst Case Available Settling Time: 8.397 ns
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.995
+    Info (332114): Worst Case Available Settling Time: 8.470 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 8.0
     Info (332114): Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
     Info (332114):   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 17.8
 Info: Analyzing Fast 1100mV -40C Model
-Warning (332060): Node: emu:emu|clk_sys was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register emu:emu|hps_io:hps_io|io_dout[11] is being clocked by emu:emu|clk_sys
 Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter  from: vco0ph[0]  to: divclk
     Info (332098): Cell: emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter  from: vco0ph[0]  to: divclk
@@ -1876,65 +1889,65 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -7.099
+Info (332146): Worst-case setup slack is -6.534
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.099             -82.092 HDMI_CLK 
-    Info (332119):     1.519               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     6.886               0.000 FPGA_CLK3_50 
-    Info (332119):     7.382               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):     8.366               0.000 spi_sck 
-    Info (332119):    11.781               0.000 FPGA_CLK1_50 
-    Info (332119):    17.100               0.000 FPGA_CLK2_50 
-    Info (332119):    17.619               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
-    Info (332119):    18.699               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-Info (332146): Worst-case hold slack is 0.072
+    Info (332119):    -6.534             -87.988 HDMI_CLK 
+    Info (332119):     1.629               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     6.851               0.000 FPGA_CLK3_50 
+    Info (332119):     7.222               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
+    Info (332119):     8.185               0.000 spi_sck 
+    Info (332119):    11.014               0.000 FPGA_CLK1_50 
+    Info (332119):    15.049               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+    Info (332119):    15.460               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):    17.151               0.000 FPGA_CLK2_50 
+Info (332146): Worst-case hold slack is 0.079
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.072               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
-    Info (332119):     0.108               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     0.133               0.000 FPGA_CLK3_50 
-    Info (332119):     0.140               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):     0.160               0.000 FPGA_CLK2_50 
-    Info (332119):     0.165               0.000 FPGA_CLK1_50 
-    Info (332119):     0.176               0.000 spi_sck 
-    Info (332119):     0.933               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     2.028               0.000 HDMI_CLK 
-Info (332146): Worst-case recovery slack is 4.835
+    Info (332119):     0.079               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+    Info (332119):     0.095               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     0.133               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
+    Info (332119):     0.155               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     0.158               0.000 FPGA_CLK1_50 
+    Info (332119):     0.163               0.000 spi_sck 
+    Info (332119):     0.167               0.000 FPGA_CLK3_50 
+    Info (332119):     0.171               0.000 FPGA_CLK2_50 
+    Info (332119):     1.912               0.000 HDMI_CLK 
+Info (332146): Worst-case recovery slack is 4.944
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     4.835               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     8.551               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):    17.556               0.000 FPGA_CLK1_50 
-    Info (332119):    38.641               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
-Info (332146): Worst-case removal slack is 0.485
+    Info (332119):     4.944               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     8.243               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
+    Info (332119):    17.878               0.000 FPGA_CLK1_50 
+    Info (332119):    38.888               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+Info (332146): Worst-case removal slack is 0.344
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.485               0.000 FPGA_CLK1_50 
-    Info (332119):     0.501               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):     0.508               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):     0.734               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+    Info (332119):     0.344               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
+    Info (332119):     0.515               0.000 FPGA_CLK1_50 
+    Info (332119):     0.568               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     0.587               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
 Info (332146): Worst-case minimum pulse width slack is 1.122
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.122               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0] 
     Info (332119):     1.666               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|fpll_0|fpll|vcoph[0] 
-    Info (332119):     2.249               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
+    Info (332119):     2.253               0.000 pll_hdmi|pll_hdmi_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
     Info (332119):     3.903               0.000 sysmem|fpga_interfaces|clocks_resets|h2f_user0_clk 
-    Info (332119):     4.569               0.000 spi_sck 
-    Info (332119):     8.449               0.000 FPGA_CLK3_50 
+    Info (332119):     4.566               0.000 spi_sck 
+    Info (332119):     8.452               0.000 FPGA_CLK3_50 
+    Info (332119):     8.888               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
     Info (332119):     9.045               0.000 FPGA_CLK1_50 
     Info (332119):     9.048               0.000 FPGA_CLK2_50 
-    Info (332119):     9.546               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[0].output_counter|divclk 
-    Info (332119):    18.885               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
-Info (332114): Report Metastability: Found 158 synchronizer chains.
+    Info (332119):    18.882               0.000 emu|pll|pll_inst|altera_pll_i|cyclonev_pll|counter[1].output_counter|divclk 
+Info (332114): Report Metastability: Found 210 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-    Info (332114): Number of Synchronizer Chains Found: 158
+    Info (332114): Number of Synchronizer Chains Found: 210
     Info (332114): Shortest Synchronizer Chain: 2 Registers
-    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.994
-    Info (332114): Worst Case Available Settling Time: 8.745 ns
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.995
+    Info (332114): Worst Case Available Settling Time: 8.809 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.7
@@ -1942,10 +1955,10 @@ Info (332114): Report Metastability: Found 158 synchronizer chains.
     Info (332114):   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 17.8
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 5623 megabytes
-    Info: Processing ended: Fri Dec 06 11:44:59 2019
-    Info: Elapsed time: 00:00:19
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 5625 megabytes
+    Info: Processing ended: Fri Dec 06 12:43:11 2019
+    Info: Elapsed time: 00:00:18
     Info: Total CPU time (on all processors): 00:00:45
 
 
