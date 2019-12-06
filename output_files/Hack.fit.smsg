@@ -1,4 +1,3 @@
-Warning: RST port on the PLL is not properly connected on instance emu:emu|pll:pll|pll_0002:pll_inst|altera_pll:altera_pll_i|general[0].gpll. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altera_pll.v Line: 748
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
 Extra Info (176273): Performing register packing on registers with non-logic cell location assignments
 Extra Info (176274): Completed register packing on registers with non-logic cell location assignments
@@ -8,4 +7,3 @@ Extra Info (176238): Start inferring scan chains for DSP blocks
 Extra Info (176239): Inferring scan chains for DSP blocks is complete
 Extra Info (176246): Moving registers into I/O cells, DSP blocks, and RAM blocks to improve timing and density
 Extra Info (176247): Finished moving registers into I/O cells, DSP blocks, and RAM blocks
-Warning (15705): Ignored locations or region assignments to the following nodes

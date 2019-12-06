@@ -1,6 +1,6 @@
 Flow report for Hack
-Sat Nov 30 22:49:38 2019
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Fri Dec 06 11:41:40 2019
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
 ---------------------
@@ -21,7 +21,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2017  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -40,25 +40,25 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat Nov 30 22:49:30 2019       ;
-; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Flow Status                     ; Successful - Fri Dec 06 11:41:39 2019       ;
+; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; Hack                                        ;
 ; Top-level Entity Name           ; sys_top                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEBA6U23I7                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 4,090 / 41,910 ( 10 % )                     ;
-; Total registers                 ; 6301                                        ;
-; Total pins                      ; 134 / 314 ( 43 % )                          ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 7606                                        ;
+; Total pins                      ; 145                                         ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 234,708 / 5,662,720 ( 4 % )                 ;
-; Total DSP Blocks                ; 19 / 112 ( 17 % )                           ;
+; Total block memory bits         ; 327,043                                     ;
+; Total DSP Blocks                ; 29                                          ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
 ; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 2 / 6 ( 33 % )                              ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
+; Total PLLs                      ; 2                                           ;
+; Total DLLs                      ; 0                                           ;
 +---------------------------------+---------------------------------------------+
 
 
@@ -67,42 +67,39 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/30/2019 22:44:55 ;
+; Start date & time ; 12/06/2019 11:40:18 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Hack                ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                              ;
-+--------------------------------------+----------------------------------------+--------------------+-------------+------------+
-; Assignment Name                      ; Value                                  ; Default Value      ; Entity Name ; Section Id ;
-+--------------------------------------+----------------------------------------+--------------------+-------------+------------+
-; COMPILER_SIGNATURE_ID                ; 229335800732101.157515029518948        ; --                 ; --          ; --         ;
-; FINAL_PLACEMENT_OPTIMIZATION         ; Always                                 ; Automatically      ; --          ; --         ;
-; FITTER_EFFORT                        ; Standard Fit                           ; Auto Fit           ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP               ; 100                                    ; --                 ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP               ; -40                                    ; --                 ; --          ; --         ;
-; MISC_FILE                            ; sys/pll.cmp                            ; --                 ; --          ; --         ;
-; MISC_FILE                            ; sys/pll_hdmi.cmp                       ; --                 ; --          ; --         ;
-; MISC_FILE                            ; sys/pll_hdmi_cfg.cmp                   ; --                 ; --          ; --         ;
-; NUM_PARALLEL_PROCESSORS              ; All                                    ; --                 ; --          ; --         ;
-; OPTIMIZE_POWER_DURING_FITTING        ; Off                                    ; Normal compilation ; --          ; --         ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --                 ; sys_top     ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --                 ; sys_top     ; Top        ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --                 ; sys_top     ; Top        ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --                 ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --                 ; --          ; --         ;
-; PRE_FLOW_SCRIPT_FILE                 ; quartus_sh:sys/build_id.tcl            ; --                 ; --          ; --         ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --                 ; --          ; --         ;
-; SAVE_DISK_SPACE                      ; Off                                    ; On                 ; --          ; --         ;
-; SMART_RECOMPILE                      ; On                                     ; Off                ; --          ; --         ;
-; SYNTHESIS_ONLY_QIP                   ; On                                     ; --                 ; --          ; --         ;
-; SYNTHESIS_ONLY_QIP                   ; On                                     ; --                 ; --          ; --         ;
-; SYNTHESIS_ONLY_QIP                   ; On                                     ; --                 ; --          ; --         ;
-; TIMING_ANALYZER_MULTICORNER_ANALYSIS ; Off                                    ; On                 ; --          ; --         ;
-; TOP_LEVEL_ENTITY                     ; sys_top                                ; Hack               ; --          ; --         ;
-+--------------------------------------+----------------------------------------+--------------------+-------------+------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                        ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 18121613312252.157562881808760         ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 100                                    ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; -40                                    ; --            ; --          ; --         ;
+; MISC_FILE                           ; sys/pll.cmp                            ; --            ; --          ; --         ;
+; MISC_FILE                           ; sys/pll_hdmi.cmp                       ; --            ; --          ; --         ;
+; MISC_FILE                           ; sys/pll_cfg.cmp                        ; --            ; --          ; --         ;
+; NUM_PARALLEL_PROCESSORS             ; All                                    ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                      ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                      ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                             ; --            ; --          ; --         ;
+; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                             ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; sys_top     ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; sys_top     ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; sys_top     ; Top        ;
+; PRE_FLOW_SCRIPT_FILE                ; quartus_sh:sys/build_id.tcl            ; --            ; --          ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
+; SMART_RECOMPILE                     ; On                                     ; Off           ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                     ; --            ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                     ; --            ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                     ; --            ; --          ; --         ;
+; TOP_LEVEL_ENTITY                    ; sys_top                                ; Hack          ; --          ; --         ;
++-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -110,11 +107,8 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:36     ; 1.8                     ; 5460 MB             ; 00:02:04                           ;
-; Fitter               ; 00:02:35     ; 1.3                     ; 7138 MB             ; 00:06:07                           ;
-; Assembler            ; 00:00:16     ; 1.0                     ; 4920 MB             ; 00:00:15                           ;
-; Timing Analyzer      ; 00:00:07     ; 1.2                     ; 5059 MB             ; 00:00:07                           ;
-; Total                ; 00:04:34     ; --                      ; --                  ; 00:08:33                           ;
+; Analysis & Synthesis ; 00:01:19     ; 2.2                     ; 5513 MB             ; 00:01:53                           ;
+; Total                ; 00:01:19     ; --                      ; --                  ; 00:01:53                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -123,20 +117,14 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-1UU8NIO  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-1UU8NIO  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-1UU8NIO  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-1UU8NIO  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-D2PJ1MM  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off HACK -c Hack
-quartus_fit --read_settings_files=off --write_settings_files=off HACK -c Hack
-quartus_asm --read_settings_files=off --write_settings_files=off HACK -c Hack
-quartus_sta HACK -c Hack
+quartus_map --read_settings_files=on --write_settings_files=off Hack -c Hack
 
 
 

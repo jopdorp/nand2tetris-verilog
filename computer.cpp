@@ -6,7 +6,7 @@
 #include "Vcomputer.h"
 #include "Vcomputer_computer.h"
 #include "Vcomputer_rom_32K.h"
-#include "Vcomputer_screen_8K.h"
+#include "Vcomputer_Screen.h"
 #include "Vcomputer_memory.h"
 #include <iostream>
 
@@ -34,14 +34,14 @@ int handleInput()
 	 		if (event.key.keysym.sym == SDLK_ESCAPE)
 	 			return -2;
 	 		if (event.key.keysym.sym == SDLK_LEFT)
-				top->computer->memory->scancode = 130;
+				top->computer->scancode = 130;
 	 		else if (event.key.keysym.sym == SDLK_RIGHT)
-				top->computer->memory->scancode = 132;
+				top->computer->scancode = 132;
 	 		else
-				top->computer->memory->scancode = event.key.keysym.sym;
+				top->computer->scancode = event.key.keysym.sym;
 	 		break;
 	 	case SDL_KEYUP:
-			top->computer->memory->scancode = 0;
+			top->computer->scancode = 0;
 	 		break;
 	 	}
 	 }
@@ -57,7 +57,7 @@ int handleInput()
 
  void drawScreen()
  {
-	uint16_t *smem = top->computer->memory->screen->memory;
+	uint16_t *smem = top->computer->memory->screen->vram;
 	for (int y = 0; y < 256; y++) {
 		uint16_t *row = &smem[y << 5];
 		int x = 0;

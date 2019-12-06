@@ -5,13 +5,15 @@
 `include "./Screen.v"
 
 module memory(
+  input reset,
   input[15:0] in, 
   input clock, load, 
   input[14:0] address, 
   output[15:0] out,
   input[15:0] scancode,
   input clk_vid,
-  output r, g, b, hsync, vsync, hblank, vblank
+  output r, g, b, hsync, vsync, display_on,
+  output [9:0] hpos, vpos
 );
 
   wire[15:0] outM, outS, outSK;
@@ -22,7 +24,7 @@ module memory(
   and_n2t g3(address[14], load, Sload);
   
   ram_16K_optimized ram16k(in, address[13:0], Mload,clock, outM);
-  Screen screen(clk, clk_vid, reset, in, Sload,address[12:0], outS, r, g, b, hsync, vsync, hblank, vblank); 
+  Screen screen(clock, clk_vid, reset, in, Sload,address[12:0], outS, r, g, b, hsync, vsync, display_on, hpos, vpos); 
 
   mux_16 g4(outM, outSK, address[14], out);
   mux_16 g5(outS, scancode,  address[13], outSK);

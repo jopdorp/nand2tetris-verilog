@@ -17,7 +17,18 @@ module computer(
   wire [15:0] instruction;
   wire [15:0] value_to_cpu;
   
-  memory memory(cpuValueToMemory, !clock, writeM, addressM, value_to_cpu);
+
+  /* verilator lint_off UNUSED */
+  reg[15:0] scancode /*verilator public*/;
+  /* verilator lint_off UNDRIVEN */
+  wire clk_vid;
+  /* verilator lint_off UNUSED */
+  wire r, g, b, hsync, vsync, display_on;
+  /* verilator lint_off UNUSED */
+  wire [9:0] hpos, vpos;
+
+  memory memory(reset, cpuValueToMemory, !clock, writeM, addressM, value_to_cpu, scancode, clk_vid, r, g, b, hsync, vsync, display_on, hpos, vpos);
+
   rom_32K rom(pc, instruction);
 
   cpu_jopdorp_optimized cpu(value_to_cpu,

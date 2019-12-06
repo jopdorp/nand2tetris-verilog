@@ -1,4 +1,4 @@
- -- Copyright (C) 2018  Intel Corporation. All rights reserved.
+ -- Copyright (C) 2017  Intel Corporation. All rights reserved.
  -- Your use of Intel Corporation's design tools, logic functions 
  -- and other software and tools, and its AMPP partner logic 
  -- functions, and any output files from any of the foregoing 
@@ -73,7 +73,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 CHIP  "Hack"  ASSIGNED TO AN: 5CSEBA6U23I7
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -145,7 +145,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AB28      :        :                   :      
 GND                          : AC1       : gnd    :                   :         :           :                
 GND                          : AC2       : gnd    :                   :         :           :                
 GND                          : AC3       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC4       :        :                   :         : 3A        :                
+ADC_SDI                      : AC4       : output : 3.3-V LVTTL       :         : 3A        : Y              
 AS_DATA2, DATA2              : AC5       :        :                   :         : 3A        :                
 AS_DATA1, DATA1              : AC6       :        :                   :         : 3A        :                
 TMS                          : AC7       : input  :                   :         : 3A        :                
@@ -161,7 +161,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AC28      :        :                   :      
 DNU                          : AD1       :        :                   :         :           :                
 DNU                          : AD2       :        :                   :         :           :                
 GND                          : AD3       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD4       :        :                   :         : 3A        :                
+ADC_SDO                      : AD4       : input  : 3.3-V LVTTL       :         : 3A        : Y              
 SDRAM_DQ[13]                 : AD5       : bidir  : 3.3-V LVTTL       :         : 3A        : Y              
 GND                          : AD6       : gnd    :                   :         :           :                
 AS_DATA0, ASDO, DATA0        : AD7       :        :                   :         : 3A        :                
@@ -200,7 +200,7 @@ HDMI_TX_D[6]                 : AE11      : output : 3.3-V LVTTL       :         
 HDMI_TX_D[1]                 : AE12      : output : 3.3-V LVTTL       :         : 3B        : Y              
 VCCIO3B                      : AE13      : power  :                   : 3.3V    : 3B        :                
 DNU                          : AE14      :        :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AE15      :        :                   :         : 4A        :                
+SD_SPI_CS                    : AE15      : output : 3.3-V LVTTL       :         : 4A        : Y              
 GND                          : AE16      : gnd    :                   :         :           :                
 VGA_R[0]                     : AE17      : output : 3.3-V LVTTL       :         : 4A        : Y              
 GND                          : AE18      : gnd    :                   :         :           :                
@@ -230,7 +230,7 @@ SDRAM_DQMH                   : AF13      : output : 3.3-V LVTTL       :         
 VCCIO4A                      : AF14      : power  :                   : 3.3V    : 4A        :                
 USER_IO[5]                   : AF15      : bidir  : 3.3-V LVTTL       :         : 4A        : Y              
 VREFB4AN0                    : AF16      : power  :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF17      :        :                   :         : 4A        :                
+USER_IO[6]                   : AF17      : bidir  : 3.3-V LVTTL       :         : 4A        : Y              
 VGA_G[2]                     : AF18      : output : 3.3-V LVTTL       :         : 4A        : Y              
 VCCIO4A                      : AF19      : power  :                   : 3.3V    : 4A        :                
 VGA_R[2]                     : AF20      : output : 3.3-V LVTTL       :         : 4A        : Y              
@@ -249,8 +249,8 @@ VCCIO3B                      : AG4       : power  :                   : 3.3V    
 HDMI_TX_CLK                  : AG5       : output : 3.3-V LVTTL       :         : 3B        : Y              
 HDMI_TX_D[21]                : AG6       : output : 3.3-V LVTTL       :         : 3B        : Y              
 GND                          : AG7       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG8       :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG9       :        :                   :         : 4A        :                
+SD_SPI_CLK                   : AG8       : output : 3.3-V LVTTL       :         : 4A        : Y              
+IO_SDA                       : AG9       : bidir  : 3.3-V LVTTL       :         : 4A        : Y              
 SDRAM_CKE                    : AG10      : output : 3.3-V LVTTL       :         : 4A        : Y              
 USER_IO[0]                   : AG11      : bidir  : 3.3-V LVTTL       :         : 4A        : Y              
 VCCIO4A                      : AG12      : power  :                   : 3.3V    : 4A        :                
@@ -275,8 +275,8 @@ SDRAM_DQ[15]                 : AH3       : bidir  : 3.3-V LVTTL       :         
 HDMI_TX_D[18]                : AH4       : output : 3.3-V LVTTL       :         : 3B        : Y              
 HDMI_TX_D[19]                : AH5       : output : 3.3-V LVTTL       :         : 3B        : Y              
 HDMI_TX_D[20]                : AH6       : output : 3.3-V LVTTL       :         : 3B        : Y              
-SDIO_CD                      : AH7       : input  : 3.3-V LVTTL       :         : 4A        : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH8       :        :                   :         : 4A        :                
+SDCD_SPDIF                   : AH7       : bidir  : 3.3-V LVTTL       :         : 4A        : Y              
+SD_SPI_MISO                  : AH8       : input  : 3.3-V LVTTL       :         : 4A        : Y              
 USER_IO[1]                   : AH9       : bidir  : 3.3-V LVTTL       :         : 4A        : Y              
 GND                          : AH10      : gnd    :                   :         :           :                
 USER_IO[3]                   : AH11      : bidir  : 3.3-V LVTTL       :         : 4A        : Y              
@@ -660,12 +660,12 @@ GND                          : U3        : gnd    :                   :         
 VCCA_FPLL                    : U4        : power  :                   : 2.5V    :           :                
 GND                          : U5        : gnd    :                   :         :           :                
 DNU                          : U8        :        :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U9        :        :                   :         : 3A        :                
+ADC_CONVST                   : U9        : output : 3.3-V LVTTL       :         : 3A        : Y              
 HDMI_I2C_SCL                 : U10       : output : 3.3-V LVTTL       :         : 3A        : Y              
 HDMI_MCLK                    : U11       : output : 3.3-V LVTTL       :         : 3B        : Y              
 GND                          : U12       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U13       :        :                   :         : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : U14       :        :                   :         : 4A        :                
+SD_SPI_MOSI                  : U13       : output : 3.3-V LVTTL       :         : 4A        : Y              
+IO_SCL                       : U14       : output : 3.3-V LVTTL       :         : 4A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : U15       :        :                   :         : 6B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : U16       :        :                   :         : 6B        :                
 GND                          : U17       : gnd    :                   :         :           :                
@@ -685,7 +685,7 @@ GND                          : V4        : gnd    :                   :         
 GND                          : V5        : gnd    :                   :         :           :                
 GND                          : V8        : gnd    :                   :         :           :                
 GND                          : V9        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : V10       :        :                   :         : 3A        :                
+ADC_SCK                      : V10       : output : 3.3-V LVTTL       :         : 3A        : Y              
 FPGA_CLK1_50                 : V11       : input  : 3.3-V LVTTL       :         : 3B        : Y              
 SDRAM_DQ[1]                  : V12       : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
 HDMI_TX_VS                   : V13       : output : 3.3-V LVTTL       :         : 4A        : Y              

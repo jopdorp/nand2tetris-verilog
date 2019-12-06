@@ -1,7 +1,8 @@
 module HVSyncGenerator(
   input clk,
   input reset,
-  output reg hsync, vsync, hblank, vblank,
+  output reg hsync, vsync,
+  output display_on,
   output reg [9:0] hpos,
   output reg [9:0] vpos
 );
@@ -35,7 +36,7 @@ module HVSyncGenerator(
     if(hmaxxed)
       hpos <= 0;
     else
-      hpos <= hpos + 1;
+      hpos <= hpos + 10'd1;
   end
 
   // vertical position counter
@@ -46,13 +47,10 @@ module HVSyncGenerator(
       if (vmaxxed)
         vpos <= 0;
       else
-        vpos <= vpos + 1;
+        vpos <= vpos + 10'd1;
   end
   
-  // hblank and vblank
-  always @(posedge clk) begin
-      hblank <= hpos>H_DISPLAY;
-      vblank <= vpos>V_DISPLAY;
-  end
+  assign display_on = (hpos<640) && (vpos<256);
+
 
 endmodule

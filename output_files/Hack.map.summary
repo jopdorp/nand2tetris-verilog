@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sat Nov 30 22:46:32 2019
-Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Analysis & Synthesis Status : Successful - Fri Dec 06 11:41:39 2019
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : Hack
 Top-level Entity Name : sys_top
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 6536
-Total pins : 134
+Total registers : 7606
+Total pins : 145
 Total virtual pins : 0
-Total block memory bits : 234,708
-Total DSP Blocks : 19
+Total block memory bits : 327,043
+Total DSP Blocks : 29
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0
