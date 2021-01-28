@@ -73,6 +73,7 @@ then clone and build iverilog
 ```console
 $ git clone https://github.com/steveicarus/iverilog.git
 $ cd iverilog
+$ git checkout v11_0
 $ sh autoconf.sh
 $ ./configure
 $ make
