@@ -97,7 +97,7 @@ Open Msys2 64 bit
 $ pacman -S mingw-w64-x86_64-verilator
 ```
 #### A note about editors  
-There is an editor in Quartus, but I recommend using VSCode from microsoft, which has as nice system verilog plugin which it will suggest to install when you open a .sv file.
+I recommend using VSCode from microsoft, which has as nice system verilog plugin which it will suggest to install when you open a .sv file.
 
 If you don't want a big program like that, there are other options:
 -   Emacs https://www.gnu.org/software/emacs/download.html  
