@@ -8,10 +8,10 @@
   `include "add_16.sv"
 `endif
 `ifndef and_16
-  `include "and_16.sv"
+  `include "../01/and_16.sv"
 `endif
 `ifndef not_16
-  `include "not_16.sv"
+  `include "../01/not_16.sv"
 `endif
 `define alu 1
 
