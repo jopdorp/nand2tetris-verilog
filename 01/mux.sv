@@ -3,6 +3,10 @@
 `endif
 `define mux 1
 
+/** 
+ * Multiplexor. If sel==1 then out=b else out=a.
+ */
+ 
 module mux(
     input  a,
     input  b,

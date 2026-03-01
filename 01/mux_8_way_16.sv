@@ -3,6 +3,15 @@
 `endif
 `define mux_8_way_16 1
 
+/**
+ * 8-way 16-bit multiplexor.  
+ * out = a if sel==000
+ *       b if sel==001
+ *       etc.
+ *       h if sel==111
+ */
+
+
 module mux_8_way_16(
     input  [15:0] a,
     input  [15:0] b,

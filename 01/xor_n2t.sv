@@ -3,6 +3,10 @@
 `endif
 `define xor_n2t 1
 
+/**
+ *  Exclusive-or gate: out = !(a == b).
+ */
+ 
 module xor_n2t(input a, input b, output out);
 
     // Put your code here
