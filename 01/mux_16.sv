@@ -3,6 +3,10 @@
 `endif
 `define mux_16 1
 
+/**
+ * 16 bit multiplexor. If sel==1 then out=b else out=a.
+ */
+ 
 module mux_16(
     input  [15:0] a,
     input  [15:0] b,

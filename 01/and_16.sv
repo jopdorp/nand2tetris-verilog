@@ -3,6 +3,10 @@
 `endif
 `define and_16 1
 
+/**
+ * 16-bit-wise and gate: for i = 0..15: out[i] = a[i] and b[i]
+ */
+
 module and_16(
    input [15:0] a,
    input [15:0] b,
